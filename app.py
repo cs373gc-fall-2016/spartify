@@ -125,10 +125,10 @@ def company(name):
 
 def shell_context():
 	context = {
-		'app': app,
-		'db': db,
-		'Contributor': Contributor,
-		'Language': Language,
+        'app': app,
+        'db': db,
+        'Contributor': Contributor,
+        'Language': Language,
         'Project': Project,
         'Company': Company
 	}
