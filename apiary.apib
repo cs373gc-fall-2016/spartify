@@ -1,8 +1,8 @@
 FORMAT: 1A
-HOST: http://opensorcery.me/
+HOST: http://opensourcery.me/
 
-# OPENSORCERY API
-API for http://opensorcery.me
+# OPENSOURCERY API
+API for http://opensourcery.me
 
 ## Project [/projects/{id}]
 Represents a single project.
@@ -17,15 +17,16 @@ Required attributes:
 - `description`     A description of the Projecthttp://docs.opensorcery.apiary.io/traffic
 
 + Parameters
-    + name (required, string) ... Unique name
+    + id (required, integer) ... Unique ID
 
 + Model (application/json)
 
     + Body
 
             {
+                "id" : 10,
                 "name": "Example Project",
-                "github_url" : "http://github.com/example_projct"
+                "url" : "http://github.com/example_projct",
                 "languages" : ["JavaScript", "Python"],
                 "contributors": ["user1", "user2"],
                 "owner": "Google"
@@ -51,6 +52,7 @@ Get all projects.
 
             [
                 {
+                    "id": 10,
                     "name": "Example Project1",
                     "github_url" : "http://github.com/example_project1"
                     "language" : ["Javascipt", "Python"],
@@ -58,6 +60,7 @@ Get all projects.
                     "owner": "Google"
                 },
                 {
+                    "id": 2,
                     "name": "Example Project2",
                     "github_url" : "http://github.com/example_project2"
                     "languages" : ["Java"],
@@ -79,8 +82,8 @@ Represents a single company.
 Required attributes: 
 
 - `name`            The name of the company
-- `projects`        A list of projects owned by the Company
-- `members`         A list of contributors that belong to this company
+- `projects`        A list of projects ids owned by the Company
+- `members`         A list of contributors ids that belong to this company
 - `description`     A description of the company
 
 + Parameters
@@ -92,9 +95,9 @@ Required attributes:
 
             {
                 "name": "Google",
-                "github_url" : "http://github.com/google",
-                "projects": ["project1", "project2"],
-                "members": ["user1", "user2"],
+                "url" : "http://github.com/google",
+                "project_ids": [10, 12],
+                "member_ids": [3, 4],
                 "description": "Google is a a company focused on ..."
             }
             
@@ -155,6 +158,7 @@ Required attributes:
     + Body
 
             {
+                "id": 2,
                 "username": "example_name",
                 "email": "example@example.com",
                 "github_url": http://github.com/user1,
@@ -182,12 +186,14 @@ Get all contributors.
 
             [
                 {
+                    "id": 2,
                     "username": "user1",
                     "email": "user1@example.com",
                     "github_url": http://github.com/user1,
                     "projects": ["project1", "project2"]
                 },
                 {
+                    "id": 4,
                     "username": "user2",
                     "email": "user2@example.com",
                     "github_url": http://github.com/user1,
