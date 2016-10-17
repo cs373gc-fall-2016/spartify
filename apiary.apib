@@ -1,0 +1,229 @@
+FORMAT: 1A
+HOST: http://opensorcery.me/
+
+# OPENSORCERY API
+API for http://opensorcery.me
+
+## Project [/projects/{name}]
+Represents a single project.
+
+Required attributes: 
+
+- `name`            The name of the project
+- `description`     A description of the project
+
++ Parameters
+    + name (required, string) ... Unique name
+
++ Model (application/json)
+
+    + Body
+
+            {
+                "name": "Example Project",
+                "createdDate": "2012-04-23T18:25:43.511Z"
+            }
+            
+## Retrieve a single Project [GET]
+
++ Response 200
+
+    [Project][]
+    
++ Response 404 (application/json)
+
+        "Resource not found" 
+
+
+# Project List [/projects]
+Get all projects.
+
++ Model (application/json)
+
+    + Body
+
+            [
+                {
+                    "name": "Example Project1",
+                    "createdDate": "2012-04-23T18:25:43.511Z"
+                },
+                {
+                    "name": "Example Project2",
+                    "createdDate": "2014-22-19T12:47:07.511Z"
+                }
+            ]
+            
+
+## List all projects [GET]
+
++ Response 200
+
+    [Project List][]
+
+## Company [/companies/{name}]
+Represents a single company.
+
+Required attributes: 
+
+- `name`            The name of the company
+- `description`     A description of the company
+
++ Parameters
+    + name (required, string) ... Unique name
+
++ Model (application/json)
+
+    + Body
+
+            {
+                "name": "Google",
+                "description": "Google is a a company focused on ..."
+            }
+            
+## Retrieve a single Company [GET]
+
++ Response 200
+
+    [Company][]
+    
++ Response 404 (application/json)
+
+        "Resource not found" 
+
+
+# Company List [/companies]
+Get all companies.
+
++ Model (application/json)
+
+    + Body
+
+            [
+                {
+                    "name": "Google",
+                    "description": "Google is a a company focused on ..."
+                },
+                {
+                    "name": "Microsoft",
+                    "description": "Microsoft is a company focused on ..."
+                }
+            ]
+            
+
+## List all companies [GET]
+
++ Response 200
+
+    [Company List][]
+
+## Contributor [/contributors/{username}]
+Represents a single contributor.
+
+Required attributes: 
+
+- `username`  The username of the contributor
+- `email`     The email address of the contributor
+
++ Parameters
+    + username (required, string) ... Unique username
+
++ Model (application/json)
+
+    + Body
+
+            {
+                "username": "example_name",
+                "email": "example@example.com"
+            }
+            
+## Retrieve a single Contributor [GET]
+
++ Response 200
+
+    [Contributor][]
+    
++ Response 404 (application/json)
+
+        "Resource not found" 
+
+
+# Contributor List [/contributors]
+Get all contributors.
+
++ Model (application/json)
+
+    + Body
+
+            [
+                {
+                    "username": "user1",
+                    "email": "user1@example.com"
+                },
+                {
+                    "username": "user2",
+                    "email": "user2@example.com"
+                }
+            ]
+            
+
+## List all Contributors [GET]
+
++ Response 200
+
+    [Contributor List][]
+
+## Language [/languages/{name}]
+Represents a single language.
+
+Required attributes: 
+
+- `name`            The name of the language
+- `description`     A description of the language
+
++ Parameters
+    + name (required, string) ... Unique name
+
++ Model (application/json)
+
+    + Body
+
+            {
+                "name": "Python",
+                "description": "Python is scripting language for ..."
+            }
+            
+## Retrieve a single Language [GET]
+
++ Response 200
+
+    [Language][]
+    
++ Response 404 (application/json)
+
+        "Resource not found" 
+
+
+# Language List [/languages]
+Get all languages.
+
++ Model (application/json)
+
+    + Body
+
+            [
+                {
+                    "name": "Python",
+                    "description": "Python is a programming language for ..."
+                },
+                {
+                    "name": "Java",
+                    "description": "Java is a programming language for ..."
+                }
+            ]
+            
+
+## List all Languages [GET]
+
++ Response 200
+
+    [Language List][]
