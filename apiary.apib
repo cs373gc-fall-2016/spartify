@@ -9,8 +9,11 @@ Represents a single project.
 
 Required attributes: 
 
-- `name`            The name of the project
-- `description`     A description of the project
+- `name`            The name of the Project
+- `github_url`      The url of the Project on GitHub
+- `languages`       A list of languages used in the Project
+- `contributors`    A list of contributors of the Project
+- `description`     A description of the Project
 
 + Parameters
     + name (required, string) ... Unique name
@@ -21,7 +24,10 @@ Required attributes:
 
             {
                 "name": "Example Project",
-                "createdDate": "2012-04-23T18:25:43.511Z"
+                "github_url" : "http://github.com/example_projct"
+                "languages" : ["JavaScript", "Python"],
+                "contributors": ["user1", "user2"],
+                "owner": "Google"
             }
             
 ## Retrieve a single Project [GET]
@@ -45,11 +51,17 @@ Get all projects.
             [
                 {
                     "name": "Example Project1",
-                    "createdDate": "2012-04-23T18:25:43.511Z"
+                    "github_url" : "http://github.com/example_project1"
+                    "language" : ["Javascipt", "Python"],
+                    "contributors": ["user1", "user2"],
+                    "owner": "Google"
                 },
                 {
                     "name": "Example Project2",
-                    "createdDate": "2014-22-19T12:47:07.511Z"
+                    "github_url" : "http://github.com/example_project2"
+                    "languages" : ["Java"],
+                    "contributors": ["user1", "user2"],
+                    "owner": "Microsoft"
                 }
             ]
             
@@ -66,6 +78,8 @@ Represents a single company.
 Required attributes: 
 
 - `name`            The name of the company
+- `projects`        A list of projects owned by the Company
+- `members`         A list of contributors that belong to this company
 - `description`     A description of the company
 
 + Parameters
@@ -77,6 +91,9 @@ Required attributes:
 
             {
                 "name": "Google",
+                "github_url" : "http://github.com/google",
+                "projects": ["project1", "project2"],
+                "members": ["user1", "user2"],
                 "description": "Google is a a company focused on ..."
             }
             
@@ -101,10 +118,14 @@ Get all companies.
             [
                 {
                     "name": "Google",
+                    "github_url" : "http://github.com/google",
+                    "projects": ["project1", "project2"],
                     "description": "Google is a a company focused on ..."
                 },
                 {
                     "name": "Microsoft",
+                    "github_url" : "http://github.com/microsoft",
+                    "projects": ["project2", "project20"],
                     "description": "Microsoft is a company focused on ..."
                 }
             ]
@@ -123,6 +144,7 @@ Required attributes:
 
 - `username`  The username of the contributor
 - `email`     The email address of the contributor
+- `projects`  A list of projects this contributor contributed to
 
 + Parameters
     + username (required, string) ... Unique username
@@ -133,7 +155,9 @@ Required attributes:
 
             {
                 "username": "example_name",
-                "email": "example@example.com"
+                "email": "example@example.com",
+                "github_url": http://github.com/user1,
+                "projects": ["project1", "project2"]
             }
             
 ## Retrieve a single Contributor [GET]
@@ -157,11 +181,15 @@ Get all contributors.
             [
                 {
                     "username": "user1",
-                    "email": "user1@example.com"
+                    "email": "user1@example.com",
+                    "github_url": http://github.com/user1,
+                    "projects": ["project1", "project2"]
                 },
                 {
                     "username": "user2",
-                    "email": "user2@example.com"
+                    "email": "user2@example.com",
+                    "github_url": http://github.com/user1,
+                    "projects": ["project2", "project8"]
                 }
             ]
             
@@ -178,7 +206,9 @@ Represents a single language.
 Required attributes: 
 
 - `name`            The name of the language
+- `creator`         The creator of the language
 - `description`     A description of the language
+- `projects`        A list of projects that use this language
 
 + Parameters
     + name (required, string) ... Unique name
@@ -189,6 +219,8 @@ Required attributes:
 
             {
                 "name": "Python",
+                "creator": "Guido van Rossum",
+                "projects" ["project1","project2"],
                 "description": "Python is scripting language for ..."
             }
             
@@ -213,10 +245,14 @@ Get all languages.
             [
                 {
                     "name": "Python",
+                    "creator": "Guido van Rossum",
+                    "projects": ["project1","project2"],
                     "description": "Python is a programming language for ..."
                 },
                 {
                     "name": "Java",
+                    "creator": "James Gosling",
+                    "projects": ["project4","project10"],
                     "description": "Java is a programming language for ..."
                 }
             ]
