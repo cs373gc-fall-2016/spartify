@@ -12,9 +12,10 @@ Required attributes:
 - `id`              The unique ID of the Project
 - `name`            The name of the Project
 - `url`             The url of the Project
-- `languages`       A list of languages used in the Project
-- `contributors`    A list of contributors of the Project
+- `languages`       A list of language names used in the Project
+- `contributor_ids` A list of contributor IDs that contributed to the Project
 - `description`     A description of the Project
+- `owner_id`        ID of the company that owns the project
 
 + Parameters
     + id (required, integer) ... Unique ID
@@ -26,10 +27,10 @@ Required attributes:
             {
                 "id" : 10,
                 "name": "Example Project",
-                "url" : "http://github.com/example_projct",
+                "url" : "http://github.com/example_project",
                 "languages" : ["JavaScript", "Python"],
-                "contributors": ["user1", "user2"],
-                "owner": "Google"
+                "contributor_ids": [1, 2],
+                "owner_id": 1
             }
             {
                 "id" : 11,
@@ -69,20 +70,20 @@ Get all projects.
 
             [
                 {
-                    "id": 10,
-                    "name": "Example Project1",
-                    "github_url" : "http://github.com/example_project1"
-                    "language" : ["Javascipt", "Python"],
-                    "contributors": ["user1", "user2"],
-                    "owner": "Google"
+                    "id" : 10,
+                    "name": "Example Project",
+                    "url" : "http://github.com/example_project",
+                    "languages" : ["JavaScript", "Python"],
+                    "contributor_ids": [1, 2],
+                    "owner_id": 1
                 },
                 {
-                    "id": 2,
+                   "id" : 10,
                     "name": "Example Project2",
-                    "github_url" : "http://github.com/example_project2"
+                    "url" : "http://github.com/example_project2",
                     "languages" : ["Java"],
-                    "contributors": ["user1", "user2"],
-                    "owner": "Microsoft"
+                    "contributor_ids": [3, 4],
+                    "owner_id": 2
                 }
             ]
             
@@ -93,18 +94,20 @@ Get all projects.
 
     [Project List][]
 
-## Company [/api/companies/{name}]
+## Company [/api/companies/{id}]
 Represents a single company.
 
 Required attributes: 
 
+- `id`              A unique ID
 - `name`            The name of the company
-- `projects`        A list of projects ids owned by the Company
-- `members`         A list of contributors ids that belong to this company
+- `url`             URL for the company
+- `project_ids`     A list of project ids for projects owned by the Company
+- `member_ids`      A list of contributor ids for contributors that belong to the company
 - `description`     A description of the company
 
 + Parameters
-    + name (required, string) ... Unique name
+    + id (required, integer) ... Unique ID
 
 + Model (application/json)
 
@@ -139,15 +142,19 @@ Get all companies.
 
             [
                 {
+                    "id": 2,
                     "name": "Google",
-                    "github_url" : "http://github.com/google",
-                    "projects": ["project1", "project2"],
+                    "url" : "http://github.com/google",
+                    "project_ids": [10, 12],
+                    "member_ids": [3, 4],
                     "description": "Google is a a company focused on ..."
                 },
                 {
+                    "id": 1,
                     "name": "Microsoft",
-                    "github_url" : "http://github.com/microsoft",
-                    "projects": ["project2", "project20"],
+                    "url" : "http://github.com/microsoft",
+                    "project_ids": [2, 20],
+                    "member_ids": [1, 3, 4]
                     "description": "Microsoft is a company focused on ..."
                 }
             ]
@@ -159,17 +166,20 @@ Get all companies.
 
     [Company List][]
 
-## Contributor [/api/contributors/{username}]
+## Contributor [/api/contributors/{id}]
 Represents a single contributor.
 
 Required attributes: 
 
-- `username`  The username of the contributor
-- `email`     The email address of the contributor
-- `projects`  A list of projects this contributor contributed to
+- `id`          A unique ID
+- `username`    The username of the contributor
+- `email`       The email address of the contributor
+- `url`         The URL for the contributor
+- `project_ids` A list of project ids for which the contributor contributes
+- `company_ids` A list of company ids for which the contributor is a member
 
 + Parameters
-    + username (required, string) ... Unique username
+    + id (required, integer) ... Unique ID
 
 + Model (application/json)
 
@@ -177,11 +187,11 @@ Required attributes:
 
             {
                 "id": 2,
-                "username": "example_name",
-                "email": "example@example.com",
-                "github_url": http://github.com/user1,
-                "projects": ["project1", "project2"],
-                "companies": ["Google", "Microsoft"]
+                "username": "usr1",
+                "email": "usr1@example.com",
+                "url": http://github.com/user1,
+                "project_ids": [1, 2],
+                "company_ids": [3, 4]
             }
             
 ## Retrieve a single Contributor [GET]
@@ -204,18 +214,20 @@ Get all contributors.
 
             [
                 {
-                    "id": 2,
-                    "username": "user1",
-                    "email": "user1@example.com",
-                    "github_url": http://github.com/user1,
-                    "projects": ["project1", "project2"]
+                    "id": 1,
+                    "username": "usr1",
+                    "email": "usr1@example.com",
+                    "url": http://github.com/user1,
+                    "project_ids": [1, 2],
+                    "company_ids": [3, 4]
                 },
                 {
-                    "id": 4,
-                    "username": "user2",
-                    "email": "user2@example.com",
-                    "github_url": http://github.com/user1,
-                    "projects": ["project2", "project8"]
+                    "id": 2,
+                    "username": "usr2",
+                    "email": "usr2@example.com",
+                    "url": http://github.com/user2,
+                    "project_ids": [4, 5],
+                    "company_ids": [3]
                 }
             ]
             
@@ -234,7 +246,8 @@ Required attributes:
 - `name`            The name of the language
 - `creator`         The creator of the language
 - `description`     A description of the language
-- `projects`        A list of projects that use this language
+- `project_ids`     A list of project ids that use this language
+- `paradigms`       A list of programming paradigms the language uses
 
 + Parameters
     + name (required, string) ... Unique name
@@ -246,9 +259,9 @@ Required attributes:
             {
                 "name": "Python",
                 "creator": "Guido van Rossum",
-                "projects" ["project1","project2"],
+                "project_ids": ["project1","project2"],
                 "description": "Python is scripting language for ...",
-                "paradigm" : [functional, object oriented]
+                "paradigms" : ["Functional", "Object Oriented"]
             }
             
 ## Retrieve a single Language [GET]
@@ -273,14 +286,16 @@ Get all languages.
                 {
                     "name": "Python",
                     "creator": "Guido van Rossum",
-                    "projects": ["project1","project2"],
-                    "description": "Python is a programming language for ..."
+                    "project_ids": [1,2],
+                    "description": "Python is a programming language for ...",
+                    "paradigms" : ["Functional", "Object Oriented"]
                 },
                 {
                     "name": "Java",
                     "creator": "James Gosling",
-                    "projects": ["project4","project10"],
-                    "description": "Java is a programming language for ..."
+                    "project_ids": [4,10],
+                    "description": "Java is a programming language for ...",
+                    "paradigms" : ["Object Oriented"]
                 }
             ]
             
