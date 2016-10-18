@@ -26,11 +26,15 @@ class Contributor(db.Model):
     username = db.Column(db.String)
     email = db.Column(db.String)
     url = db.Column(db.String)
+    avatar_url = db.Column(db.String)
+    location = db.Column(db.String)
 
-    def __init__(self, username, email, url):
+    def __init__(self, username, email, url, avatar_url, location):
         self.username = username
         self.email=email
         self.url = url
+        self.avatar_url = avatar_url
+        self.location = location
 
     def __repr__(self):
         return '<Contributor %r>' % self.username
@@ -41,6 +45,8 @@ class Contributor(db.Model):
         cdict['username'] = self.username
         cdict['email'] = self.email
         cdict['url'] = self.url
+        cdict['avatar_url'] = self.avatar_url
+        cdict['location'] = self.location
         projects = list(self.projects)
         companies = list(self.companies)
         if projects:
@@ -65,13 +71,17 @@ class Language(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, unique=True)
     creator = db.Column(db.String)
+    type = db.Column(db.String)
+    firstAppeared = db.Column(db.Integer)
     description = db.Column(db.String)
     paradigms = db.relationship('Paradigm', secondary=paradigms_used,
         backref=db.backref('languages', lazy='dynamic'))
 
-    def __init__(self, name, creator, description):
+    def __init__(self, name, creator, type, firstAppeared, description):
         self.name = name
         self.creator = creator
+        self.type = type
+        self.firstAppeared = firstAppeared
         self.description = description
 
     def __repr__(self):
@@ -82,6 +92,8 @@ class Language(db.Model):
         ldict['name'] = self.name
         ldict['creator'] = self.creator
         ldict['description'] = self.description
+        ldict['type'] = self.type
+        ldict['firstAppeared'] = self.firstAppeared
         projects = list(self.projects)
         paradigms = list(self.paradigms)
         if projects:
@@ -95,6 +107,8 @@ class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
     url = db.Column(db.String)
+    createdDate = db.Column(db.DateTime)
+    private = db.Column(db.Boolean)
     owner_id = db.Column(db.Integer, db.ForeignKey('companies.id'))
     description = db.Column(db.String)
     languages = db.relationship('Language', secondary=language_usage,
@@ -115,6 +129,8 @@ class Project(db.Model):
         pdict['id'] = self.id
         pdict['name'] = self.name
         pdict['url'] = self.url
+        pdict['createdDate'] = self.createdDate
+        pdict['private'] = self.private
         languages = list(self.languages)
         contributors = list(self.contributors)
         if languages:
@@ -128,15 +144,19 @@ class Company(db.Model):
     __tablename__ = 'companies'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, unique=True)
+    email = db.Column(db.String)
     url = db.Column(db.String)
+    avatar_url = db.Column(db.String)
     description = db.Column(db.String, unique=True)
     projects = db.relationship('Project', backref='company', lazy='dynamic')
     members = db.relationship('Contributor', secondary=company_membership,
         backref=db.backref('companies', lazy='dynamic'))
 
-    def __init__(self, name, url, description):
+    def __init__(self, name, email, url, avatar_url, description):
         self.name = name
+        self.email = email
         self.url = url
+        self.avatar_url = avatar_url
         self.description = description
 
     def __repr__(self):
@@ -146,7 +166,9 @@ class Company(db.Model):
         cdict = {}
         cdict['id'] = self.id
         cdict['name'] = self.name
+        cdict['email'] = self.email
         cdict['url'] = self.url
+        cdict['avatar_url'] = self.avatar_url
         cdict['description'] = self.description
         projects = list(self.projects)
         members = list(self.members)
