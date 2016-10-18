@@ -6,7 +6,6 @@ Create database named 'opensourcery' on linux this can be done as follows:
 $ sudo -u postgres createdb opensourcery
 
 next, execute the following:
-$ cd db-dump
 $ psql openssourcery < dump.sql
 
 That will import the data to the database
