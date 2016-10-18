@@ -9,7 +9,7 @@ $ sudo -u postgres createdb opensourcery
 
 next, execute the following:
 ```
-$ psql openssourcery < dump.sql
+$ psql opensourcery < dump.sql
 ```
 
 That will import the data to the database
