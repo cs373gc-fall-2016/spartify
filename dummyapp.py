@@ -3,14 +3,16 @@ import json
 
 dummyapp = Flask(__name__)
 
-projects2 = {"1":{"id":1, "name":"example_project1", "url":"http://github.com/company1/example_project1", "languages":["Java"], "contributors":[1,2], "description":"Example_Project1 is a project ..."},
-             "2":{"id":2, "name":"example_project2", "url":"http://github.com/company1/example_project2", "languages":["Python"], "contributors":[1,2], "description":"Example_Project2 is a project ..."}}
+projects2 = {"1":{"id":1, "name":"example_project1", "url":"http://github.com/company1/example_project1", "languages":["Java"],
+             "contributor_ids":[1,2], "description":"Example_Project1 is a project ...", "owner_id":1},
+             "2":{"id":2, "name":"example_project2", "url":"http://github.com/company1/example_project2", "languages":["Python"], 
+             "contributor_ids":[1,2], "description":"Example_Project2 is a project ...", "owner_id":2}}
 
 companies2    = {"1":{"id":1, "name":"Company1", "url": "http://github.com/company1", "project_ids":[1], "member_ids":[2], "description":"Company1 is a company focused on ..."},
                  "2":{"id":2, "name":"Company2", "url": "http://github.com/company2", "project_ids":[2], "member_ids":[1], "description":"Company1 is a company focused on ..."}}
 
-contributors2 = {"1":{"id":1, "username":"usr1", "email":"user1@company2.com", "url":"http://github.com/usr1", "project_ids":[1,2],"companies":[2]},
-                 "2":{"id":2, "username":"usr2", "email":"user2@company1.com", "url":"http://github.com/usr2", "project_ids":[1,2],"companies":[1]}}
+contributors2 = {"1":{"id":1, "username":"usr1", "email":"user1@company2.com", "url":"http://github.com/usr1", "project_ids":[1,2],"company_ids":[2]},
+                 "2":{"id":2, "username":"usr2", "email":"user2@company1.com", "url":"http://github.com/usr2", "project_ids":[1,2],"company_ids":[1]}}
 
 languages2    = {"python" : {"name":"Python","creator":"Guido van Rossum","project_ids":[2],"description":"Python is a language ...", "paradigms":["functional", "Object Oriented"]},
                  "java" : {"name":"Java","creator":"James Gosling","project_ids":[1], "description":"Java is a language ...", "paradigms":["Object Oriented"]}}
