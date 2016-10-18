@@ -4,7 +4,7 @@ HOST: http://opensourcery.me/
 # OPENSOURCERY API
 API for http://opensourcery.me
 
-## Project [/projects/{id}]
+## Project [/api/projects/{id}]
 Represents a single project.
 
 Required attributes: 
@@ -60,7 +60,7 @@ Required attributes:
         "Resource not found" 
 
 
-# Project List [/projects]
+# Project List [/api/projects]
 Get all projects.
 
 + Model (application/json)
@@ -93,7 +93,7 @@ Get all projects.
 
     [Project List][]
 
-## Company [/companies/{name}]
+## Company [/api/companies/{name}]
 Represents a single company.
 
 Required attributes: 
@@ -111,6 +111,7 @@ Required attributes:
     + Body
 
             {
+                "id": 2,
                 "name": "Google",
                 "url" : "http://github.com/google",
                 "project_ids": [10, 12],
@@ -129,7 +130,7 @@ Required attributes:
         "Resource not found" 
 
 
-# Company List [/companies]
+# Company List [/api/companies]
 Get all companies.
 
 + Model (application/json)
@@ -158,7 +159,7 @@ Get all companies.
 
     [Company List][]
 
-## Contributor [/contributors/{username}]
+## Contributor [/api/contributors/{username}]
 Represents a single contributor.
 
 Required attributes: 
@@ -194,7 +195,7 @@ Required attributes:
         "Resource not found" 
 
 
-# Contributor List [/contributors]
+# Contributor List [/api/contributors]
 Get all contributors.
 
 + Model (application/json)
@@ -225,7 +226,7 @@ Get all contributors.
 
     [Contributor List][]
 
-## Language [/languages/{name}]
+## Language [/api/languages/{name}]
 Represents a single language.
 
 Required attributes: 
@@ -261,7 +262,7 @@ Required attributes:
         "Resource not found" 
 
 
-# Language List [/languages]
+# Language List [/api/languages]
 Get all languages.
 
 + Model (application/json)
