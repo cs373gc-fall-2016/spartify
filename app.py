@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_script import Manager, Shell
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/opensorcery'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/opensourcery'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -57,6 +57,7 @@ class Contributor(db.Model):
             cdict['project_ids'] = [p.id for p in projects]
         if companies:
             cdict['company_ids'] = [c.di for c in companies]
+        return cdict
 
 class Paradigm(db.Model):
     __tablename__ = 'paradigms'
@@ -131,18 +132,21 @@ class Project(db.Model):
         if contributors:
             pdict['contributor_ids'] = [c.id for c in contributors]
         pdict['owner_id'] = self.owner_id
+        return pdict
 
 class Company(db.Model):
     __tablename__ = 'companies'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(20), unique=True)
-    description = db.Column(db.String(120), unique=True)
+    name = db.Column(db.String, unique=True)
+    url = db.Column(db.String)
+    description = db.Column(db.String, unique=True)
     projects = db.relationship('Project', backref='company', lazy='dynamic')
     members = db.relationship('Contributor', secondary=company_membership,
         backref=db.backref('companies', lazy='dynamic'))
 
-    def __init__(self, name, description):
+    def __init__(self, name, url, description):
         self.name = name
+        self.url = url
         self.description = description
 
     def __repr__(self):
@@ -160,6 +164,7 @@ class Company(db.Model):
             cdict['project_ids'] = [p.id for p in projects]
         if members:
             cdict['member_ids'] = [c.id for c in members]
+        return cdict
 
 
 @app.route('/')
