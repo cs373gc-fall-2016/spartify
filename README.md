@@ -1,6 +1,7 @@
 Setup:
-PostgreSQL needs to be installed. This is platform dependendent so you'll just have to
-google setup instructions on your resprecive platform.
+PostgreSQL needs to be installed.  Apparantly you can use http://postgresapp.com/ if your using mac OS X.
+Installation instructions for Ubuntu ared below and I would expect that the experience would be fairly similar.
+If your using windows well then your on your on figuring out how to install it.
 
 The following instructions will setup PostgresSQl for Ubuntu:
 ```
