@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+<table id="projects" class="display table table-striped">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>URL</th>
+        <th>CreatedDate</th>
+        <th>Private</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for project in projects %}
+    <tr>
+        <td>{{project.name}}</td>
+        <td>{{project.url}}</td>
+        <td>{{project.createdDate}}</td>
+        <td>{{project.private}}</td>
+        <td>{{project.description}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
