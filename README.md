@@ -12,6 +12,11 @@ Change every instance of 'md5' to 'trust in the following config file:
 ```
 $ sudo vim /etc/postgresql/9.5/main/pg_hba.conf
 ```
+Then restart the psql server:
+```
+$sudo /etc/init.d/postgresql restart
+```
+
 Create a super user(I recommend an empty password, its not secure but should be fine for a dev environment):
 ```
 $ sudo -u postgres createuser --superuser $USER
