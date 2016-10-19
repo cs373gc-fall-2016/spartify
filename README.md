@@ -8,7 +8,10 @@ The following instructions will setup PostgresSQl for Ubuntu:
 $ sudo apt-get update
 $ sudo apt-get install postgresql postgresql-contrib
 ```
-
+Change every instance of 'md5' to 'trust in the following config file:
+```
+$ sudo vim /etc/postgresql/9.5/main/pg_hba.conf
+```
 Create a super user(I recommend an empty password, its not secure but should be fine for a dev environment):
 ```
 $ sudo -u postgres createuser --superuser $USER
@@ -41,7 +44,9 @@ pip install psycopg2
 
 Also load the requirements file.
 ```
-$ pip install -r requirements.txt
+$sudo pip install flask
+$sudo pip install flask_sqlalchemy
+$sudo pip install flask_script
 ```
 
 This finishes the setup.
