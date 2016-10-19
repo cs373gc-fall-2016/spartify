@@ -12,9 +12,11 @@ Required attributes:
 - `id`              The unique ID of the Project
 - `name`            The name of the Project
 - `url`             The url of the Project
+- `createdDate`     The date the project was created
+- `private`         True if the project is private, false otherwise
+- `description`     A description of the Project
 - `languages`       A list of language names used in the Project
 - `contributor_ids` A list of contributor IDs that contributed to the Project
-- `description`     A description of the Project
 - `owner_id`        ID of the company that owns the project
 
 + Parameters
@@ -28,26 +30,11 @@ Required attributes:
                 "id" : 10,
                 "name": "Example Project",
                 "url" : "http://github.com/example_project",
+                "createdDate": "Sat, 09 May 2009 02:38:42 GMT",
+                "private": false,
                 "languages" : ["JavaScript", "Python"],
                 "contributor_ids": [1, 2],
                 "owner_id": 1
-            }
-            {
-                "id" : 11,
-                "name": "tesseract.js",
-                "url" : "https://github.com/naptha",
-                "languages" : ["JavaScript", "HTML", "CSS"],
-                "contributors": ["bijection", "antimatter15", "zzarcon", "hemanth", "rowasc", "jayathungek", "helloandre", "katamaritaco", "andrewthehan", "radarhere"],
-                "owner": "Naptha"
-            }
-            {
-                "id": 12,
-                "name":"sanic",
-                "url" :"https://github.com/channelcat/sanic",
-                "languages": "[Python]",
-                "contributors": "["channelcat", "seemethere", "cbess", "jpiasetz", "cclauss", "radarhere", "mindflayer", "bikegriffith", "JD557", "abhishek7", "kolanos", "KhasanovBI"]"
-                "owner": "channelcat"
-
             }
             
 ## Retrieve a single Project [GET]
@@ -73,6 +60,8 @@ Get all projects.
                     "id" : 10,
                     "name": "Example Project",
                     "url" : "http://github.com/example_project",
+                    "createdDate": "Sat, 09 May 2009 02:38:42 GMT",
+                    "private": false,
                     "languages" : ["JavaScript", "Python"],
                     "contributor_ids": [1, 2],
                     "owner_id": 1
@@ -81,6 +70,8 @@ Get all projects.
                    "id" : 10,
                     "name": "Example Project2",
                     "url" : "http://github.com/example_project2",
+                    "createdDate": "Sun, 31 August 2005 12:11:07 GMT",
+                    "private": false,
                     "languages" : ["Java"],
                     "contributor_ids": [3, 4],
                     "owner_id": 2
@@ -101,7 +92,10 @@ Required attributes:
 
 - `id`              A unique ID
 - `name`            The name of the company
+- `email`           The comapny's email
 - `url`             URL for the company
+- `avatar_url`      URL for the avatar image of the comapany
+- `description`     A description of the comapany
 - `project_ids`     A list of project ids for projects owned by the Company
 - `member_ids`      A list of contributor ids for contributors that belong to the company
 - `description`     A description of the company
@@ -116,7 +110,10 @@ Required attributes:
             {
                 "id": 2,
                 "name": "Google",
-                "url" : "http://github.com/google",
+                "email" "example@google.com",
+                "url": "http://github.com/google",
+                "avatar_url": "https://avatars.githubusercontent.com/u/1234567?v=3",
+                "description": "Google is compnay ...",
                 "project_ids": [10, 12],
                 "member_ids": [3, 4],
                 "description": "Google is a a company focused on ..."
@@ -144,7 +141,9 @@ Get all companies.
                 {
                     "id": 2,
                     "name": "Google",
+                    "email" "example@google.com",
                     "url" : "http://github.com/google",
+                    "avatar_url": "https://avatars.githubusercontent.com/u/1234567?v=3",
                     "project_ids": [10, 12],
                     "member_ids": [3, 4],
                     "description": "Google is a a company focused on ..."
@@ -152,9 +151,12 @@ Get all companies.
                 {
                     "id": 1,
                     "name": "Microsoft",
+                    "email" "example@microsoft.com",
                     "url" : "http://github.com/microsoft",
+                    "avatar_url": "https://avatars.githubusercontent.com/u/7654321?v=3",
+                    "description": "Microsoft is compnay ...",
                     "project_ids": [2, 20],
-                    "member_ids": [1, 3, 4]
+                    "member_ids": [1, 3, 4],
                     "description": "Microsoft is a company focused on ..."
                 }
             ]
@@ -175,6 +177,8 @@ Required attributes:
 - `username`    The username of the contributor
 - `email`       The email address of the contributor
 - `url`         The URL for the contributor
+- `avatar_url`  URL for the avatar image of the contributor
+- `location`    The geographical location of the contributor
 - `project_ids` A list of project ids for which the contributor contributes
 - `company_ids` A list of company ids for which the contributor is a member
 
@@ -190,6 +194,8 @@ Required attributes:
                 "username": "usr1",
                 "email": "usr1@example.com",
                 "url": http://github.com/user1,
+                "avatar_url": "https://avatars.githubusercontent.com/u/1234?v=3",
+                "location": "Seattle, WA", 
                 "project_ids": [1, 2],
                 "company_ids": [3, 4]
             }
@@ -218,6 +224,8 @@ Get all contributors.
                     "username": "usr1",
                     "email": "usr1@example.com",
                     "url": http://github.com/user1,
+                    "avatar_url": "https://avatars.githubusercontent.com/u/1234?v=3",
+                    "location": "Seattle, WA", 
                     "project_ids": [1, 2],
                     "company_ids": [3, 4]
                 },
@@ -226,6 +234,8 @@ Get all contributors.
                     "username": "usr2",
                     "email": "usr2@example.com",
                     "url": http://github.com/user2,
+                    "avatar_url": "https://avatars.githubusercontent.com/u/4321?v=3",
+                    "location": "Austin,TX", 
                     "project_ids": [4, 5],
                     "company_ids": [3]
                 }
@@ -245,9 +255,11 @@ Required attributes:
 
 - `name`            The name of the language
 - `creator`         The creator of the language
+- `type`            Lists if the the language is compiled, interpreted, etc.
+- `firstAppeared`   The year the language first appeared
 - `description`     A description of the language
-- `project_ids`     A list of project ids that use this language
 - `paradigms`       A list of programming paradigms the language uses
+- `project_ids`     A list of project ids that use this language
 
 + Parameters
     + name (required, string) ... Unique name
@@ -259,10 +271,14 @@ Required attributes:
             {
                 "name": "Python",
                 "creator": "Guido van Rossum",
-                "project_ids": ["project1","project2"],
+                "type", "Interpreted",
+                "firstAppeared": 1991,
                 "description": "Python is scripting language for ...",
-                "paradigms" : ["Functional", "Object Oriented"]
+                "paradigms" : ["Functional", "Object Oriented"],
+                "project_ids": ["project1","project2"]
             }
+                
+                
             
 ## Retrieve a single Language [GET]
 
@@ -286,16 +302,20 @@ Get all languages.
                 {
                     "name": "Python",
                     "creator": "Guido van Rossum",
-                    "project_ids": [1,2],
+                    "type", "Interpreted",
+                    "firstAppeared": 1991,
                     "description": "Python is a programming language for ...",
-                    "paradigms" : ["Functional", "Object Oriented"]
+                    "paradigms" : ["Functional", "Object Oriented"],
+                    "project_ids": [1,2]
                 },
                 {
                     "name": "Java",
                     "creator": "James Gosling",
-                    "project_ids": [4,10],
+                    "type", "Compiled",
+                    "firstAppeared": 1995,
                     "description": "Java is a programming language for ...",
-                    "paradigms" : ["Object Oriented"]
+                    "paradigms" : ["Object Oriented"],
+                    "project_ids": [4,10]
                 }
             ]
             
