@@ -8,6 +8,30 @@ from models import Contributor, Paradigm, Language, Project, Company
 def index():
     return render_template('index.html')
 
+@app.route('/languages/')
+def lang_temp():
+    languages = Language.query.all()
+    return render_template('languages.html', languages=languages)
+
+@app.route('/companies/')
+def comp_temp():
+    companies = Company.query.all()
+    return render_template('companies.html', companies=companies)
+
+@app.route('/contributors/')
+def contr_temp():
+    contributors = Contributor.query.all()
+    return render_template('contributors.html', contributors=contributors)
+
+@app.route('/projects/')
+def proj_temp():
+    projects = Project.query.all()
+    return render_template('projects.html', projects=projects)
+
+@app.route('/About/')
+def about_temp():
+    return render_template('about.html')
+
 @app.route('/api/contributors/')
 def contributors():
     contributors = Contributor.query.all()
