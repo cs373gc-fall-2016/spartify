@@ -5,10 +5,12 @@
 import unittest
 from models import Contributor, Paradigm, Company, Project, Language
 
+
 class TestModels(unittest.TestCase):
     """
       Unit Test Class for testing the DB Model Classes
     """
+
     def setUp(self):
         paradigm = Paradigm(name='Functional')
         language = Language(name='tstLang', creator='bob',

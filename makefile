@@ -9,32 +9,32 @@ FILES :=                                   \
     tests.py
 
 ifeq ($(shell uname), Darwin)          # Apple
-    PYTHON   := python3.5
-    PIP      := pip3.5
-    PYLINT   := pylint
-    COVERAGE := coverage-3.5
-    PYDOC    := pydoc3.5
-    AUTOPEP8 := autopep8
-else ifeq ($(CI), true)                # Travis CI
-    PYTHON   := python3.5
+    PYTHON   := python
     PIP      := pip
     PYLINT   := pylint
-    COVERAGE := coverage-3.5
+    COVERAGE := coverage
+    PYDOC    := pydoc
+    AUTOPEP8 := autopep8
+else ifeq ($(CI), true)                # Travis CI
+    PYTHON   := python
+    PIP      := pip
+    PYLINT   := pylint
+    COVERAGE := coverage
     PYDOC    := pydoc
     AUTOPEP8 := autopep8
 else ifeq ($(shell uname -p), unknown) # Docker
-    PYTHON   := python3.5
-    PIP      := pip3.5
+    PYTHON   := python
+    PIP      := pip
     PYLINT   := pylint
-    COVERAGE := coverage-3.5
-    PYDOC    := pydoc3.5
+    COVERAGE := coverage
+    PYDOC    := pydoc
     AUTOPEP8 := autopep8
 else                                   # UTCS
-    PYTHON   := python3.5
-    PIP      := pip3.5
-    PYLINT   := pylint3.5
-    COVERAGE := coverage-3.5
-    PYDOC    := pydoc3.4
+    PYTHON   := python
+    PIP      := pip
+    PYLINT   := pylint
+    COVERAGE := coverage
+    PYDOC    := pydoc
     AUTOPEP8 := autopep8
 endif
 
@@ -42,7 +42,7 @@ endif
 	$(PYLINT) --disable=locally-disabled --reports=no --generate-rcfile > $@
 
 OpenSourcery.html: models.py
-	pydoc3 -w backend.py models.py db.py
+	$(PYDOC) -w backend models db > OpenSourcery.html
 
 OpenSourcery.log:
 	git log > OpenSourcery.log
