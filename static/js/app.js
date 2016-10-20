@@ -6,25 +6,41 @@ $(document).ready(function() {
         columnDefs: [ {
             targets: 4,
             render: $.fn.dataTable.render.ellipsis(65)
-        } ]
+        } ],
+        rowReorder: {
+            selector: 'td:nth-child(2)'
+        },
+        responsive: true
     });
     $("#projects").DataTable({
         columnDefs: [ {
             targets: 4,
             render: $.fn.dataTable.render.ellipsis(65)
-        } ]
+        } ],
+        rowReorder: {
+            selector: 'td:nth-child(2)'
+        },
+        responsive: true
     });
     $("#companies").DataTable({
         columnDefs: [ {
             targets: 4,
             render: $.fn.dataTable.render.ellipsis(65)
-        } ]
+        } ],
+        rowReorder: {
+            selector: 'td:nth-child(2)'
+        },
+        responsive: true
     });
     $("#languages").DataTable({
         columnDefs: [ {
             targets: 4,
             render: $.fn.dataTable.render.ellipsis(65)
-        } ]
+        } ],
+        rowReorder: {
+            selector: 'td:nth-child(2)'
+        },
+        responsive: true
     });
 });
 
