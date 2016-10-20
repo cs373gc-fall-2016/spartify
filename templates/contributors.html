@@ -13,7 +13,7 @@
     <tbody>
     {% for contributor in contributors %}
     <tr>
-        <td>{{contributor.username}}</td>
+        <td><a href="/contributors/{{contributor.id}}">{{contributor.username}}</a></td>
         <td>{{contributor.email}}</td>
         <td>{{contributor.url}}</td>
         <td>{{contributor.avatar_url}}</td>

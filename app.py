@@ -13,20 +13,40 @@ def lang_temp():
     languages = Language.query.all()
     return render_template('languages.html', languages=languages)
 
+@app.route('/languages/<name>')
+def lang_tmp(name):
+    language = Language.query.filter_by(name=name.lower()).first()
+    return render_template('language.html', language=language)
+
 @app.route('/companies/')
 def comp_temp():
     companies = Company.query.all()
     return render_template('companies.html', companies=companies)
+
+@app.route('/companies/<id>')
+def comp_tmp(id):
+    company = Company.query.filter_by(id=id).first()
+    return render_template('company.html', company=company)
 
 @app.route('/contributors/')
 def contr_temp():
     contributors = Contributor.query.all()
     return render_template('contributors.html', contributors=contributors)
 
+@app.route('/contributors/<id>')
+def contr_tmp(id):
+    contributor = Contributor.query.filter_by(id=id).first()
+    return render_template('contributor.html', contributor=contributor)
+
 @app.route('/projects/')
 def proj_temp():
     projects = Project.query.all()
     return render_template('projects.html', projects=projects)
+
+@app.route('/projects/<id>')
+def proj_tmp(id):
+    project = Project.query.filter_by(id=id).first()
+    return render_template('project.html', project=project)
 
 @app.route('/About/')
 def about_temp():
@@ -39,7 +59,7 @@ def contributors():
 
 @app.route('/api/contributors/<id>')
 def contributor(id):
-    contributor = Project.query.filter_by(id=id).first()
+    contributor = Contributor.query.filter_by(id=id).first()
     if contributor == None:
         abort(404)
     return jsonify(create_dict(contributor))

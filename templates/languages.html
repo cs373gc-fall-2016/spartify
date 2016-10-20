@@ -13,7 +13,7 @@
     <tbody>
     {% for language in languages %}
       <tr>
-        <td>{{language.name}}</td>
+        <td><a href="/languages/{{language.name}}">{{language.name}}</a></td>
         <td>{{language.creator}}</td>
         <td>{{language.type}}</td>
         <td>{{language.firstAppeared}}</td>
