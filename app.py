@@ -6,7 +6,8 @@ from models import Contributor, Paradigm, Language, Project, Company
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    companies = Company.query.all()
+    return render_template('index.html', companies=companies)
 
 @app.route('/languages/')
 def lang_temp():
