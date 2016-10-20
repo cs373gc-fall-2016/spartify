@@ -36,7 +36,7 @@
             <div class="panel-body">
                 {% for c in project.contributors %}
                 <div class="col-xs-6 col-md-3">
-                    <a href="/contributors/{{c.id}}" class="btn btn-info btn-block btn-sq"><h4>{{c.username}}</h4></a>
+                    <a href="/contributors/{{c.id}}" class="btn btn-info btn-block btn-sq mrgn-btm"><h4>{{c.username}}</h4></a>
                 </div>
                 {% endfor %}
             </div>
@@ -48,7 +48,7 @@
             <div class="panel-body">
                 {% for l in project.languages %}
                 <div class="col-xs-6 col-md-3">
-                    <a href="/languages/{{l.name}}" class="btn btn-success btn-block btn-sq"><h4>{{l.name}}</h4></a>
+                    <a href="/languages/{{l.name}}" class="btn btn-success btn-block btn-sq mrgn-btm"><h4>{{l.name}}</h4></a>
                 </div>
                 {% endfor %}
             </div>
