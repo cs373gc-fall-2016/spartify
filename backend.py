@@ -4,12 +4,25 @@ from flask_script import Manager, Shell
 from db import db, app, manager
 from models import Contributor, Paradigm, Language, Project, Company
 
+"""
+"""
+
+# ---------------
+# index 
+# ---------------]
+
 @app.route('/')
 def index():
+    """ 
+    renders the landing page
+    """
     return render_template('index.html')
 
 @app.route('/languages/')
 def lang_temp():
+    """ 
+      renders the language page
+    """ 
     languages = Language.query.all()
     return render_template('languages.html', languages=languages)
 

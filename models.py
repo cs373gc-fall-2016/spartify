@@ -1,4 +1,8 @@
 from db import db
+"""
+ This File contains the classes for the DataBase models
+"""
+
 
 project_participation = db.Table('project_participation',
     db.Column('contributor_id', db.Integer, db.ForeignKey('contributors.id')),
@@ -21,6 +25,9 @@ paradigms_used = db.Table('paradigms_used',
 )
 
 class Contributor(db.Model):
+    """ 
+    A contributor represents a person who has contributed to a project
+    """
     __tablename__ = 'contributors'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String)
@@ -52,7 +59,7 @@ class Contributor(db.Model):
         if projects:
             cdict['project_ids'] = [p.id for p in projects]
         if companies:
-            cdict['company_ids'] = [c.di for c in companies]
+            cdict['company_ids'] = [c.id for c in companies]
         return cdict
 
 class Paradigm(db.Model):
@@ -116,10 +123,12 @@ class Project(db.Model):
     contributors = db.relationship('Contributor', secondary=project_participation,
         backref=db.backref('projects', lazy='dynamic'))
 
-    def __init__(self, name, url, description):
+    def __init__(self, name, url, createdDate, description, private):
         self.name = name
         self.url = url
+        self.createdDate = createdDate
         self.description = description
+        self.private = private
 
     def __repr__(self):
         return '<Project %r' % self.name
@@ -129,6 +138,7 @@ class Project(db.Model):
         pdict['id'] = self.id
         pdict['name'] = self.name
         pdict['url'] = self.url
+        pdict['description'] = self.description
         pdict['createdDate'] = self.createdDate
         pdict['private'] = self.private
         languages = list(self.languages)

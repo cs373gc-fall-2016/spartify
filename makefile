@@ -3,7 +3,7 @@
 FILES :=                                   \
     OpenSourcery.html                      \
     OpenSourcery.log                       \
-    app.py                                 \
+    backend.py                                 \
     models.py                              \
     TestOpenSourcery.out                   \
     tests.py
@@ -42,15 +42,15 @@ endif
 	$(PYLINT) --disable=locally-disabled --reports=no --generate-rcfile > $@
 
 OpenSourcery.html: models.py
-	pydoc3 -w app.py
+	pydoc3 -w backend.py models.py db.py
 
 OpenSourcery.log:
 	git log > OpenSourcery.log
 
-TestOpenSourcery.tmp: app.py models.py tests.py.py .pylintrc
+TestOpenSourcery.tmp: backend.py models.py tests.py .pylintrc
 	-$(PYLINT) tests.py
-	$(COVERAGE) run    --branch TestOpenSourcery.py >  TestOpenSourcery.tmp 2>&1
-	$(COVERAGE) report -m                      >> TestOpenSourcery.tmp
+	$(COVERAGE) run    --branch tests.py >  TestOpenSourcery.tmp 2>&1
+	$(COVERAGE) report -m tests.py models.py db.py >> TestOpenSourcery.tmp
 	cat TestOpenSourcery.tmp
 
 check:
@@ -84,7 +84,7 @@ config:
 	git config -l
 
 format:
-	$(AUTOPEP8) -i app.py
+	$(AUTOPEP8) -i backend.py
 	$(AUTOPEP8) -i models.py
 	$(AUTOPEP8) -i tests.py
 
@@ -95,7 +95,7 @@ status:
 	git remote -v
 	git status
 
-test: OpenSourcery.html OpenSourcery.log TestOpenSourcery.tmp netflix-tests check
+test: OpenSourcery.html OpenSourcery.log TestOpenSourcery.tmp check
 
 versions:
 	which make
