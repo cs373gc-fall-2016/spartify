@@ -48,7 +48,11 @@
             <div class="panel-body">
                 {% for l in project.languages %}
                 <div class="col-xs-6 col-md-3">
+                    {% if l.name == "c#" %}
+                    <a href="/languages/c%23" class="btn btn-success btn-block btn-sq mrgn-btm"><h4>{{l.name}}</h4></a>
+                    {% else %}
                     <a href="/languages/{{l.name}}" class="btn btn-success btn-block btn-sq mrgn-btm"><h4>{{l.name}}</h4></a>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>
