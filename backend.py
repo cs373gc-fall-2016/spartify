@@ -17,7 +17,8 @@ def index():
     """ 
     renders the landing page
     """
-    return render_template('index.html')
+    companies = Company.query.all()
+    return render_template('index.html', companies=companies)
 
 
 @app.route('/languages/')
