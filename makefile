@@ -1,9 +1,11 @@
 .DEFAULT_GOAL := test
 
 FILES :=                                   \
-    OpenSourcery.html                      \
+    backend.html                           \
+    models.html                            \
+    db.html                                \
     OpenSourcery.log                       \
-    backend.py                                 \
+    backend.py                             \
     models.py                              \
     TestOpenSourcery.out                   \
     tests.py
@@ -41,8 +43,14 @@ endif
 .pylintrc:
 	$(PYLINT) --disable=locally-disabled --reports=no --generate-rcfile > $@
 
-OpenSourcery.html: models.py
-	$(PYDOC) -w backend models db > OpenSourcery.html
+backend.html: models.py
+	$(PYDOC) -w backend
+
+models.html: models.py
+	$(PYDOC) -w models
+
+db.html: models.py
+	$(PYDOC) -w db
 
 OpenSourcery.log:
 	git log > OpenSourcery.log
@@ -76,7 +84,9 @@ clean:
 	rm -f  .coverage
 	rm -f  .pylintrc
 	rm -f  *.pyc
-	rm -f  OpenSourcery.html
+	rm -f  backend.html
+	rm -f  models.html
+	rm -f  db.html
 	rm -f  OpenSourcery.log
 	rm -rf __pycache__
 
@@ -95,7 +105,7 @@ status:
 	git remote -v
 	git status
 
-test: OpenSourcery.html OpenSourcery.log TestOpenSourcery.tmp check
+test: backend.html models.html db.html OpenSourcery.log TestOpenSourcery.tmp check
 
 versions:
 	which make
