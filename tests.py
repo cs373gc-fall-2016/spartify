@@ -39,6 +39,12 @@ class TestModels(unittest.TestCase):
         self.company = company
         self.project = project
 
+    def test_paradigm_refr(self):
+        """
+           test string representaion method for Paradigm class
+        """
+        self.assertEqual(str(self.language.paradigms[0]), "<Paradigm 'Functional'>")
+
     def test_language_refr(self):
         """
            test string representaion method for Language class
