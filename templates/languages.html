@@ -13,7 +13,11 @@
     <tbody>
     {% for language in languages %}
       <tr>
+        {% if language.name == "c#" %}
+        <td><a href="/languages/c%23">{{language.name}}</a></td>
+	{% else %}
         <td><a href="/languages/{{language.name}}">{{language.name}}</a></td>
+	{% endif %}
         <td>{{language.creator}}</td>
         <td>{{language.type}}</td>
         <td>{{language.firstAppeared}}</td>
