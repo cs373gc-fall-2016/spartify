@@ -167,7 +167,7 @@ class Project(db.Model):
         self.private = private
 
     def __repr__(self):
-        return '<Project %r' % self.name
+        return '<Project %r>' % self.name
 
     def dictionary(self):
         pdict = {}
