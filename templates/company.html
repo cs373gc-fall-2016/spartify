@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <img src="{{company.avatar_url}}" class="img-responsive" alt="">
+
+                <div>
+                    <h3>{{company.name}}</h3>
+                </div>
+
+                <div>
+                    {{company.description}}
+                </div>
+
+                <div>
+                    <ul class="nav">
+                        {% if company.email != "" and company.email != None %}
+                        <li>
+                            <a href="mailto:{{company.email}}">
+                                <i class="glyphicon glyphicon-envelope"></i>
+                                {{company.email}}
+                            </a>
+                        </li>
+                        {% endif %}
+                        <li>
+                            <a href="{{company.url}}">
+                                <i class="glyphicon glyphicon-link"></i>
+                                {{company.url}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Owned Projects</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="nav">
+                    {% for p in company.projects %}
+                    <li><a href="/projects/{{p.id}}">{{p.name}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Members</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="nav">
+                    {% for c in company.contributors %}
+                    <li><a href="/contributors/{{c.id}}">{{c.name}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
