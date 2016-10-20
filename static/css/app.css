@@ -1,23 +1,27 @@
 .btn-sq-lg {
     width: 150px !important;
     height: 150px !important;
-    padding-top: 55px; !important;
+    padding-top: 55px !important;
 }
 
 .btn-sq {
     width: 120px !important;
     height: 120px !important;
-    padding-top: 40px; !important;
+    padding-top: 40px !important;
 }
 
 .btn-sq-sm {
     width: 50px !important;
     height: 50px !important;
-    padding-top: 5px; !important;
+    padding-top: 5px !important;
 }
 
 .btn-sq-xs {
     width: 25px !important;
     height: 25px !important;
-    padding-top: 2px;
+    padding-top: 2px !important;
+}
+
+.mrgn-btm {
+    margin-bottom: 5px !important;
 }
