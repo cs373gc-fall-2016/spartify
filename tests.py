@@ -12,10 +12,12 @@ class TestModels(TestCase):
     def setUp(self):
         db.create_all()
         paradigm = Paradigm(name='Functional')
-        language = Language(name='tstLang', creator='bob', description='test')
-        company = Company(name='TestCom', url="test.com/testcom", description='test')
-        contributor = Contributor(username='testusr', email='testusr@test.com', url='test.com/testusr')
-        project = Project('testProj', url='test.com/testproj', description='test')
+        language = Language(name='tstLang', creator='bob', type='Interpreted', firstAppeared=1987, description='test')
+        company = Company(name='TestCom', email='test@test.com',
+                          url="test.com/testcom", avatar_url='test.com/testcom/avatar', description='test')
+        contributor = Contributor(username='testusr', email='testusr@test.com',
+                                  url='test.com/testusr', avatar_url='test.com/testusr/avatar', location='Texas')
+        project = Project('testProj', url='test.com/testproj', description='test', createdDate='June, 11', private=False)
         language.id = 1
         contributor.id = 2
         company.id = 3
@@ -43,6 +45,8 @@ class TestModels(TestCase):
         self.assertEqual(language.name,'tstLang')
         self.assertEqual(language.creator,'bob')
         self.assertEqual(language.description, 'test')
+        self.assertEqual(language.type, 'Interpreted')
+        self.assertEqual(language.firstAppeared, 1987)
         self.assertEqual(len(language.paradigms), 1)
         self.assertEqual(paradigm.name, 'Functional')
 
@@ -56,6 +60,8 @@ class TestModels(TestCase):
         self.assertEqual(contributor.name, 'testusr')
         self.assertEqual(contributor.email, 'testusr@test.com')
         self.assertEqual(contributor.url, 'test.com/testusr')
+        self.assertEqual(contributor.avatar_url, 'test.com/testusr/avatar')
+        self.assertEqual(contributor.location, Texas)
 
     def testGetAllCompanies(self):
         comapnies = Company.query.all()
@@ -64,7 +70,9 @@ class TestModels(TestCase):
     def testGetSpecificCompany(self):
         company = Company.query.filter_by(id=3)
         self.assertEqual(company.name, 'TestCom')
+        self.assertEqual(company.email, 'testusr@test.com')
         self.assertEqual(company.url, 'test.com/testcom')
+        self.assertEqual(company.avatar_url, 'test.com/testcom/avatar')
         self.assertEqual(company.description, 'test')
 
     def testGetAllProjects(self):
@@ -76,6 +84,8 @@ class TestModels(TestCase):
         self.assertEqual(project.name, 'testProj')
         self.assertEqual(project.url, 'test.com/testproj')
         self.assertEqual(project.description, 'test')
+        self.assertEqual(project.private, False)
+        self.assertEqual(project.createdDate='June, 11')
 
 if __name__ == "__main__":
         main()
