@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+  <table id="languages" class="display table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Creator</th>
+        <th>Type</th>
+        <th>FirstAppeared</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for language in languages %}
+      <tr>
+        <td><a href="/languages/{{language.name}}">{{language.name}}</a></td>
+        <td>{{language.creator}}</td>
+        <td>{{language.type}}</td>
+        <td>{{language.firstAppeared}}</td>
+        <td>{{language.description}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

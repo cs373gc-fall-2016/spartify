@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+<table id="companies" class="display table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>URL</th>
+        <th>Avatar Url</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for company in companies %}
+    <tr>
+        <td><a href="/companies/{{company.id}}">{{company.name}}</a></td>
+        <td>{{company.email}}</td>
+        <td>{{company.URL}}</td>
+        <td>{{company.avatar_url}}</td>
+        <td>{{company.description}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

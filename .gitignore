@@ -2,3 +2,5 @@ __pycache__
 .coverage
 .pylintrc
 venv
+*.pyc
+TestOpenSourcery.tmp

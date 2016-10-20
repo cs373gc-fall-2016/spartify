@@ -1,0 +1,442 @@
+commit a261a99bcfe0c4d4bd069fca8005ef4f257bb869
+Author: Ubuntu <ubuntu@ip-172-31-21-2.us-west-2.compute.internal>
+Date:   Thu Oct 20 09:59:20 2016 +0000
+
+    one more unit test
+
+commit 9c7b2d356cb89a10b3ff8f96bcf25fe5774df09f
+Author: Ubuntu <ubuntu@ip-172-31-21-2.us-west-2.compute.internal>
+Date:   Thu Oct 20 09:54:46 2016 +0000
+
+    more unit tests
+
+commit dc2f088976116a381d890e31a78050979be489f4
+Merge: 3570b11 80e57b1
+Author: Ubuntu <ubuntu@ip-172-31-21-2.us-west-2.compute.internal>
+Date:   Thu Oct 20 09:31:39 2016 +0000
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/spartify
+
+commit 3570b11c5f13d5e7fbdd6a5f6fcffdb73d504483
+Author: Ubuntu <ubuntu@ip-172-31-21-2.us-west-2.compute.internal>
+Date:   Thu Oct 20 09:31:03 2016 +0000
+
+    updated makefile ran autopep8
+
+commit 80e57b157043bd80d69eecd1e8474b871cde04e0
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Thu Oct 20 04:09:14 2016 -0500
+
+    Update README.md
+
+commit f68fb18f7245ca5e60ba59c9d43fac47bbde415b
+Merge: 9f53e11 d4312b4
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Thu Oct 20 01:39:03 2016 -0700
+
+    Merge pull request #14 from cs373gc-fall-2016/dev
+    
+    Dev
+
+commit d4312b4471f0e579b6db5e532b2308cef64f25e6
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Thu Oct 20 15:31:35 2016 -0500
+
+    out of tests
+
+commit 50d8bcc385499b7f623afd9674d0b84f41d6d6c8
+Merge: 4aeccc4 61f3889
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Thu Oct 20 15:30:29 2016 -0500
+
+    Merge branch 'about_and_splash' into dev
+
+commit 4aeccc43cf9c5fb411cac132a396ec1abc127fd0
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Thu Oct 20 15:27:11 2016 -0500
+
+    update
+
+commit 5d5469597e95a9e8806bf216eaccc7da3d7de72f
+Merge: 934f5ec 83e5dbd
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Thu Oct 20 15:25:37 2016 -0500
+
+    Merge branch 'dev' of https://github.com/cs373gc-fall-2016/spartify into dev
+
+commit 934f5ec69816d6f1e6d0917479554596cb03c82d
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Thu Oct 20 15:25:21 2016 -0500
+
+    updates to unit test
+
+commit 18b8766910ded83f36a4182c3af079dfce41b774
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Thu Oct 20 15:08:29 2016 -0500
+
+    Unit Test
+
+commit 7636b0a393607e6455f699e154c07bee2fcf82ab
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Thu Oct 20 13:21:27 2016 -0500
+
+    added makefile and travis.yml
+
+commit 6c2e808d98b020dccf7f9ef98868ec7b98064885
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Thu Oct 20 13:21:09 2016 -0500
+
+    updated unit tests
+
+commit 61f3889d96054af9aef51072a1f0e8f6b241ad12
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Thu Oct 20 13:02:09 2016 -0500
+
+    finished design of about page.
+    
+    The page just needs information about other group members now
+
+commit 83e5dbda9d8cc4859179d4feb7f82a3889db28b8
+Merge: 7ff599a 9f53e11
+Author: jack0lantern <j_j_jiang@yahoo.com>
+Date:   Thu Oct 20 02:25:45 2016 -0500
+
+    Merge remote-tracking branch 'refs/remotes/origin/master' into dev
+
+commit cb217b64f286798287718fffd0a1240be0e85d89
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Wed Oct 19 23:30:40 2016 -0500
+
+    Basic carousel, and beginnings of an about page
+
+commit 9f53e111753eedeb5a01784f2b65e508424fb524
+Merge: d1b17c4 7ff599a
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Wed Oct 19 20:12:42 2016 -0700
+
+    Merge pull request #9 from cs373gc-fall-2016/dev
+    
+    Dev
+
+commit 7ff599a38047ca063865c0f3660359e7ba695319
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Wed Oct 19 22:12:00 2016 -0500
+
+    Made an instance page for each model
+
+commit d1b17c46d49bc35358bcfc41f6ef3dade3fe2839
+Author: jack0lantern <jack0lantern@users.noreply.github.com>
+Date:   Wed Oct 19 14:27:49 2016 -0500
+
+    Delete CNAME
+
+commit 3353bb863224322dd94a4809d3d1ced83c27a6fa
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Wed Oct 19 08:41:14 2016 -0700
+
+    Update README.md
+
+commit fcaed3fc9079b641ac7acf48153efe1d897efdc6
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Wed Oct 19 08:39:37 2016 -0700
+
+    Update README.md
+
+commit fd65ae08f816bc8c8409a164d25829f5efbaffa0
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Wed Oct 19 05:21:39 2016 -0500
+
+    Update README.md
+
+commit 31e4d7615485a504dfb3321184b710d652ec9c03
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Wed Oct 19 05:21:10 2016 -0500
+
+    Update README.md
+
+commit 69d56b55021f22516755cd7a1bd80730ba997474
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Wed Oct 19 05:18:45 2016 -0500
+
+    Update README.md
+
+commit 64a272c8f535d562729c51a8be49fa5960741392
+Merge: ab009ab 3d18ca9
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Wed Oct 19 04:01:03 2016 -0500
+
+    Merge pull request #5 from cs373gc-fall-2016/master
+    
+    dev out of date
+
+commit 3d18ca9bd28429737248253e86f332f7a4798455
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Wed Oct 19 04:00:08 2016 -0500
+
+    Basic Templates
+
+commit df5db55dc7e1a15a38359b44bbfcbdb31d29fd33
+Author: lock14 <brianrbechtel@gmail.com>
+Date:   Tue Oct 18 22:50:05 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit ab009abdbc05ec441f87d4693ae860e4b2ee93e7
+Merge: 1ba7074 9a52586
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Tue Oct 18 16:11:36 2016 -0500
+
+    Merge pull request #4 from cs373gc-fall-2016/master
+    
+    dev out of date
+
+commit 9a5258660783bc3a62f145472b8070c5dced9ef3
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Tue Oct 18 06:38:56 2016 -0500
+
+    fixed typo
+
+commit 7dd923a5e4eef0abc222cbfcf7d5defe2feca706
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Tue Oct 18 06:37:19 2016 -0500
+
+    added requirements.txt, updted README
+
+commit 45ef8864f4420dcb3959608298c958aade9675c2
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Tue Oct 18 05:44:44 2016 -0500
+
+    Made it so each model has 5 attributes
+
+commit 22225badacad62c6341a0f23fbb6276109103f8c
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Tue Oct 18 03:58:58 2016 -0500
+
+    Added UML diagram
+
+commit a34e63c09fb579a08077e5001817dd5f9f432fb4
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Tue Oct 18 03:27:18 2016 -0500
+
+    Split up app.py into different files to accomodate testing
+    
+    Can't get the unit test to work yet though
+
+commit c4152bf377482ceabe3e4e0e45bfc73e05e53e1c
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Tue Oct 18 00:39:32 2016 -0500
+
+    typo in the README
+
+commit 94792da33bf681a9a75c9b95525530729ae650e5
+Merge: 49171d1 1ba7074
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Tue Oct 18 00:38:12 2016 -0500
+
+    Merge pull request #3 from cs373gc-fall-2016/dev
+    
+    Dev
+
+commit 1ba7074fa01abcc63cc4c95e3130dfca933ca786
+Merge: 6d8f633 c8b1efe
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Tue Oct 18 00:37:50 2016 -0500
+
+    Merge pull request #2 from cs373gc-fall-2016/backend-work
+    
+    Backend finshed
+
+commit c8b1efed80327be536babb1c734167e065a9a7ae
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Tue Oct 18 00:35:36 2016 -0500
+
+    Backend finshed
+    
+    Sample data scapred from github is dumped into dump.sql.
+    intrstruction on how to load the data into a databse is located in the README
+
+commit 6d8f633fcdb5b64f5b631b7b47c4dc00c9ddeaf1
+Merge: 49171d1 1f0c0d1
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Mon Oct 17 22:40:09 2016 -0500
+
+    Merge pull request #1 from cs373gc-fall-2016/backend-work
+    
+    backend should be finished, just need to load DB with data
+
+commit 1f0c0d160f11840adc5656baa14f8d8a3a5b8ca6
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Mon Oct 17 22:38:49 2016 -0500
+
+    backend should be finished, just need to load DB with data
+
+commit 49171d1dce0f506a0f3c37070a4f92e6b28766f9
+Merge: 6f76a13 593d326
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Mon Oct 17 20:37:59 2016 -0500
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/spartify
+
+commit 6f76a13789994f399ebeaca17c56ac2a83dee982
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Mon Oct 17 20:37:17 2016 -0500
+
+    Didn't quite conform to the API, fixed now
+
+commit 593d326cfb78d026c30f30426dad2a84e5af4cac
+Author: lock14 <brianrbechtel@gmail.com>
+Date:   Mon Oct 17 20:35:47 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 7d829ba45ddbe4d24ca29436a70ff7b4bc52a793
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Mon Oct 17 20:09:54 2016 -0500
+
+    Made a dummyapp.py
+    
+    dummyapp.py conforms to the REST API defined on apiary and
+    includes dummy data.
+    This will hopefully make developing the frontend easier as
+    you can use dummyapp.py as the backend while the actual backend
+    is still being developed
+
+commit 7f5459e5f7d2bedd2efa55722bfc96912375952c
+Merge: 57edc86 9ce590e
+Author: rajvanshyr <rajvanshyr@utexas.edu>
+Date:   Mon Oct 17 19:16:14 2016 -0500
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/spartify
+
+commit 57edc86f20eebb8e1cc611817280a0a71c0e0313
+Author: rajvanshyr <rajvanshyr@utexas.edu>
+Date:   Mon Oct 17 19:14:55 2016 -0500
+
+    added some prelimnary models for backend
+
+commit 2ee3cae85a996fa25d400a1ab71375b39d093ef0
+Author: rajvanshyr <rajvanshyr@utexas.edu>
+Date:   Mon Oct 17 19:12:07 2016 -0500
+
+    added some real data to the models
+
+commit 9ce590edc064996299aad4e2c826e5fad119fab8
+Author: lock14 <brianrbechtel@gmail.com>
+Date:   Mon Oct 17 18:21:36 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit ec089b578015731cc00a25071e1ad52947904294
+Author: jack0lantern <j_j_jiang@yahoo.com>
+Date:   Mon Oct 17 18:10:31 2016 -0500
+
+    added index.html
+
+commit 3e56025c074ebdfe119089760c528125510969d9
+Author: jack0lantern <jack0lantern@users.noreply.github.com>
+Date:   Mon Oct 17 18:08:24 2016 -0500
+
+    Create CNAME
+
+commit 18429fe5c27babb6f7c25c8301ecabe7e4dc8b2a
+Author: lock14 <brianrbechtel@gmail.com>
+Date:   Mon Oct 17 18:05:56 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 2ab7e172a250555913a048ce7206af9ac3f913f6
+Author: lock14 <brianrbechtel@gmail.com>
+Date:   Mon Oct 17 18:02:58 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit db66c2f1b60e7ad6b2ff8720a7cb5249aeee255d
+Author: lock14 <brianrbechtel@gmail.com>
+Date:   Mon Oct 17 18:01:30 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit c6834911fe19d32f40c69be5f8931409fc40d7fd
+Author: lock14 <brianrbechtel@gmail.com>
+Date:   Mon Oct 17 17:45:30 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 3fed04c39b76443199c56e263721b21fd35a4c29
+Author: lock14 <brianrbechtel@gmail.com>
+Date:   Mon Oct 17 17:32:07 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 41df0a67891f2cd6eaab9063b807f862ed92d133
+Author: lock14 <brianrbechtel@gmail.com>
+Date:   Mon Oct 17 13:36:15 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit be7b1cdd9ff9924552e21295f069ca8810713bac
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Mon Oct 17 03:04:09 2016 -0500
+
+    updated readme
+
+commit 2df9c7f13c869bfa21284a08a70dd1adb2007c5e
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Mon Oct 17 03:01:43 2016 -0500
+
+    removed
+
+commit 6223f6ce7782ab7006750eb03c8ac75a2b7a9588
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Mon Oct 17 02:59:38 2016 -0500
+
+    moved everything to app.py
+    
+    I apparantly don't understand python well enough to split things up
+    everything is in app.py for the time being
+
+commit 90ff459b624d73d792cfd29ac3dc936dfb9f892c
+Author: Brian Bechtel <core.editor>
+Date:   Sun Oct 16 23:31:41 2016 -0500
+
+    redoing the models and putting them in one file.
+    
+    This may change though
+
+commit 73f90791af6e4dc15556e98737766bf1cdb6837a
+Author: lock14 <brianrbechtel@gmail.com>
+Date:   Sun Oct 16 21:36:31 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 09de99f1e162b8e6e083e36fccfcf338adc33da0
+Author: lock14 <brianrbechtel@gmail.com>
+Date:   Sun Oct 16 21:35:08 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 42642d0f74ef0d46a0b25f4d8ca08db982aec940
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sun Oct 16 19:03:38 2016 -0500
+
+    Added index.html template and hooked up to app.py
+
+commit 71e2f9717d25ab495e0aa7050a22df3a03ff62ce
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sun Oct 16 18:57:49 2016 -0500
+
+    Added Boostrap css, javascript, and fonts
+
+commit 6f7d25b9cae85c7e29284abe1a19a0e1093a9261
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sun Oct 16 18:43:13 2016 -0500
+
+    Added very simpl model classes
+    
+    A model class for Language, Contributor, Company, and Project
+
+commit 5c5b075d90658849d64b05be8dd4e56d4e38f79e
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sun Oct 16 18:16:18 2016 -0500
+
+    Made super simple Flask app that does practically nothing
