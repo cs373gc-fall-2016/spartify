@@ -1,21 +1,26 @@
+"""
+  Test file for OpenSourcery webapp
+"""
+
 import unittest
-from flask.ext.testing import TestCase
-from db import db, app
-from models import Contributor, Paradigm, Company, Project, Languae
+from models import Contributor, Paradigm, Company, Project, Language
 
-class TestModels(TestCase):
-
-    def mock_app(self):
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://test.db'
-        return app
-
+class TestModels(unittest.TestCase):
+    """
+      Unit Test Class for testing the DB Model Classes
+    """
     def setUp(self):
-        db.create_all()
         paradigm = Paradigm(name='Functional')
-        language = Language(name='tstLang', creator='bob', description='test')
-        company = Company(name='TestCom', url="test.com/testcom", description='test')
-        contributor = Contributor(username='testusr', email='testusr@test.com', url='test.com/testusr')
-        project = Project('testProj', url='test.com/testproj', description='test')
+        language = Language(name='tstLang', creator='bob',
+                            type='Interpreted', firstAppeared=1987, description='test')
+        company = Company(name='TestCom', email='test@test.com',
+                          url="test.com/testcom", avatar_url='test.com/testcom/avatar',
+                          description='test')
+        contributor = Contributor(username='testusr', email='testusr@test.com',
+                                  url='test.com/testusr', avatar_url='test.com/testusr/avatar',
+                                  location='Texas')
+        project = Project(name='testProj', url='test.com/testproj',
+                          description='test', createdDate='June, 11', private=False)
         language.id = 1
         contributor.id = 2
         company.id = 3
@@ -23,59 +28,50 @@ class TestModels(TestCase):
         language.paradigms.append(paradigm)
         project.languages.append(language)
         project.company = company
+        project.owner_id = company.id
         project.contributors.append(contributor)
         company.members.append(contributor)
+        self.paradigm = paradigm
+        self.language = language
+        self.contributor = contributor
+        self.company = company
+        self.project = project
 
-        db.session.add(project)
-        db.session.commit()
-    
-    def tearDown():
-        db.session.remove()
-        db.drop_all()
+    def test_language_dict(self):
+        """
+           test dictionary method for Language class
+        """
+        ldict = {'name': 'tstLang', 'creator': 'bob', 'type': 'Interpreted',
+                 'firstAppeared': 1987, 'description': 'test',
+                 'project_ids': [4], 'paradigms': ['Functional']}
+        self.assertEqual(self.language.dictionary(), ldict)
 
-    def testGetAllLanguages(self):
-        languages = Language.query.all()
-        self.assertEqual(len(languages) == 1)
+    def test_contributor_dict(self):
+        """
+           test dictionary method for Contributor class
+        """
+        cdict = {'id': 2, 'username': 'testusr', 'email': 'testusr@test.com',
+                 'url': 'test.com/testusr', 'avatar_url': 'test.com/testusr/avatar',
+                 'location': 'Texas', 'project_ids': [4], 'company_ids': [3]}
+        self.assertEqual(self.contributor.dictionary(), cdict)
 
-    def testGetSpecificLanguage(self):
-        language = Language.query.filter_by(name='tstLang').first()
-        paradigm = language.paradigms[0]
-        self.assertEqual(language.name,'tstLang')
-        self.assertEqual(language.creator,'bob')
-        self.assertEqual(language.description, 'test')
-        self.assertEqual(len(language.paradigms), 1)
-        self.assertEqual(paradigm.name, 'Functional')
+    def test_company_dict(self):
+        """
+           test dictionary method for Company class
+        """
+        cdict = {'id': 3, 'name': 'TestCom', 'email': 'test@test.com',
+                 'url': "test.com/testcom", 'avatar_url': 'test.com/testcom/avatar',
+                 'description': 'test', 'project_ids': [4], 'member_ids': [2]}
+        self.assertEqual(self.company.dictionary(), cdict)
 
-
-    def testGetAllContributors(self):
-        contributors = Contributor.query.all()
-        self.asserEqual(len(contributors), 1)
-
-    def testGetSpecificContributor(self):
-        contributor = Contributor.query.filter_by(id=2)
-        self.assertEqual(contributor.name, 'testusr')
-        self.assertEqual(contributor.email, 'testusr@test.com')
-        self.assertEqual(contributor.url, 'test.com/testusr')
-
-    def testGetAllCompanies(self):
-        comapnies = Company.query.all()
-        self.assertEqual(len(company), 1)
-
-    def testGetSpecificCompany(self):
-        company = Company.query.filter_by(id=3)
-        self.assertEqual(company.name, 'TestCom')
-        self.assertEqual(company.url, 'test.com/testcom')
-        self.assertEqual(company.description, 'test')
-
-    def testGetAllProjects(self):
-        projects = Project.query.all()
-        assertEqual(len(projects), 2)
-
-    def testGetSpecificProject(self):
-        project = Project.query.filter_by(id=4)
-        self.assertEqual(project.name, 'testProj')
-        self.assertEqual(project.url, 'test.com/testproj')
-        self.assertEqual(project.description, 'test')
+    def test_project_dict(self):
+        """
+           test dictionary method for Project class
+        """
+        pdict = {'id': 4, 'name': 'testProj', 'url': 'test.com/testproj',
+                 'description': 'test', 'createdDate': 'June, 11', 'private': False,
+                 'languages': ['tstLang'], 'contributor_ids': [2], 'owner_id': 3}
+        self.assertEqual(self.project.dictionary(), pdict)
 
 if __name__ == "__main__":
-        main()
+    unittest.main()
