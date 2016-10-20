@@ -29,11 +29,11 @@
                 <h3 class="panel-title">Used in Projects</h3>
             </div>
             <div class="panel-body">
-                <ul class="nav">
-                    {% for p in language.projects %}
-                    <li><a href="/projects/{{p.id}}">{{p.name}}</a></li>
-                    {% endfor %}
-                </ul>
+                {% for p in language.projects %}
+                    <div class="col-xs-6 col-md-3">
+                        <a href="/projects/{{p.id}}" class="btn btn-primary btn-block btn-sq"><h4>{{p.name}}</h4></a>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>
