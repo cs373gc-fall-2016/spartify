@@ -3,10 +3,6 @@
  */
 $(document).ready(function() {
     $("#contributors").DataTable({
-        columnDefs: [ {
-            targets: 4,
-            render: $.fn.dataTable.render.ellipsis(65)
-        } ],
         rowReorder: {
             selector: 'td:nth-child(2)'
         },

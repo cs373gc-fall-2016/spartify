@@ -1,5 +1,21 @@
+td {
+    vertical-align: middle !important;
+}
+
 img {
     margin: 0 auto;
+}
+
+.thumbnail {
+    margin-bottom: 0 !important;
+}
+
+.btn-sqr {
+    width: 75px !important;
+    height: 75px !important;
+    padding-top: 25px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 .btn-tile {
@@ -16,4 +32,3 @@ img {
 .mrgn-btm {
     margin-bottom: 10px !important;
 }
-

@@ -3,21 +3,44 @@
 <table id="contributors" class="display table table-striped no-wrap">
     <thead>
     <tr>
+        <th></th>
         <th>Username</th>
         <th>Email</th>
         <th>URL</th>
-        <th>Avatar Url</th>
         <th>Location</th>
     </tr>
     </thead>
     <tbody>
     {% for contributor in contributors %}
     <tr>
-        <td><a href="/contributors/{{contributor.id}}" class="text-capitalize">{{contributor.username}}</a></td>
-        <td>{{contributor.email}}</td>
-        <td>{{contributor.url}}</td>
-        <td>{{contributor.avatar_url}}</td>
-        <td>{{contributor.location}}</td>
+        <td class="col-xs-1">
+            <a href="/contributors/{{contributor.id}}" class="thumbnail">
+                <img src="{{contributor.avatar_url}}">
+            </a>
+        </td>
+        <td class="text-capitalize">{{contributor.username}}</td>
+        <td>
+            {% if contributor.email != "" and contributor.email != None %}
+            <a href="mailto:{{contributor.email}}">
+                <i class="glyphicon glyphicon-envelope"></i>
+                {{contributor.email}}
+            </a>
+            {% else %}
+            None
+            {% endif %}
+        </td>
+        <td>
+            <a href="{{contributor.url}}">
+                <i class="glyphicon glyphicon-link"></i>
+                {{contributor.url}}
+            </a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/place/{{contributor.location}}/">
+                <i class="glyphicon glyphicon-pushpin"></i>
+                {{contributor.location}}
+            </a>
+        </td>
     </tr>
     {% endfor %}
     </tbody>
