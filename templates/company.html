@@ -7,7 +7,7 @@
                 <img src="{{company.avatar_url}}" class="img-responsive" alt="">
 
                 <div>
-                    <h3>{{company.name}}</h3>
+                    <h3 class="text-capitalize">{{company.name}}</h3>
                 </div>
 
                 <div>
@@ -43,7 +43,9 @@
             <div class="panel-body">
                 {% for p in company.projects %}
                 <div class="col-xs-6 col-md-3">
-                    <a href="/projects/{{p.id}}" class="btn btn-primary btn-block btn-sq mrgn-btm"><h4>{{p.name}}</h4></a>
+                    <a href="/projects/{{p.id}}" class="btn btn-primary btn-block btn-sq mrgn-btm">
+                        <h4 class="text-capitalize">{{p.name}}</h4>
+                    </a>
                 </div>
                 {% endfor %}
             </div>
@@ -55,7 +57,9 @@
             <div class="panel-body">
                 {% for c in company.contributors %}
                 <div class="col-xs-6 col-md-3">
-                    <a href="/contributors/{{c.id}}" class="btn btn-info btn-block btn-sq mrgn-btm"><h4>{{c.name}}</h4></a>
+                    <a href="/contributors/{{c.id}}" class="btn btn-info btn-block btn-sq mrgn-btm">
+                        <h4 class="text-capitalize">{{c.name}}</h4>
+                    </a>
                 </div>
                 {% endfor %}
             </div>

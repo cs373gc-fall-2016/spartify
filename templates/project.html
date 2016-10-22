@@ -2,31 +2,23 @@
 {% block body %}
 <div class="row">
     <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div>
-                    <h3>{{project.name}}</h3>
-                </div>
-
-                <div>
-                    <p>{{project.description}}</p>
-                </div>
-
-                <ul class="list-group">
-                    <li class="list-group-item">Created: {{project.createdDate}}</li>
-                    <li class="list-group-item">Private: {{project.private}}</li>
-                    <li class="list-group-item">
-                        Owner: <a href="/companies/{{project.company.id}}">{{project.company.name}}</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="{{project.url}}">
-                            <i class="glyphicon glyphicon-link"></i>
-                            {{project.url}}
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <h3 class="text-capitalize">{{project.name}}</h3>
+                <p>{{project.description}}</p>
+            </li>
+            <li class="list-group-item"><label>Created:</label> {{project.createdDate}}</li>
+            <li class="list-group-item"><label>Private:</label> {{project.private}}</li>
+            <li class="list-group-item">
+                <label>Owner:</label> <a href="/companies/{{project.company.id}}">{{project.company.name}}</a>
+            </li>
+            <li class="list-group-item">
+                <a href="{{project.url}}">
+                    <i class="glyphicon glyphicon-link"></i>
+                    {{project.url}}
+                </a>
+            </li>
+        </ul>
     </div>
     <div class="col-md-8">
         <div class="panel panel-default">
@@ -36,7 +28,9 @@
             <div class="panel-body">
                 {% for c in project.contributors %}
                 <div class="col-xs-6 col-md-3">
-                    <a href="/contributors/{{c.id}}" class="btn btn-info btn-block btn-sq mrgn-btm"><h4>{{c.username}}</h4></a>
+                    <a href="/contributors/{{c.id}}" class="btn btn-info btn-block btn-sq mrgn-btm">
+                        <h4 class="text-capitalize">{{c.username}}</h4>
+                    </a>
                 </div>
                 {% endfor %}
             </div>
@@ -49,9 +43,13 @@
                 {% for l in project.languages %}
                 <div class="col-xs-6 col-md-3">
                     {% if l.name == "c#" %}
-                    <a href="/languages/c%23" class="btn btn-success btn-block btn-sq mrgn-btm"><h4>{{l.name}}</h4></a>
+                    <a href="/languages/c%23" class="btn btn-success btn-block btn-sq mrgn-btm">
+                        <h4 class="text-capitalize">{{l.name}}</h4>
+                    </a>
                     {% else %}
-                    <a href="/languages/{{l.name}}" class="btn btn-success btn-block btn-sq mrgn-btm"><h4>{{l.name}}</h4></a>
+                    <a href="/languages/{{l.name}}" class="btn btn-success btn-block btn-sq mrgn-btm">
+                        <h4 class="text-capitalize">{{l.name}}</h4>
+                    </a>
                     {% endif %}
                 </div>
                 {% endfor %}
