@@ -2,26 +2,18 @@
 {% block body %}
 <div class="row">
     <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div>
-                    <h3>{{language.name}}</h3>
-                </div>
-
-                <div>
-                    <p>{{language.description}}</p>
-                </div>
-
-                <ul class="list-group">
-                    <li class="list-group-item">Creator: {{language.creator}}</li>
-                    <li class="list-group-item">Type: {{language.type}}</li>
-                    <li class="list-group-item">First Appeared: {{language.firstAppeared}}</li>
-                    <li class="list-group-item">
-                        Paradigms: {% for p in language.paradigms %} {{p.name}} {% endfor %}
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <h3 class="text-capitalize">{{language.name}}</h3>
+                <p>{{language.description}}</p>
+            </li>
+            <li class="list-group-item"><label>Creator:</label> {{language.creator}}</li>
+            <li class="list-group-item"><label>Type:</label> {{language.type}}</li>
+            <li class="list-group-item"><label>First Appeared:</label> {{language.firstAppeared}}</li>
+            <li class="list-group-item">
+                <label>Paradigms:</label> {% for p in language.paradigms %} {{p.name}} {% endfor %}
+            </li>
+        </ul>
     </div>
     <div class="col-md-8">
         <div class="panel panel-default">
@@ -31,7 +23,9 @@
             <div class="panel-body">
                 {% for p in language.projects %}
                     <div class="col-xs-6 col-md-3">
-                        <a href="/projects/{{p.id}}" class="btn btn-primary btn-block btn-sq mrgn-btm"><h4>{{p.name}}</h4></a>
+                        <a href="/projects/{{p.id}}" class="btn btn-primary btn-block btn-sq mrgn-btm">
+                            <h4 class="text-capitalize">{{p.name}}</h4>
+                        </a>
                     </div>
                 {% endfor %}
             </div>
