@@ -14,7 +14,7 @@ $ npm install
 The you should be able to go to the backend and start the server
 `
 $ cd ./backend
-$ python backend runserver
+$ python backend.py runserver
 `
 
 You should be able to navigate to localhost:5000 and see the angular frontend load. 
