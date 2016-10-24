@@ -1,0 +1,56 @@
+<div *ngIf="contributor">
+  <div class="row">
+    <div class="col-sm-5 col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <img src="{{contributor.avatar_url}}" class="img-responsive" alt="">
+
+          <div>
+            <h3 class="text-capitalize">{{contributor.username}}</h3>
+          </div>
+
+          <div>
+            <ul class="nav">
+              <li *ngIf="contributor.email != null">
+                <a href="mailto:{{contributor.email}}">
+                  <i class="glyphicon glyphicon-envelope"></i>
+                  {{contributor.email}}
+                </a>
+              </li>
+              <li>
+                <a href="{{contributor.url}}">
+                  <i class="glyphicon glyphicon-link"></i>
+                  {{contributor.url}}
+                </a>
+              </li>
+              <li>
+                <a href="https://www.google.com/maps/place/{{contributor.location}}/">
+                  <i class="glyphicon glyphicon-pushpin"></i>
+                  {{contributor.location}}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-7 col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Contributed Projects</h3>
+        </div>
+        <div class="panel-body">
+
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Company Membership</h3>
+        </div>
+        <div class="panel-body">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

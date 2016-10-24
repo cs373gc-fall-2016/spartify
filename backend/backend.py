@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, jsonify, abort
+from flask import Flask, render_template, url_for, jsonify, abort, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from flask_script import Manager, Shell
 from db import db, app, manager
@@ -17,89 +17,23 @@ def index():
     """ 
     renders the landing page
     """
-    companies = Company.query.all()
-    return render_template('index.html', companies=companies)
+    return send_from_directory('..', 'index.html')
 
+@app.route('/node_modules/<path:path>')
+def send_nodemodules(path):
+    return send_from_directory('../node_modules', path)
 
-@app.route('/languages/')
-def lang_temp():
-    """ 
-    renders the languages page
-    """
-    languages = Language.query.all()
-    return render_template('languages.html', languages=languages)
+@app.route('/app/<path:path>')
+def send_app(path):
+    return send_from_directory('../app', path)
 
+@app.route('/favicon.ico')
+def send_favicon():
+    return send_from_directory('..', 'favicon.ico')
 
-@app.route('/languages/<name>')
-def lang_tmp(name):
-    """ 
-    renders the page for the given language
-    """
-    language = Language.query.filter_by(name=name.lower()).first()
-    return render_template('language.html', language=language)
-
-
-@app.route('/companies/')
-def comp_temp():
-    """ 
-    renders the companies page
-    """
-    companies = Company.query.all()
-    return render_template('companies.html', companies=companies)
-
-
-@app.route('/companies/<id>')
-def comp_tmp(id):
-    """ 
-    renders the page for the company with the given id
-    """
-    company = Company.query.filter_by(id=id).first()
-    return render_template('company.html', company=company)
-
-
-@app.route('/contributors/')
-def contr_temp():
-    """ 
-      renders the contributors page
-    """
-    contributors = Contributor.query.all()
-    return render_template('contributors.html', contributors=contributors)
-
-
-@app.route('/contributors/<id>')
-def contr_tmp(id):
-    """ 
-    renders the page for the contributor with the given id
-    """
-    contributor = Contributor.query.filter_by(id=id).first()
-    return render_template('contributor.html', contributor=contributor)
-
-
-@app.route('/projects/')
-def proj_temp():
-    """ 
-    renders the projects page
-    """
-    projects = Project.query.all()
-    return render_template('projects.html', projects=projects)
-
-
-@app.route('/projects/<id>')
-def proj_tmp(id):
-    """ 
-    renders the page for the project with the given id
-    """
-    project = Project.query.filter_by(id=id).first()
-    return render_template('project.html', project=project)
-
-
-@app.route('/About/')
-def about_temp():
-    """ 
-    renders the about page
-    """
-    return render_template('about.html')
-
+@app.route('/system-config.js')
+def send_systemconfig():
+    return send_from_directory('..', 'system-config.js')
 
 @app.route('/api/contributors/')
 def contributors():

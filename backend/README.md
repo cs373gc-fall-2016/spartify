@@ -1,13 +1,4 @@
-#Setup: 
-In addtion to the database setup described below do the following to get Angular2 to work.
-
-Install node and npm
-`sudo apt-get install npm`
-
-Install the apps dependencies
-`npm install`
-
-#DB Setup (Should only need to be done once)
+Setup: 
 PostgreSQL needs to be installed.  Apparantly you can use http://postgresapp.com/ if your using mac OS X.
 Installation instructions for Ubuntu ared below and I would expect that the experience would be fairly similar for other linux
 distributions. If your using windows well then your on your on figuring out how to install it.

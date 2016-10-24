@@ -1,0 +1,28 @@
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" routerLink="/" routerLinkActive="active">OpenSourcery</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a routerLink="/companies"  routerLinkActive="active">Companies</a></li>
+        <li><a routerLink="/projects" routerLinkActive="active">Projects</a></li>
+        <li><a routerLink="/contributors" routerLinkActive="active">Contributors</a></li>
+        <li><a routerLink="/languages" routerLinkActive="active">Languages</a></li>
+        <li class="navbar-right"><a routerLink="/about" routerLinkActive="active">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class=page>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<table id="projects" class="display table table-striped no-wrap">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>URL</th>
+      <th>CreatedDate</th>
+      <th>Private</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let project of projects">
+      <td class="col-xs-1">
+        <a routerLink="/projects/{{project.id}}" routerLinkActive="active" class="text-capitalize btn btn-primary btn-block btn-sqr">
+          {{project.name}}
+        </a>
+      </td>
+      <td>
+        <a href="{{project.url}}">
+          <i class="glyphicon glyphicon-link"></i>
+          {{project.url}}
+        </a>
+      </td>
+      <td>{{project.createdDate}}</td>
+      <td>{{project.private}}</td>
+      <td>{{project.description}}</td>
+    </tr>
+  </tbody>
+</table>

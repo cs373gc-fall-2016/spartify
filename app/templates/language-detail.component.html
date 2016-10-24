@@ -1,0 +1,28 @@
+<div *ngIf="language">
+  <div class="row">
+    <div class="col-sm-5 col-md-4">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <h3 class="text-capitalize">{{language.name}}</h3>
+          <p>{{language.description}}</p>
+        </li>
+        <li class="list-group-item"><label>Creator:</label> {{language.creator}}</li>
+        <li class="list-group-item"><label>Type:</label> {{language.type}}</li>
+        <li class="list-group-item"><label>First Appeared:</label> {{language.firstAppeared}}</li>
+        <li class="list-group-item">
+          <label>Paradigms:</label> <span *ngFor="let p of language.paradigms"> {{p}} </span>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-7 col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Used in Projects</h3>
+        </div>
+        <div class="panel-body">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
