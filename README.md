@@ -2,10 +2,22 @@
 In addtion to the database setup described below do the following to get Angular2 to work.
 
 Install node and npm
-`sudo apt-get install npm`
+`
+$ sudo apt-get install npm
+`
 
 Install the apps dependencies
-`npm install`
+`
+$ npm install
+`
+
+The you should be able to go to the backend and start the server
+`
+$ cd ./backend
+$ python backend runserver
+`
+
+You should be able to navigate to localhost:5000 and see the angular frontend load. 
 
 #DB Setup (Should only need to be done once)
 PostgreSQL needs to be installed.  Apparantly you can use http://postgresapp.com/ if your using mac OS X.
