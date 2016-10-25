@@ -9,7 +9,7 @@
         <li class="list-group-item"><label>Created:</label> {{project.createdDate}}</li>
         <li class="list-group-item"><label>Private:</label> {{project.private}}</li>
         <li class="list-group-item">
-          <label>Owner:</label><my-company-avatar></my-company-avatar>
+          <label>Owner:</label><my-company-avatar [c_id]="project.owner_id"></my-company-avatar>
         </li>
         <li class="list-group-item">
           <a href="{{project.url}}">
@@ -25,7 +25,9 @@
           <h3 class="panel-title">Contributors</h3>
         </div>
         <div class="panel-body">
-
+          <div *ngFor="let id of project.contributor_ids" class="col-xs-6 col-md-3">
+            <my-contributor-link [c_id]="id"></my-contributor-link>
+          </div>
         </div>
       </div>
       <div class="panel panel-default">
@@ -33,7 +35,9 @@
           <h3 class="panel-title">Languages Used</h3>
         </div>
         <div class="panel-body">
-
+          <div *ngFor="let id of project.language_ids" class="col-xs-6 col-md-3">
+            <my-language-link [l_id]="id"></my-language-link>
+          </div>
         </div>
       </div>
     </div>

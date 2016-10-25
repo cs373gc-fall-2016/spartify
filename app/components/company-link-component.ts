@@ -6,11 +6,11 @@ import { CompanyService } from '../services/company.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'my-company-avatar',
-  templateUrl: '../templates/company-avatar.component.html'
+  selector: 'my-company-link',
+  templateUrl: '../templates/company-link.component.html'
 })
 
-export class CompanyAvatarComponent implements OnInit {
+export class CompanyLinkComponent implements OnInit {
   @Input() c_id: number;
   @Input() company: Company;
 
@@ -20,8 +20,7 @@ export class CompanyAvatarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      this.navigated = true;
-      this.companyService.getCompany(this.c_id)
-        .then(company => this.company = company);
+    this.companyService.getCompany(this.c_id)
+      .then(company => this.company = company);
   }
 }

@@ -1,17 +1,5 @@
 export class InMemoryDataService {
   createDb() {
-    let heroes = [
-      { id: 11, name: 'Mr. Nice' },
-      { id: 12, name: 'Narco' },
-      { id: 13, name: 'Bombasto' },
-      { id: 14, name: 'Celeritas' },
-      { id: 15, name: 'Magneta' },
-      { id: 16, name: 'RubberMan' },
-      { id: 17, name: 'Dynama' },
-      { id: 18, name: 'Dr IQ' },
-      { id: 19, name: 'Magma' },
-      { id: 20, name: 'Tornado' }
-    ];
 
     let companies = [
       {
@@ -43,7 +31,6 @@ export class InMemoryDataService {
       }
     ];
 
-
     let projects = [
       {
         id: 1,
@@ -52,7 +39,7 @@ export class InMemoryDataService {
         createdDate: 'Sat, 09 May 2009 02:38:42 GMT',
         private: false,
         description: 'small, fast parsers for the 21st century',
-        languages: ['c','c++','ruby','python'],
+        language_ids: [1, 4, 5, 6],
         contributor_ids: [1],
         owner_id: 1
       },
@@ -63,7 +50,7 @@ export class InMemoryDataService {
         createdDate: 'Thu, 02 Apr 2009 04:51:54 GMT',
         private: false,
         description: 'Codemod is a tool/library to assist you with large-scale codebase refactors that can be partially automated but still require human oversight and occasional intervention. Codemod was developed at Facebook and released as open source.',
-        languages: ['python'],
+        language_ids: [1],
         contributor_ids: [2],
         owner_id: 2
       },
@@ -74,7 +61,7 @@ export class InMemoryDataService {
         createdDate: 'Fri, 25 Oct 2013 12:35:40 GMT',
         private: false,
         description: 'HTML5 application for Windows Phone that allows the screen to be used as protractor/ruler to measure lengths and angles.',
-        languages: ['javascript','c#'],
+        language_ids: [3, 7],
         contributor_ids: [3],
         owner_id: 3
       }
@@ -182,6 +169,6 @@ export class InMemoryDataService {
       }
     ];
 
-    return { heroes, companies, projects, contributors, languages }
+    return { companies, projects, contributors, languages }
   }
 }

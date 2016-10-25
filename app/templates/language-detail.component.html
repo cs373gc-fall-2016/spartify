@@ -20,7 +20,9 @@
           <h3 class="panel-title">Used in Projects</h3>
         </div>
         <div class="panel-body">
-
+          <div *ngFor="let id of language.project_ids" class="col-xs-6 col-md-3">
+            <my-project-link [p_id]="id"></my-project-link>
+          </div>
         </div>
       </div>
     </div>

@@ -40,7 +40,9 @@
           <h3 class="panel-title">Contributed Projects</h3>
         </div>
         <div class="panel-body">
-
+          <div *ngFor="let id of contributor.project_ids" class="col-xs-6 col-md-3">
+            <my-project-link [p_id]="id"></my-project-link>
+          </div>
         </div>
       </div>
       <div class="panel panel-default">
@@ -48,7 +50,9 @@
           <h3 class="panel-title">Company Membership</h3>
         </div>
         <div class="panel-body">
-
+          <div *ngFor="let id of contributor.company_ids" class="col-xs-6 col-md-3">
+            <my-company-link [c_id]="id"></my-company-link>
+          </div>
         </div>
       </div>
     </div>

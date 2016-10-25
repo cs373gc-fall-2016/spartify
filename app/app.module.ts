@@ -14,6 +14,10 @@ import { ProjectService } from "./services/project.service";
 import { ContributorService } from "./services/contributor.service";
 import { LanguageService } from "./services/language.service";
 import { CompanyAvatarComponent } from "./components/company-avatar-component";
+import { ProjectLinkComponent } from "./components/project-link.component";
+import { ContributorLinkComponent } from "./components/contributor-link.component";
+import { LanguageLinkComponent } from "./components/language-link-component";
+import { CompanyLinkComponent } from "./components/company-link-component";
 
 @NgModule({
   imports: [
@@ -26,7 +30,11 @@ import { CompanyAvatarComponent } from "./components/company-avatar-component";
   declarations: [
     AppComponent,
     routedComponents,
-    CompanyAvatarComponent
+    CompanyAvatarComponent,
+    CompanyLinkComponent,
+    ContributorLinkComponent,
+    ProjectLinkComponent,
+    LanguageLinkComponent
   ],
   providers: [
     CompanyService,
