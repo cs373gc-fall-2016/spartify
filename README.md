@@ -54,8 +54,13 @@ $sudo pip install flask_sqlalchemy
 $sudo pip install flask_script
 ```
 
-This finishes the setup.
- 
+This finishes the setup. You're about ready to run the server now!
+
+You may need to switch to a postgres user profile before being able to run your app properly.
+```
+sudo su - postgres
+```
+
 To Run:
 ```
 $ python backend.py runserver
