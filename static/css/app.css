@@ -1,27 +1,19 @@
-.btn-sq-lg {
+img {
+    margin: 0 auto;
+}
+
+.btn-tile {
     width: 150px !important;
-    height: 150px !important;
-    padding-top: 55px !important;
+    height: 100px !important;
+    padding-top: 30px !important;
 }
 
-.btn-sq {
-    width: 120px !important;
-    height: 120px !important;
-    padding-top: 40px !important;
-}
-
-.btn-sq-sm {
-    width: 50px !important;
+.btn-chubby {
     height: 50px !important;
-    padding-top: 5px !important;
-}
-
-.btn-sq-xs {
-    width: 25px !important;
-    height: 25px !important;
-    padding-top: 2px !important;
+    padding-top: 14px !important;
 }
 
 .mrgn-btm {
-    margin-bottom: 5px !important;
+    margin-bottom: 10px !important;
 }
+
