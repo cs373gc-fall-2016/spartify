@@ -17,7 +17,7 @@ export class InMemoryDataService {
         email: null,
         url: 'https://github.com/facebook',
         avatar_url: 'https://avatars.githubusercontent.com/u/69631?v=3',
-        description: 'We work hard to contribute our work back to the web, mobile, big data, & infrastructure communities. NB: members must have two-factor auth.'
+        description: 'We work hard to contribute our work back to the web, mobile, big data, & infrastructure communities. NB: members must have two-factor auth.',
         project_ids: [2]
       },
       {
