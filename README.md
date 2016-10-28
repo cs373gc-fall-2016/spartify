@@ -4,12 +4,18 @@ In addtion to the database setup described below do the following to get Angular
 Install node and npm
 `
 $ sudo apt-get install npm
+$ sudo apt-get install nodejs-legacy
+$ sudo apt-get install tsc
 `
 
-Install the apps dependencies
+Install the apps dependencies (this is done in the project root directory)
 `
 $ npm install
 `
+
+Compile the TypeScript (this is done in the project root directory)
+`
+$ tsc -w
 
 The you should be able to go to the backend and start the server
 `
