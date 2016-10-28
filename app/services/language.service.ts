@@ -5,7 +5,7 @@ import { Language } from './language';
 
 @Injectable()
 export class LanguageService {
-  private languagesUrl = '/api/languages';  // URL to web api
+  private languagesUrl = '/api/languages/';  // URL to web api
 
   constructor(private http: Http) { }
 

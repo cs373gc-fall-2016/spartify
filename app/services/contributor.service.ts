@@ -5,7 +5,7 @@ import { Contributor } from './contributor';
 
 @Injectable()
 export class ContributorService {
-  private contributorsUrl = '/api/contributors';  // URL to web api
+  private contributorsUrl = '/api/contributors/';  // URL to web api
 
   constructor(private http: Http) { }
 

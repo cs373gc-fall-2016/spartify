@@ -7,7 +7,7 @@ import { Company } from './company';
 
 @Injectable()
 export class CompanyService {
-  private companiesUrl = '/api/companies';  // URL to web api
+  private companiesUrl = '/api/companies/';  // URL to web api
 
   constructor(private http: Http) { }
 
