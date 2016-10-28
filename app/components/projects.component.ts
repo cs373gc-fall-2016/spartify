@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { ProjectService } from "../services/project.service";
 import { Project } from "../services/project";
+declare var jQuery:any;
 
 @Component({
   moduleId: module.id,
@@ -20,5 +21,6 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void {
     this.projectService.getProjects()
       .then(projects => this.projects = projects);
+
   }
 }

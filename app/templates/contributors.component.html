@@ -1,39 +1,39 @@
-<table id="contributors" class="display table table-striped no-wrap">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Username</th>
-      <th>Email</th>
-      <th>URL</th>
-      <th>Location</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let contributor of contributors">
-      <td class="col-xs-1">
-        <a routerLink="/contributors/{{contributor.id}}" routerLinkActive="active" class="thumbnail">
-          <img src="{{contributor.avatar_url}}">
-        </a>
-      </td>
-      <td class="text-capitalize">{{contributor.username}}</td>
-      <td>
-        <a *ngIf="contributor.email != null" href="mailto:{{contributor.email}}">
-          <i class="glyphicon glyphicon-envelope"></i>
-          {{contributor.email}}
-        </a>
-      </td>
-      <td>
-        <a href="{{contributor.url}}">
-          <i class="glyphicon glyphicon-link"></i>
-          {{contributor.url}}
-        </a>
-      </td>
-      <td>
-        <a href="https://www.google.com/maps/place/{{contributor.location}}/">
-          <i class="glyphicon glyphicon-pushpin"></i>
-          {{contributor.location}}
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="ui-widget-header ui-helper-clearfix" style="padding:4px 10px;border-bottom: 0 none">
+  <i class="fa fa-search" style="float:left;margin:4px 4px 0 0"></i>
+  <input #gb type="text" pInputText size="50" style="float:left" placeholder="Search">
+</div>
+<p-dataTable [value]="contributors" [sortMode]="multiple"
+             paginator=true rows=5 [globalFilter]="gb">
+  <p-column field="avatar_url" header="Avatar" [sortable]="true" [style]="{'width':'150px'}">
+    <template let-contributor="rowData" pTemplate type="body">
+      <a routerLink="/contributors/{{contributor.id}}" routerLinkActive="active" class="thumbnail">
+        <img src="{{contributor.avatar_url}}">
+      </a>
+    </template>
+  </p-column>
+  <p-column field="username" header="Username" [sortable]="true"></p-column>
+  <p-column field="email" header="Email" [sortable]="true" [style]="{'width':'300px'}">
+    <template let-contributor="rowData" pTemplate type="body">
+      <a *ngIf="contributor.email != null" href="mailto:{{contributor.email}}">
+        <i class="glyphicon glyphicon-envelope"></i>
+        {{contributor.email}}
+      </a>
+    </template>
+  </p-column>
+  <p-column field="url" header="Url" [sortable]="true" [style]="{'width':'300px'}">
+    <template let-contributor="rowData" pTemplate type="body">
+      <a href="{{contributor.url}}">
+        <i class="glyphicon glyphicon-link"></i>
+        {{contributor.url}}
+      </a>
+    </template>
+  </p-column>
+  <p-column field="location" header="Location" [sortable]="true">
+    <template let-contributor="rowData" pTemplate type="body">
+      <a href="https://www.google.com/maps/place/{{contributor.location}}/">
+        <i class="glyphicon glyphicon-pushpin"></i>
+        {{contributor.location}}
+      </a>
+    </template>
+  </p-column>
+</p-dataTable>

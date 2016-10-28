@@ -7,4 +7,6 @@ import { Router } from '@angular/router';
   templateUrl: '../templates/about.component.html'
 })
 
-export class AboutComponent {}
+export class AboutComponent {
+  title = 'About';
+}
