@@ -1,0 +1,194 @@
+id	name	creator	type	firstAppeared	description
+1	C++
+2	Shell
+3	C
+4	Ragel in Ruby Host
+5	Makefile
+6	Lua
+7	Ruby
+8	Protocol Buffer
+9	Python
+10	Java
+11	HTML
+12	JavaScript
+13	CSS
+14	LiveScript
+15	Dart
+16	TeX
+17	Batchfile
+18	Go
+19	PHP
+20	XSLT
+21	CMake
+22	M4
+23	Standard ML
+24	GDB
+25	LLVM
+26	Awk
+27	OCaml
+28	Objective-C
+29	Groff
+30	Assembly
+31	Emacs Lisp
+32	Yacc
+33	Hack
+34	Perl
+35	PAWN
+36	ApacheConf
+37	C#
+38	Opa
+39	Prolog
+40	Common Lisp
+41	Erlang
+42	Haskell
+43	Smalltalk
+44	GAP
+45	Thrift
+46	Processing
+47	PowerShell
+48	R
+49	Perl6
+50	Visual Basic
+51	Pascal
+52	SQLPL
+53	POV-Ray SDL
+54	PLpgSQL
+55	Scilab
+56	SourcePawn
+57	PLSQL
+58	Lex
+59	DTrace
+60	D
+61	Groovy
+62	IDL
+63	Rust
+64	Objective-C++
+65	Scala
+66	Kotlin
+67	Swift
+68	Matlab
+69	TypeScript
+70	CoffeeScript
+71	VimL
+72	PigLatin
+73	Cucumber
+74	AppleScript
+75	Scheme
+76	Mathematica
+77	Bison
+78	Logos
+79	SystemVerilog
+80	Tcl
+81	Smarty
+82	NSIS
+83	XML
+84	Gettext Catalog
+85	GCC Machine Description
+86	Handlebars
+87	Nginx
+88	DIGITAL Command Language
+89	PostScript
+90	Vue
+91	Mask
+92	XS
+93	Rebol
+94	eC
+95	Forth
+96	Harbour
+97	IGOR Pro
+98	RenderScript
+99	Haxe
+100	CLIPS
+101	DOT
+102	FORTRAN
+103	Ada
+104	NewLisp
+105	Clojure
+106	Vala
+107	EmberScript
+108	QMake
+109	M
+110	GLSL
+111	ActionScript
+112	1C Enterprise
+113	Racket
+114	FreeMarker
+115	XProc
+116	ANTLR
+117	Mako
+118	Gnuplot
+119	Inno Setup
+120	Objective-J
+121	XQuery
+122	Elm
+123	AspectJ
+124	ASP
+125	F#
+126	ColdFusion
+127	Elixir
+128	Puppet
+129	Liquid
+130	Jasmin
+131	Diff
+132	Module Management System
+133	SAS
+134	ABAP
+135	Cirru
+136	VHDL
+137	Verilog
+138	OpenSCAD
+139	Eiffel
+140	LSL
+141	Io
+142	AutoHotkey
+143	COBOL
+144	JSONiq
+145	Julia
+146	Nix
+147	Lean
+148	CartoCSS
+149	UnrealScript
+150	OpenEdge ABL
+151	SuperCollider
+152	Limbo
+153	Metal
+154	Csound Document
+155	HLSL
+156	WebIDL
+157	FLUX
+158	QML
+159	UrWeb
+160	API Blueprint
+161	Terra
+162	Boo
+163	HCL
+164	VCL
+165	Nu
+166	Ioke
+167	Gosu
+168	Delphi
+169	Arduino
+170	Slash
+171	Eagle
+172	Augeas
+173	RobotFramework
+174	J
+175	Jupyter Notebook
+176	AMPL
+177	wisp
+178	Myghty
+179	Genshi
+180	Stata
+181	Cuda
+182	Mercury
+183	SaltStack
+184	REXX
+185	AGS Script
+186	Pure Data
+187	XC
+188	Arc
+189	Coq
+190	HyPhy
+191	Nimrod
+192	Fancy
+193	Apex
