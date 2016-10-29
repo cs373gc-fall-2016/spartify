@@ -8,7 +8,8 @@ FILES :=                                   \
     backend.py                             \
     models.py                              \
     TestOpenSourcery.out                   \
-    tests.py
+    tests.py 							   \
+    OpenSourcery.pdf
 
 ifeq ($(shell uname), Darwin)          # Apple
     PYTHON   := python
