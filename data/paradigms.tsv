@@ -1,5 +1,5 @@
 id	name
-1	Procedural
+1	Imperative
 2	Structured
 3	Functional
 4	Object-oriented
@@ -7,3 +7,10 @@ id	name
 6	Concurrent
 7	Reflective
 8	Meta
+9	Language Oriented Programming
+10	Logic programming
+11	Vector Oriented Programming
+12	Modular
+13	Declarative
+14	Aspect Oriented Programming
+15	Protocol Oriented Programming
