@@ -15,16 +15,14 @@
       </ul>
     </div>
     <div class="col-sm-7 col-md-8">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Used in Projects</h3>
-        </div>
-        <div class="panel-body">
-          <div *ngFor="let id of language.project_ids" class="col-xs-6 col-md-3">
+      <p-dataGrid [value]="language.project_ids" [paginator]="true" [rows]="8">
+        <header>Used in Projects</header>
+        <template let-id>
+          <div class="ui-g-12 ui-md-3">
             <my-project-link [p_id]="id"></my-project-link>
           </div>
-        </div>
-      </div>
+        </template>
+      </p-dataGrid>
     </div>
   </div>
 </div>

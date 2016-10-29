@@ -20,26 +20,24 @@
       </ul>
     </div>
     <div class="col-sm-7 col-md-8">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Contributors</h3>
-        </div>
-        <div class="panel-body">
-          <div *ngFor="let id of project.contributor_ids" class="col-xs-6 col-md-3">
+      <p-dataGrid [value]="project.contributor_ids" [paginator]="true" [rows]="8">
+        <header>Contributors</header>
+        <template let-id>
+          <div class="ui-g-12 ui-md-3">
             <my-contributor-link [c_id]="id"></my-contributor-link>
           </div>
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Languages Used</h3>
-        </div>
-        <div class="panel-body">
-          <div *ngFor="let id of project.language_ids" class="col-xs-6 col-md-3">
+        </template>
+      </p-dataGrid>
+      <br>
+      <p-dataGrid [value]="project.language_ids" [paginator]="true" [rows]="8">
+        <header>Languages</header>
+        <template let-id>
+          <div class="ui-g-12 ui-md-3">
             <my-language-link [l_id]="id"></my-language-link>
           </div>
-        </div>
-      </div>
+        </template>
+      </p-dataGrid>
     </div>
+
   </div>
 </div>

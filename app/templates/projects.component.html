@@ -2,8 +2,8 @@
   <i class="fa fa-search" style="float:left;margin:4px 4px 0 0"></i>
   <input #gb type="text" pInputText size="50" style="float:left" placeholder="Search">
 </div>
-<p-dataTable [value]="projects" [sortMode]="multiple"
-             paginator=true rows=5 [globalFilter]="gb">
+<p-dataTable [value]="projects" [sortMode]="multiple" [globalFilter]="gb" paginator=true
+             [rows]="5" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,25,100]" >
   <p-column field="name" header="Name" [sortable]="true" [style]="{'width':'150px'}">
     <template let-project="rowData" pTemplate type="body">
       <a routerLink="/projects/{{project.id}}" routerLinkActive="active"

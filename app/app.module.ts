@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
-import { DataTableModule,SharedModule } from 'primeng/primeng';
+import { DataTableModule, DataGridModule, SharedModule } from 'primeng/primeng';
 import './rxjs-extensions';
 import { AppComponent } from './components/app.component';
 import { AppRoutingModule, routedComponents } from './app-routing.module';
@@ -27,6 +27,7 @@ import { EllipsisPipe } from "./ellipsis-pipe";
     AppRoutingModule,
     HttpModule,
     DataTableModule,
+    DataGridModule,
     SharedModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 600 })
   ],
