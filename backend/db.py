@@ -2,7 +2,7 @@
 This Module contains configuration for the Database.
 Its separated out this way to facilitate testing
 """
-from flask import Flask, render_template, url_for, jsonify, abort
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_script import Manager, Shell
 

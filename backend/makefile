@@ -56,7 +56,7 @@ OpenSourcery.log:
 	git log > OpenSourcery.log
 
 TestOpenSourcery.tmp: backend.py models.py tests.py .pylintrc
-	-$(PYLINT) tests.py
+	$(PYLINT) tests.py
 	$(COVERAGE) run    --branch tests.py >  TestOpenSourcery.tmp 2>&1
 	$(COVERAGE) report -m tests.py models.py db.py >> TestOpenSourcery.tmp
 	cat TestOpenSourcery.tmp
