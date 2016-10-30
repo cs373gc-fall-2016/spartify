@@ -5,16 +5,20 @@ import { Contributor } from './contributor';
 
 @Injectable()
 export class ContributorService {
-  private contributorsUrl = '/api/contributors/';  // URL to web api
+  private contributorsUrl = '/api/contributors/';  // URL to web ap
+  private contributors : Promise<Contributor[]> = null;
 
   constructor(private http: Http) { }
 
   getContributors(): Promise<Contributor[]> {
-    return this.http
-      .get(this.contributorsUrl, { cache: true})
-      .toPromise()
-      .then(response => response.json().data as Contributor[])
-      .catch(this.handleError);
+    if ( this.contributors === null) {
+      this.contributors = this.http
+            .get(this.contributorsUrl)
+            .toPromise()
+            .then(response => response.json() as Contributor[])
+            .catch(this.handleError);
+    }
+    return this.contributors;
   }
 
   getContributor(id: number): Promise<Contributor> {

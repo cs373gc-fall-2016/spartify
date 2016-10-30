@@ -8,7 +8,7 @@
     <template let-language="rowData" pTemplate type="body">
       <a routerLink="/languages/{{language.id}}" routerLinkActive="active"
          class="text-capitalize btn btn-success btn-block btn-sqr">
-        {{language.name}}
+        {{language.name | ellipsis:7}}
       </a>
     </template>
   </p-column>

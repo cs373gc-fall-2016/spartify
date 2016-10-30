@@ -35,16 +35,6 @@ export class LanguageDetailComponent implements OnInit {
     });
   }
 
-  save(): void {
-    this.languageService
-      .save(this.language)
-      .then(language => {
-        this.language = language; // saved language, w/ id if new
-        this.goBack(language);
-      })
-      .catch(error => this.error = error); // TODO: Display error message
-  }
-
   goBack(savedLanguage: Language = null): void {
     this.close.emit(savedLanguage);
     if (this.navigated) { window.history.back(); }

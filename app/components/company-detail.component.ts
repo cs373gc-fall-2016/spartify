@@ -35,16 +35,6 @@ export class CompanyDetailComponent implements OnInit {
     });
   }
 
-  save(): void {
-    this.companyService
-      .save(this.company)
-      .then(company => {
-        this.company = company; // saved company, w/ id if new
-        this.goBack(company);
-      })
-      .catch(error => this.error = error); // TODO: Display error message
-  }
-
   goBack(savedCompany: Company = null): void {
     this.close.emit(savedCompany);
     if (this.navigated) { window.history.back(); }

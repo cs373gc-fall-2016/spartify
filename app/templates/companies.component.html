@@ -14,7 +14,7 @@
   <p-column field="name" header="Name" [sortable]="true"></p-column>
   <p-column field="email" header="Email" [sortable]="true" [style]="{'width':'300px'}">
     <template let-company="rowData" pTemplate type="body">
-      <a *ngIf="company.email != null" href="mailto:{{company.email}}">
+      <a *ngIf="company.email" href="mailto:{{company.email}}">
         <i class="glyphicon glyphicon-envelope"></i>
         {{company.email}}
       </a>

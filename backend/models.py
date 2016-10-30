@@ -128,6 +128,7 @@ class Language(db.Model):
 
     def dictionary(self):
         ldict = {}
+        ldict['id'] = self.id
         ldict['name'] = self.name
         ldict['creator'] = self.creator
         ldict['description'] = self.description
@@ -180,7 +181,7 @@ class Project(db.Model):
         languages = list(self.languages)
         contributors = list(self.contributors)
         if languages:
-            pdict['languages'] = [l.name for l in languages]
+            pdict['language_ids'] = [l.id for l in languages]
         if contributors:
             pdict['contributor_ids'] = [c.id for c in contributors]
         pdict['owner_id'] = self.owner_id

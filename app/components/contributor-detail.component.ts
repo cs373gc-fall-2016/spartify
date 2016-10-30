@@ -35,16 +35,6 @@ export class ContributorDetailComponent implements OnInit {
     });
   }
 
-  save(): void {
-    this.contributorService
-      .save(this.contributor)
-      .then(contributor => {
-        this.contributor = contributor; // saved contributor, w/ id if new
-        this.goBack(contributor);
-      })
-      .catch(error => this.error = error); // TODO: Display error message
-  }
-
   goBack(savedContributor: Contributor = null): void {
     this.close.emit(savedContributor);
     if (this.navigated) { window.history.back(); }

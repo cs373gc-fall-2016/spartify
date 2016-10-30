@@ -4,7 +4,7 @@ import { Pipe } from '@angular/core';
     name: 'ellipsis'
 })
 export class EllipsisPipe {
-    transform(val, args) {
+    transform(val:string, args:any) {
         if (args === undefined) {
             return val;
         }

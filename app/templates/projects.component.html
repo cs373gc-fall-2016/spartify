@@ -8,7 +8,7 @@
     <template let-project="rowData" pTemplate type="body">
       <a routerLink="/projects/{{project.id}}" routerLinkActive="active"
          class="text-capitalize btn btn-primary btn-block btn-sqr">
-        {{project.name}}
+        {{project.name | ellipsis:7}}
       </a>
     </template>
   </p-column>

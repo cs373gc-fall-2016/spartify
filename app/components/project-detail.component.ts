@@ -35,16 +35,6 @@ export class ProjectDetailComponent implements OnInit {
     });
   }
 
-  save(): void {
-    this.projectService
-      .save(this.project)
-      .then(project => {
-        this.project = project; // saved project, w/ id if new
-        this.goBack(project);
-      })
-      .catch(error => this.error = error); // TODO: Display error message
-  }
-
   goBack(savedProject: Project = null): void {
     this.close.emit(savedProject);
     if (this.navigated) { window.history.back(); }

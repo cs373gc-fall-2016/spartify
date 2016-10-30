@@ -6,15 +6,18 @@ import { Language } from './language';
 @Injectable()
 export class LanguageService {
   private languagesUrl = '/api/languages/';  // URL to web api
-
+  private languages :  Promise<Language[]> = null;
   constructor(private http: Http) { }
 
   getLanguages(): Promise<Language[]> {
-    return this.http
-      .get(this.languagesUrl, { cache: true})
-      .toPromise()
-      .then(response => response.json().data as Language[])
-      .catch(this.handleError);
+    if (this.languages === null) {
+      this.languages = this.http
+          .get(this.languagesUrl)
+          .toPromise()
+          .then(response => response.json() as Language[])
+          .catch(this.handleError);
+    }
+    return this.languages;
   }
 
   getLanguage(id: number): Promise<Language> {

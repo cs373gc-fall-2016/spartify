@@ -20,7 +20,6 @@ export class CompanyAvatarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      this.navigated = true;
       this.companyService.getCompany(this.c_id)
         .then(company => this.company = company);
   }

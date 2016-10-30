@@ -8,15 +8,19 @@ import { Company } from './company';
 @Injectable()
 export class CompanyService {
   private companiesUrl = '/api/companies/';  // URL to web api
+  private companies : Promise<Company[]> = null;
 
   constructor(private http: Http) { }
 
   getCompanies(): Promise<Company[]> {
-    return this.http
-      .get(this.companiesUrl)
-      .toPromise()
-      .then(response => response.json().data as Company[])
-      .catch(this.handleError);
+    if (this.companies === null) {
+      this.companies = this.http
+          .get(this.companiesUrl)
+          .toPromise()
+          .then(response => response.json() as Company[])
+          .catch(this.handleError);
+    }
+    return this.companies;
   }
 
   getCompany(id: number): Promise<Company> {

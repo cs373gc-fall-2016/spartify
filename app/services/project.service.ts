@@ -6,15 +6,19 @@ import { Project } from './project';
 @Injectable()
 export class ProjectService {
   private projectsUrl = '/api/projects/';  // URL to web api
+  private projects : Promise<Project[]>  = null;
 
   constructor(private http: Http) { }
 
   getProjects(): Promise<Project[]> {
-    return this.http
-      .get(this.projectsUrl, { cache: true})
-      .toPromise()
-      .then(response => response.json().data as Project[])
-      .catch(this.handleError);
+    if (this.projects === null) {
+      this.projects =  this.http
+        .get(this.projectsUrl)
+        .toPromise()
+        .then(response => response.json() as Project[])
+        .catch(this.handleError);
+    }
+    return this.projects;
   }
 
   getProject(id: number): Promise<Project> {

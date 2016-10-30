@@ -35,6 +35,10 @@ def send_favicon():
 def send_systemconfig():
     return send_from_directory('..', 'system-config.js')
 
+@app.route('/system-config.js.map')
+def send_systemconfig_map():
+    return send_from_directory('..', 'system-config.js.map')
+
 @app.route('/api/contributors/')
 def contributors():
     """ 
@@ -84,12 +88,12 @@ def languages():
     return jsonify([create_dict(l) for l in languages])
 
 
-@app.route('/api/languages/<name>')
-def language(name):
+@app.route('/api/languages/<id>')
+def language(id):
     """ 
     retuns json for the language with the given name 
     """
-    language = Language.query.filter_by(name=name.lower()).first()
+    language = Language.query.filter_by(id=id).first()
     if language == None:
         abort(404)
     return jsonify(create_dict(language))
