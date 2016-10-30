@@ -1,0 +1,64 @@
+img {
+  margin: 0 auto;
+}
+
+.thumbnail {
+  margin-bottom: 0 !important;
+}
+
+.btn-sqr {
+  color: white !important;
+  font-size: large !important;
+  width: 125px !important;
+  height: 125px !important;
+  padding-top: 50px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.btn-tile {
+  color: white !important;
+  font-size: large !important;
+  width: 150px !important;
+  height: 100px !important;
+  padding-top: 30px !important;
+}
+
+.btn-chubby {
+  height: 50px !important;
+  padding-top: 14px !important;
+}
+
+.mrgn-btm {
+  margin-bottom: 10px !important;
+}
+
+.ui-datatable thead th, .ui-datatable tfoot td, .ui-datatable tbody td {
+  border: 0 !important;
+  text-align: center;
+}
+.ui-carousel {
+  padding: 0 !important;
+}
+
+.ui-carousel-header {
+  margin: 0 !important;
+}
+
+.ui-md-3 {
+  padding-top: 10px !important;
+  padding-left: 15px !important;
+}
+
+.ui-carousel-item {
+  padding-top: 10px !important;
+  padding-left: 15px !important;
+  border: 0 !important;
+}
+
+.ui-datagrid-header {
+  padding-top: 7px !important;
+  padding-bottom: 8px !important;
+  padding-right: 10px !important;
+  padding-left: 10px !important;
+}

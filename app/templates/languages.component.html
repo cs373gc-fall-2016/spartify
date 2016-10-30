@@ -1,0 +1,23 @@
+<div class="ui-widget-header ui-helper-clearfix" style="padding:4px 10px;border-bottom: 0 none">
+  <i class="fa fa-search" style="float:left;margin:4px 4px 0 0"></i>
+  <input #gb type="text" pInputText size="50" style="float:left" placeholder="Search">
+</div>
+<p-dataTable [value]="languages" [sortMode]="multiple" [globalFilter]="gb" paginator=true
+             [rows]="5" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,25,100]">
+  <p-column field="name" header="Name" [sortable]="true" [style]="{'width':'150px'}">
+    <template let-language="rowData" pTemplate type="body">
+      <a routerLink="/languages/{{language.id}}" routerLinkActive="active"
+         class="text-capitalize btn btn-success btn-block btn-sqr">
+        {{language.name | ellipsis:7}}
+      </a>
+    </template>
+  </p-column>
+  <p-column field="creator" header="Creator" [sortable]="true"></p-column>
+  <p-column field="type" header="Type" [sortable]="true"></p-column>
+  <p-column field="firstAppeared" header="FirstAppeared" [sortable]="true"></p-column>
+  <p-column field="description" header="Description" [sortable]="true">
+    <template let-language="rowData" pTemplate type="body">
+      {{language.description | ellipsis:20}}
+    </template>
+  </p-column>
+</p-dataTable>

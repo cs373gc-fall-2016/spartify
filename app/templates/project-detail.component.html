@@ -1,0 +1,43 @@
+<div *ngIf="project">
+  <div class="row">
+    <div class="col-sm-5 col-md-4">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <h3 class="text-capitalize">{{project.name}}</h3>
+          <p>{{project.description}}</p>
+        </li>
+        <li class="list-group-item"><label>Created:</label> {{project.createdDate}}</li>
+        <li class="list-group-item"><label>Private:</label> {{project.private}}</li>
+        <li class="list-group-item">
+          <label>Owner:</label><my-company-avatar [c_id]="project.owner_id"></my-company-avatar>
+        </li>
+        <li class="list-group-item">
+          <a href="{{project.url}}">
+            <i class="glyphicon glyphicon-link"></i>
+            {{project.url}}
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-7 col-md-8">
+      <p-dataGrid [value]="project.contributor_ids" [paginator]="true" [rows]="8">
+        <header>Contributors</header>
+        <template let-id>
+          <div class="ui-g-12 ui-md-3">
+            <my-contributor-link [c_id]="id"></my-contributor-link>
+          </div>
+        </template>
+      </p-dataGrid>
+      <br>
+      <p-dataGrid [value]="project.language_ids" [paginator]="true" [rows]="8">
+        <header>Languages</header>
+        <template let-id>
+          <div class="ui-g-12 ui-md-3">
+            <my-language-link [l_id]="id"></my-language-link>
+          </div>
+        </template>
+      </p-dataGrid>
+    </div>
+
+  </div>
+</div>
