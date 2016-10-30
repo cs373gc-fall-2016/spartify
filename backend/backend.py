@@ -41,35 +41,30 @@ def send_systemconfig():
 def send_systemconfig_map():
     return send_from_directory('..', 'system-config.js.map')
 
+db_by_name = {
+        "contributors": Contributor,
+        "projects": Project,
+        "languages": Language,
+        "companies": Company
+        }
+
 @app.route('/api/<db_name>/')
 def model_page(db_name):
     """
     returns json list of items in database
     """
-    dbs = {
-            "contributors": Contributor,
-            "projects": Project,
-            "languages": Language,
-            "companies": Company
-            }
-    if db_name not in dbs:
+    if db_name not in db_by_name:
         abort(404)
-    return jsonify([x.dictionary() for x in dbs[db_name].query.all()])
+    return jsonify([x.dictionary() for x in db_by_name[db_name].query.all()])
 
 @app.route('/api/<db_name>/<id>')
 def single_model(db_name, id):
     """
     returns json for the database item with the given id
     """
-    dbs = {
-            "contributors": Contributor,
-            "projects": Project,
-            "languages": Language,
-            "companies": Company
-            }
-    if db_name not in dbs:
+    if db_name not in db_by_name:
         abort(404)
-    ret = dbs[db_name].query.filter_by(id=id).first()
+    ret = db_by_name[db_name].query.filter_by(id=id).first()
     if ret == None:
         abort(404)
     return jsonify(ret.dictionary())
