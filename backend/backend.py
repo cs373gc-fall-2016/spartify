@@ -14,7 +14,8 @@ import models
 
 
 @app.route('/')
-def index():
+@app.route('/<path:path>')
+def index(path = ""):
     """
     renders the landing page
     """
@@ -42,8 +43,8 @@ def send_systemconfig_map():
 
 @app.route('/api/contributors/')
 def contributors():
-    """ 
-    returns a json list of all contributors 
+    """
+    returns a json list of all contributors
     """
     contributors = Contributor.query.all()
     return jsonify([create_dict(c) for c in contributors])
@@ -51,8 +52,8 @@ def contributors():
 
 @app.route('/api/contributors/<id>')
 def contributor(id):
-    """ 
-    returns json for the contributor with the given id 
+    """
+    returns json for the contributor with the given id
     """
     contributor = Contributor.query.filter_by(id=id).first()
     if contributor == None:
@@ -62,8 +63,8 @@ def contributor(id):
 
 @app.route('/api/projects/')
 def projects():
-    """ 
-    returns a json list of all projects 
+    """
+    returns a json list of all projects
     """
     projects = Project.query.all()
     return jsonify([create_dict(p) for p in projects])
@@ -71,8 +72,8 @@ def projects():
 
 @app.route('/api/projects/<id>')
 def probejct(id):
-    """ 
-    returns json for the project with the given id 
+    """
+    returns json for the project with the given id
     """
     project = Project.query.filter_by(id=id).first()
     if project == None:
@@ -82,7 +83,7 @@ def probejct(id):
 
 @app.route('/api/languages/')
 def languages():
-    """ 
+    """
     returns a json list of all languages
     """
     languages = Language.query.all()
@@ -91,8 +92,8 @@ def languages():
 
 @app.route('/api/languages/<id>')
 def language(id):
-    """ 
-    retuns json for the language with the given name 
+    """
+    retuns json for the language with the given name
     """
     language = Language.query.filter_by(id=id).first()
     if language == None:
@@ -102,8 +103,8 @@ def language(id):
 
 @app.route('/api/companies/')
 def companies():
-    """ 
-    returns a json list of all companies 
+    """
+    returns a json list of all companies
     """
     companies = Company.query.all()
     return jsonify([create_dict(c) for c in companies])
@@ -111,8 +112,8 @@ def companies():
 
 @app.route('/api/companies/<id>')
 def company(id):
-    """ 
-    returns json of for the company with the given id 
+    """
+    returns json of for the company with the given id
     """
     company = Company.query.filter_by(id=id).first()
     if company == None:

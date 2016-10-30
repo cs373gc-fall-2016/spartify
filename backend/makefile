@@ -134,3 +134,5 @@ versions:
 	@echo
 	$(PIP) list
 
+run:
+	python backend.py runserver
