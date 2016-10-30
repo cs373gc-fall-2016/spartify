@@ -1,0 +1,30 @@
+<div class="ui-widget-header ui-helper-clearfix" style="padding:4px 10px;border-bottom: 0 none">
+  <i class="fa fa-search" style="float:left;margin:4px 4px 0 0"></i>
+  <input #gb type="text" pInputText size="50" style="float:left" placeholder="Search">
+</div>
+<p-dataTable [value]="projects" [sortMode]="multiple" [globalFilter]="gb" paginator=true
+             [rows]="5" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,25,100]" >
+  <p-column field="name" header="Name" [sortable]="true" [style]="{'width':'150px'}">
+    <template let-project="rowData" pTemplate type="body">
+      <a routerLink="/projects/{{project.id}}" routerLinkActive="active"
+         class="text-capitalize btn btn-primary btn-block btn-sqr">
+        {{project.name | ellipsis:7}}
+      </a>
+    </template>
+  </p-column>
+  <p-column field="url" header="URL" [sortable]="true" [style]="{'width':'300px'}">
+    <template let-project="rowData" pTemplate type="body">
+      <a href="{{project.url}}">
+        <i class="glyphicon glyphicon-link"></i>
+        {{project.url}}
+      </a>
+    </template>
+  </p-column>
+  <p-column field="createdDate" header="CreatedDate" [sortable]="true" [style]="{'width':'300px'}"></p-column>
+  <p-column field="private" header="Private" [sortable]="true"></p-column>
+  <p-column field="description" header="Description" [sortable]="true">
+    <template let-project="rowData" pTemplate type="body">
+      {{project.description | ellipsis:20}}
+    </template>
+  </p-column>
+</p-dataTable>
