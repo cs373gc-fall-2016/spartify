@@ -41,14 +41,20 @@ def send_systemconfig():
 def send_systemconfig_map():
     return send_from_directory('..', 'system-config.js.map')
 
-@app.route('/api/contributors/')
-def contributors():
+@app.route('/api/<db_name>/')
+def model_page(db_name):
     """
-    returns a json list of all contributors
+    returns json list of items in database
     """
-    contributors = Contributor.query.all()
-    return jsonify([create_dict(c) for c in contributors])
-
+    dbs = {
+            "contributors": Contributor,
+            "projects": Project,
+            "languages": Language,
+            "companies": Company
+            }
+    if db_name not in dbs:
+        abort(404)
+    return jsonify([create_dict(c) for c in dbs[db_name].query.all()])
 
 @app.route('/api/contributors/<id>')
 def contributor(id):
@@ -60,16 +66,6 @@ def contributor(id):
         abort(404)
     return jsonify(create_dict(contributor))
 
-
-@app.route('/api/projects/')
-def projects():
-    """
-    returns a json list of all projects
-    """
-    projects = Project.query.all()
-    return jsonify([create_dict(p) for p in projects])
-
-
 @app.route('/api/projects/<id>')
 def probejct(id):
     """
@@ -80,16 +76,6 @@ def probejct(id):
         abort(404)
     return jsonify(create_dict(project))
 
-
-@app.route('/api/languages/')
-def languages():
-    """
-    returns a json list of all languages
-    """
-    languages = Language.query.all()
-    return jsonify([create_dict(l) for l in languages])
-
-
 @app.route('/api/languages/<id>')
 def language(id):
     """
@@ -99,16 +85,6 @@ def language(id):
     if language == None:
         abort(404)
     return jsonify(create_dict(language))
-
-
-@app.route('/api/companies/')
-def companies():
-    """
-    returns a json list of all companies
-    """
-    companies = Company.query.all()
-    return jsonify([create_dict(c) for c in companies])
-
 
 @app.route('/api/companies/<id>')
 def company(id):
