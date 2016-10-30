@@ -245,11 +245,12 @@ Get all contributors.
 
     [Contributor List][]
 
-## Language [/api/languages/{name}]
+## Language [/api/languages/{id}]
 Represents a single language.
 
 Required attributes: 
 
+- `id`              The unique ID of the language
 - `name`            The name of the language
 - `creator`         The creator of the language
 - `type`            The type of the language (compiled, interpreted, etc.)
@@ -259,13 +260,14 @@ Required attributes:
 - `project_ids`     A list of project ids that use this language
 
 + Parameters
-    + name (required, string) ... Unique name
+    + id (required, integer) ... Unique ID
 
 + Model (application/json)
 
     + Body
 
             {
+                "id": "123",
                 "name": "Python",
                 "creator": "Guido van Rossum",
                 "type": "Interpreted",
@@ -297,6 +299,7 @@ Get all languages.
 
             [
                 {
+                    "id": "123",
                     "name": "Python",
                     "creator": "Guido van Rossum",
                     "type": "Interpreted",
@@ -306,6 +309,7 @@ Get all languages.
                     "project_ids": [1,2]
                 },
                 {
+                    "id": "345 ",
                     "name": "Java",
                     "creator": "James Gosling",
                     "type": "Compiled",
