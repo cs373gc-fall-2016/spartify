@@ -18,8 +18,8 @@ ifeq ($(shell uname), Darwin)          # Apple
     PYDOC    := pydoc
     AUTOPEP8 := autopep8
 else ifeq ($(CI), true)                # Travis CI
-    PYTHON   := python
-    PIP      := pip
+    PYTHON   := python3
+    PIP      := pip3
     PYLINT   := pylint
     COVERAGE := coverage
     PYDOC    := pydoc
@@ -32,8 +32,8 @@ else ifeq ($(shell uname -p), unknown) # Docker
     PYDOC    := pydoc
     AUTOPEP8 := autopep8
 else                                   # UTCS
-    PYTHON   := python
-    PIP      := pip
+    PYTHON   := python3
+    PIP      := pip3
     PYLINT   := pylint
     COVERAGE := coverage
     PYDOC    := pydoc
