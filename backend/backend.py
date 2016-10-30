@@ -56,46 +56,23 @@ def model_page(db_name):
         abort(404)
     return jsonify([create_dict(c) for c in dbs[db_name].query.all()])
 
-@app.route('/api/contributors/<id>')
-def contributor(id):
+@app.route('/api/<db_name>/<id>')
+def single_model(db_name, id):
     """
-    returns json for the contributor with the given id
+    returns json for the database item with the given id
     """
-    contributor = Contributor.query.filter_by(id=id).first()
-    if contributor == None:
+    dbs = {
+            "contributors": Contributor,
+            "projects": Project,
+            "languages": Language,
+            "companies": Company
+            }
+    if db_name not in dbs:
         abort(404)
-    return jsonify(create_dict(contributor))
-
-@app.route('/api/projects/<id>')
-def probejct(id):
-    """
-    returns json for the project with the given id
-    """
-    project = Project.query.filter_by(id=id).first()
-    if project == None:
+    ret = dbs[db_name].query.filter_by(id=id).first()
+    if ret == None:
         abort(404)
-    return jsonify(create_dict(project))
-
-@app.route('/api/languages/<id>')
-def language(id):
-    """
-    retuns json for the language with the given name
-    """
-    language = Language.query.filter_by(id=id).first()
-    if language == None:
-        abort(404)
-    return jsonify(create_dict(language))
-
-@app.route('/api/companies/<id>')
-def company(id):
-    """
-    returns json of for the company with the given id
-    """
-    company = Company.query.filter_by(id=id).first()
-    if company == None:
-        abort(404)
-    return jsonify(create_dict(company))
-
+    return jsonify(create_dict(ret))
 
 @app.errorhandler(404)
 def resource_not_found(e):
@@ -103,7 +80,6 @@ def resource_not_found(e):
     error handinging for a 'not found' error
     """
     return "Resource not found", 404
-
 
 def shell_context():
     context = {
