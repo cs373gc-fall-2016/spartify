@@ -19,8 +19,8 @@ ifeq ($(shell uname), Darwin)          # Apple
     PYDOC    := pydoc
     AUTOPEP8 := autopep8
 else ifeq ($(CI), true)                # Travis CI
-    PYTHON   := python
-    PIP      := pip
+    PYTHON   := python3
+    PIP      := pip3
     PYLINT   := pylint
     COVERAGE := coverage
     PYDOC    := pydoc
@@ -33,8 +33,8 @@ else ifeq ($(shell uname -p), unknown) # Docker
     PYDOC    := pydoc
     AUTOPEP8 := autopep8
 else                                   # UTCS
-    PYTHON   := python
-    PIP      := pip
+    PYTHON   := python3
+    PIP      := pip3
     PYLINT   := pylint
     COVERAGE := coverage
     PYDOC    := pydoc
@@ -57,7 +57,7 @@ OpenSourcery.log:
 	git log > OpenSourcery.log
 
 TestOpenSourcery.tmp: backend.py models.py tests.py .pylintrc
-	-$(PYLINT) tests.py
+	$(PYLINT) tests.py
 	$(COVERAGE) run    --branch tests.py >  TestOpenSourcery.tmp 2>&1
 	$(COVERAGE) report -m tests.py models.py db.py >> TestOpenSourcery.tmp
 	cat TestOpenSourcery.tmp

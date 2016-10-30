@@ -55,7 +55,7 @@ class TestModels(unittest.TestCase):
         """
            test dictionary method for Language class
         """
-        ldict = {'name': 'tstLang', 'creator': 'bob', 'type': 'Interpreted',
+        ldict = {'id': 1, 'name': 'tstLang', 'creator': 'bob', 'type': 'Interpreted',
                  'firstAppeared': 1987, 'description': 'test',
                  'project_ids': [4], 'paradigms': ['Functional']}
         self.assertEqual(self.language.dictionary(), ldict)
@@ -66,7 +66,7 @@ class TestModels(unittest.TestCase):
         """
         self.language.projects = []
         self.language.paradigms = []
-        ldict = {'name': 'tstLang', 'creator': 'bob', 'type': 'Interpreted',
+        ldict = {'id': 1, 'name': 'tstLang', 'creator': 'bob', 'type': 'Interpreted',
                  'firstAppeared': 1987, 'description': 'test'}
         self.assertEqual(self.language.dictionary(), ldict)
 
@@ -134,7 +134,7 @@ class TestModels(unittest.TestCase):
         """
         pdict = {'id': 4, 'name': 'testProj', 'url': 'test.com/testproj',
                  'description': 'test', 'createdDate': 'June, 11', 'private': False,
-                 'languages': ['tstLang'], 'contributor_ids': [2], 'owner_id': 3}
+                 'language_ids': [1], 'contributor_ids': [2], 'owner_id': 3}
         self.assertEqual(self.project.dictionary(), pdict)
 
     def test_project_dict_no_links(self):
