@@ -54,7 +54,7 @@ def model_page(db_name):
             }
     if db_name not in dbs:
         abort(404)
-    return jsonify([create_dict(c) for c in dbs[db_name].query.all()])
+    return jsonify([x.dictionary() for x in dbs[db_name].query.all()])
 
 @app.route('/api/<db_name>/<id>')
 def single_model(db_name, id):
@@ -72,7 +72,7 @@ def single_model(db_name, id):
     ret = dbs[db_name].query.filter_by(id=id).first()
     if ret == None:
         abort(404)
-    return jsonify(create_dict(ret))
+    return jsonify(ret.dictionary())
 
 @app.errorhandler(404)
 def resource_not_found(e):
@@ -94,14 +94,6 @@ def shell_context():
     return context
 
 manager.add_command('shell', Shell(make_context=shell_context))
-
-
-def create_dict(obj):
-    """
-    calls the obj.dictionary() and returns the result
-    """
-    return obj.dictionary()
-#    return {}
 
 if __name__ == "__main__":
     manager.run()
