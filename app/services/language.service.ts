@@ -6,8 +6,26 @@ import { Language } from './language';
 @Injectable()
 export class LanguageService {
   private languagesUrl = '/api/languages/';  // URL to web api
+  private languageCountUrl = '/api/count/languages';  // URL to web api
   private languages :  Promise<Language[]> = null;
+
   constructor(private http: Http) { }
+
+  getTotalLanguages() : Promise<number> {
+    return this.http
+        .get(this.languageCountUrl)
+        .toPromise()
+        .then(response => response.json() as number)
+        .catch(this.handleError);
+  }
+
+  getLanguageRange(start:number, end:number): Promise<Language[]> {
+    return this.http
+        .get(this.languagesUrl + "?start=" + start +"&end=" + end)
+        .toPromise()
+        .then(response => response.json() as Language[])
+        .catch(this.handleError);
+  }
 
   getLanguages(): Promise<Language[]> {
     if (this.languages === null) {
@@ -21,16 +39,11 @@ export class LanguageService {
   }
 
   getLanguage(id: number): Promise<Language> {
-    if (this.languages === null) {
-      return this.http
-          .get(this.languagesUrl + id)
-          .toPromise()
-          .then(response => response.json() as Language)
-          .catch(this.handleError);
-    } else {
-      return this.getLanguages()
-          .then(languages => languages.find(language => language.id === id));
-    }
+    return this.http
+        .get(this.languagesUrl + id)
+        .toPromise()
+        .then(response => response.json() as Language)
+        .catch(this.handleError);
   }
 
   private handleError(error: any): Promise<any> {

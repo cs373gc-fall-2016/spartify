@@ -3,7 +3,8 @@
   <input #gb type="text" pInputText size="50" style="float:left" placeholder="Search">
 </div>
 <p-dataTable [value]="languages" [sortMode]="multiple" [globalFilter]="gb" paginator=true
-             [rows]="5" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,25,100]">
+             [rows]="5" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,25,100]"
+             [lazy]="true" [totalRecords]="totalLanguages" (onLazyLoad)="loadData($event)">
   <p-column field="name" header="Name" [sortable]="true" [style]="{'width':'150px'}">
     <template let-language="rowData" pTemplate type="body">
       <a routerLink="/languages/{{language.id}}" routerLinkActive="active"
