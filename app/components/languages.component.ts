@@ -28,7 +28,12 @@ export class LanguagesComponent implements OnInit {
   }
 
   loadData(event : LazyLoadEvent) {
-    this.languageService.getLanguageRange(event.first, (event.first + event.rows))
-        .then(contributors => this.languages = contributors);
+    if (event.sortField) {
+      this.languageService.getSortedLanguages(event.sortField, event.sortOrder, event.first, (event.first + event.rows))
+          .then(contributors => this.languages = contributors);
+    } else {
+      this.languageService.getLanguageRange(event.first, (event.first + event.rows))
+          .then(contributors => this.languages = contributors);
+    }
   }
 }

@@ -29,6 +29,27 @@ export class CompanyService {
         .catch(this.handleError);
   }
 
+  getSortedCompanies(sortField:string, sortOrder:number, start:number, end:number) : Promise<Company[]> {
+    if (sortOrder === 1) {
+      return this.http
+          .get(this.companiesUrl + "?start=" + start + "&end=" + end
+              + "&orderby=" + sortField)
+          .toPromise()
+          .then(response => response.json() as Company[])
+          .catch(this.handleError);
+
+    } else if (sortOrder === -1) {
+      return this.http
+          .get(this.companiesUrl + "?start=" + start + "&end=" + end
+              + "&orderby=" + sortField + "&descending=true")
+          .toPromise()
+          .then(response => response.json() as Company[])
+          .catch(this.handleError);
+    } else {
+      return this.getCompanyRange(start, end);
+    }
+  }
+
   getCompanies(): Promise<Company[]> {
     if (this.companies === null) {
       this.companies = this.http

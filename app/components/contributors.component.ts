@@ -28,7 +28,12 @@ export class ContributorsComponent implements OnInit {
   }
 
   loadData(event : LazyLoadEvent) {
-    this.contributorService.getContributorRange(event.first, (event.first + event.rows))
-        .then(contributors => this.contributors = contributors);
+    if (event.sortField) {
+      this.contributorService.getSortedContributors(event.sortField, event.sortOrder, event.first, (event.first + event.rows))
+          .then(contributors => this.contributors = contributors);
+    } else {
+      this.contributorService.getContributorRange(event.first, (event.first + event.rows))
+          .then(contributors => this.contributors = contributors);
+    }
   }
 }
