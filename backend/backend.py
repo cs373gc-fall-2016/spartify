@@ -1,5 +1,6 @@
-from flask import Flask, render_template, url_for, jsonify, abort, send_from_directory
+from flask import Flask, request, jsonify, abort, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import func
 from flask_script import Manager, Shell
 from db import db, app, manager
 from models import Contributor, Paradigm, Language, Project, Company
@@ -48,14 +49,32 @@ db_by_name = {
         "companies": Company
         }
 
+@app.route('/api/count/<db_name>')
+def model_count(db_name):
+    if (db_name not in db_by_name):
+        abort(404)
+    return str(db_by_name[db_name].query.count())
+
 @app.route('/api/<db_name>/')
 def model_page(db_name):
     """
     returns json list of items in database
     """
-    if db_name not in db_by_name:
+    start = request.args.get("start")
+    end = request.args.get("end")
+    if (start == None and end == None):
+        if db_name not in db_by_name:
+            abort(404)
+        return jsonify([x.dictionary() for x in db_by_name[db_name].query.all()])
+    elif (start != None and end != None):
+        if (int(start) > int(end)):
+            abort(404)
+        if db_name not in db_by_name:
+            abort(404)
+        result = db_by_name[db_name].query.limit(int(end) - int(start)).offset(int(start)).all()
+        return jsonify([x.dictionary() for x in result])
+    else:
         abort(404)
-    return jsonify([x.dictionary() for x in db_by_name[db_name].query.all()])
 
 @app.route('/api/<db_name>/<id>')
 def single_model(db_name, id):

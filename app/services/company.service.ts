@@ -7,10 +7,27 @@ import { Company } from './company';
 
 @Injectable()
 export class CompanyService {
-  private companiesUrl = '/api/companies/';  // URL to web api
+  private companiesUrl = '/api/companies/';  // URL to web api.
+  private companyCountUrl = '/api/count/companies';  // URL to web api
   private companies : Promise<Company[]> = null;
 
   constructor(private http: Http) { }
+
+  getTotalCompanies() : Promise<number> {
+    return this.http
+        .get(this.companyCountUrl)
+        .toPromise()
+        .then(response => response.json() as number)
+        .catch(this.handleError);
+  }
+
+  getCompanyRange(start:number, end:number): Promise<Company[]> {
+    return this.http
+        .get(this.companiesUrl + "?start=" + start +"&end=" + end)
+        .toPromise()
+        .then(response => response.json() as Company[])
+        .catch(this.handleError);
+  }
 
   getCompanies(): Promise<Company[]> {
     if (this.companies === null) {
@@ -24,16 +41,11 @@ export class CompanyService {
   }
 
   getCompany(id: number): Promise<Company> {
-    if (this.companies === null) {
-      return this.http
-          .get(this.companiesUrl + id)
-          .toPromise()
-          .then(response => response.json() as Company)
-          .catch(this.handleError);
-    } else {
-      return this.getCompanies()
-          .then(companies => companies.find(company => company.id === id));
-    }
+    return this.http
+        .get(this.companiesUrl + id)
+        .toPromise()
+        .then(response => response.json() as Company)
+        .catch(this.handleError);
   }
 
   private handleError(error: any): Promise<any> {
