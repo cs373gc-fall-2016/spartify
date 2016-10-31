@@ -21,8 +21,16 @@ export class LanguageService {
   }
 
   getLanguage(id: number): Promise<Language> {
-    return this.getLanguages()
-      .then(languages => languages.find(language => language.id === id));
+    if (this.languages === null) {
+      return this.http
+          .get(this.languagesUrl + id)
+          .toPromise()
+          .then(response => response.json() as Language)
+          .catch(this.handleError);
+    } else {
+      return this.getLanguages()
+          .then(languages => languages.find(language => language.id === id));
+    }
   }
 
   private handleError(error: any): Promise<any> {
