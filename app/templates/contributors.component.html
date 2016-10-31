@@ -30,7 +30,7 @@
   </p-column>
   <p-column field="location" header="Location" [sortable]="true">
     <template let-contributor="rowData" pTemplate type="body">
-      <a href="https://www.google.com/maps/place/{{contributor.location}}/">
+      <a *ngIf="contributor.location" href="https://www.google.com/maps/place/{{contributor.location}}/">
         <i class="glyphicon glyphicon-pushpin"></i>
         {{contributor.location}}
       </a>

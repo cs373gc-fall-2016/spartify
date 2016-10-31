@@ -11,7 +11,7 @@
 
           <div>
             <ul class="nav">
-              <li *ngIf="contributor.email != null">
+              <li *ngIf="contributor.email">
                 <a href="mailto:{{contributor.email}}">
                   <i class="glyphicon glyphicon-envelope"></i>
                   {{contributor.email}}
@@ -23,7 +23,7 @@
                   {{contributor.url}}
                 </a>
               </li>
-              <li>
+              <li *ngIf="contributor.location">
                 <a href="https://www.google.com/maps/place/{{contributor.location}}/">
                   <i class="glyphicon glyphicon-pushpin"></i>
                   {{contributor.location}}
@@ -35,7 +35,8 @@
       </div>
     </div>
     <div class="col-sm-7 col-md-8">
-      <p-dataGrid [value]="contributor.project_ids" [paginator]="true" [rows]="8">
+
+      <p-dataGrid *ngIf="contributor.project_ids" [value]="contributor.project_ids" [paginator]="true" [rows]="8">
         <header>Projects</header>
         <template let-id>
           <div class="ui-g-12 ui-md-3">
@@ -44,7 +45,7 @@
         </template>
       </p-dataGrid>
       <br>
-      <p-dataGrid [value]="contributor.company_ids" [paginator]="true" [rows]="8">
+      <p-dataGrid *ngIf="contributor.company_ids" [value]="contributor.company_ids" [paginator]="true" [rows]="8">
         <header>Membership</header>
         <template let-id>
           <div class="ui-g-12 ui-md-3">

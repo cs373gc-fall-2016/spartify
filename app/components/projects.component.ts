@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { ProjectService } from "../services/project.service";
 import { Project } from "../services/project";
+import {LazyLoadEvent} from "primeng/components/common/api";
 declare var jQuery:any;
 
 @Component({
@@ -21,6 +22,10 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void {
     this.projectService.getProjects()
       .then(projects => this.projects = projects);
+
+  }
+
+  loadData(event : LazyLoadEvent) {
 
   }
 }

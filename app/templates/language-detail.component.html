@@ -15,7 +15,7 @@
       </ul>
     </div>
     <div class="col-sm-7 col-md-8">
-      <p-dataGrid [value]="language.project_ids" [paginator]="true" [rows]="8">
+      <p-dataGrid *ngIf="language.project_ids" [value]="language.project_ids" [paginator]="true" [rows]="8">
         <header>Used in Projects</header>
         <template let-id>
           <div class="ui-g-12 ui-md-3">

@@ -22,8 +22,17 @@ export class ContributorService {
   }
 
   getContributor(id: number): Promise<Contributor> {
-    return this.getContributors()
-      .then(contributors => contributors.find(contributor => contributor.id === id));
+    if (this.contributors === null) {
+      return this.http
+          .get(this.contributorsUrl + id)
+          .toPromise()
+          .then(response => response.json() as Contributor)
+          .catch(this.handleError);
+    } else {
+      return this.getContributors()
+          .then(contributors => contributors.find(contributor => contributor.id === id));
+    }
+
   }
 
   private handleError(error: any): Promise<any> {

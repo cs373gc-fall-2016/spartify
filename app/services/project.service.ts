@@ -22,8 +22,16 @@ export class ProjectService {
   }
 
   getProject(id: number): Promise<Project> {
-    return this.getProjects()
-      .then(projects => projects.find(project => project.id === id));
+    if (this.projects === null) {
+      return this.http
+          .get(this.projectsUrl + id)
+          .toPromise()
+          .then(response => response.json() as Project)
+          .catch(this.handleError);
+    } else {
+      return this.getProjects()
+          .then(projects => projects.find(project => project.id === id));
+    }
   }
 
   private handleError(error: any): Promise<any> {

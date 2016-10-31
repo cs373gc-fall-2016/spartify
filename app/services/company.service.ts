@@ -24,8 +24,16 @@ export class CompanyService {
   }
 
   getCompany(id: number): Promise<Company> {
-    return this.getCompanies()
-      .then(companies => companies.find(company => company.id === id));
+    if (this.companies === null) {
+      return this.http
+          .get(this.companiesUrl + id)
+          .toPromise()
+          .then(response => response.json() as Company)
+          .catch(this.handleError);
+    } else {
+      return this.getCompanies()
+          .then(companies => companies.find(company => company.id === id));
+    }
   }
 
   private handleError(error: any): Promise<any> {

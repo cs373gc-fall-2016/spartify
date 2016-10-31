@@ -15,7 +15,7 @@
 
           <div>
             <ul class="nav">
-              <li *ngIf="company.email != null">
+              <li *ngIf="company.email">
                 <a href="mailto:{{company.email}}">
                   <i class="glyphicon glyphicon-envelope"></i>
                   {{company.email}}
@@ -33,7 +33,7 @@
       </div>
     </div>
     <div class="col-sm-7 col-md-8">
-      <p-dataGrid [value]="company.project_ids" [paginator]="true" [rows]="8">
+      <p-dataGrid *ngIf="company.project_ids" [value]="company.project_ids" [paginator]="true" [rows]="8">
         <header>Projects</header>
         <template let-id>
           <div class="ui-g-12 ui-md-3">
@@ -42,7 +42,7 @@
         </template>
       </p-dataGrid>
       <br>
-      <p-dataGrid [value]="company.member_ids" [paginator]="true" [rows]="8">
+      <p-dataGrid *ngIf="company.member_ids" [value]="company.member_ids" [paginator]="true" [rows]="8">
         <header>Members</header>
         <template let-id>
           <div class="ui-g-12 ui-md-3">
