@@ -56,6 +56,10 @@ img {
   border: 0 !important;
 }
 
+.ui-tooltip {
+  max-width: 250px;
+}
+
 .ui-datagrid-header {
   padding-top: 7px !important;
   padding-bottom: 8px !important;

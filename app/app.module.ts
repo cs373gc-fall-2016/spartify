@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { DataTableModule, DataGridModule, SharedModule } from 'primeng/primeng';
+import { DataTableModule, DataGridModule, TooltipModule, SharedModule } from 'primeng/primeng';
 import './rxjs-extensions';
 import { AppComponent } from './components/app.component';
 import { AppRoutingModule, routedComponents } from './app-routing.module';
@@ -26,6 +26,7 @@ import { EllipsisPipe } from "./ellipsis-pipe";
     HttpModule,
     DataTableModule,
     DataGridModule,
+    TooltipModule,
     SharedModule
   ],
   declarations: [
