@@ -1,0 +1,373 @@
+FORMAT: 1A
+HOST: http://opensourcery.me/
+
+# OPENSOURCERY API
+API for http://opensourcery.me
+
+## Project [/api/projects/{id}]
+Represents a single project.
+
+Required attributes: 
+
+- `id`              The unique ID of the project
+- `name`            The name of the project
+- `url`             The url of the project
+- `createdDate`     The date the project was created
+- `private`         True if the project is private, false otherwise
+- `description`     A description of the project
+- `language_ids`    A list of language IDs used in the project
+- `contributor_ids` A list of contributor IDs that contributed to the project
+- `owner_id`        ID of the company that owns the project
+
++ Parameters
+    + id (required, integer) ... Unique ID
+
++ Model (application/json)
+
+    + Body
+
+            {
+                "id" : 10,
+                "name": "Example Project",
+                "url" : "http://github.com/example_project",
+                "createdDate": "Sat, 09 May 2009 02:38:42 GMT",
+                "private": false,
+                "language_ids" : [4, 5],
+                "contributor_ids": [1, 2],
+                "owner_id": 1
+            }
+            
+## Retrieve a single Project [GET]
+
++ Response 200
+
+    [Project][]
+    
++ Response 404 (application/json)
+
+        "Resource not found" 
+
+
+# Project List [/api/projects/?start={start}&end={end}&orderby={attribute}&descending={bool}]
+Get a list of projects. 
+
+If the optional index parameters 'start' and 'end' are not supplied then all
+projects will be retrieved (not recommended). If the optional parameter 'orderby' is not supplied then no
+sort order will be applied to the list. If the optional parameter 'descending' is not supplied or is set to 'false',
+but 'orderby' is supplied then the list will be sorted in ascending order.
+
++ Parameters
+    + start (optional, integer) ... start index
+    + end (optional, integer) ... end index
+    + attribute (optional, string) ... attribute to sort by
+    + bool (optional, boolean) ... boolean to denote if sort should be in descending order. default is false, ascending order.
+    
++ Model (application/json)
+
+    + Body
+
+            [
+                {
+                    "id" : 10,
+                    "name": "Example Project",
+                    "url" : "http://github.com/example_project",
+                    "createdDate": "Sat, 09 May 2009 02:38:42 GMT",
+                    "private": false,
+                    "languages" : [4, 5],
+                    "contributor_ids": [1, 2],
+                    "owner_id": 1
+                },
+                {
+                   "id" : 10,
+                    "name": "Example Project2",
+                    "url" : "http://github.com/example_project2",
+                    "createdDate": "Sun, 31 August 2005 12:11:07 GMT",
+                    "private": false,
+                    "language_ids" : [4],
+                    "contributor_ids": [3, 4],
+                    "owner_id": 2
+                }
+            ]
+            
+
+## List all projects [GET]
+
++ Response 200
+
+    [Project List][]
+
+## Company [/api/companies/{id}]
+Represents a single company.
+
+Required attributes: 
+
+- `id`              A unique ID
+- `name`            The name of the company
+- `email`           The email of the company
+- `url`             The URL of the company
+- `avatar_url`      The URL of the company's avatar image
+- `description`     A description of the comapany
+- `project_ids`     A list of project ids for projects owned by the company
+- `member_ids`      A list of contributor ids for contributors that belong to the company
+
++ Parameters
+    + id (required, integer) ... Unique ID
+
++ Model (application/json)
+
+    + Body
+
+            {
+                "id": 2,
+                "name": "Google",
+                "email": "example@google.com",
+                "url": "http://github.com/google",
+                "avatar_url": "https://avatars.githubusercontent.com/u/1234567?v=3",
+                "description": "Google is company ...",
+                "project_ids": [10, 12],
+                "member_ids": [3, 4]
+            }
+            
+## Retrieve a single Company [GET]
+
++ Response 200
+
+    [Company][]
+    
++ Response 404 (application/json)
+
+        "Resource not found" 
+
+
+# Company List [/api/companies/?start={start}&end={end}&orderby={attribute}&descending={bool}]
+Get a list of companies. 
+
+If the optional index parameters 'start' and 'end' are not supplied then all
+companies will be retrieved (not recommended). If the optional parameter 'orderby' is not supplied then no
+sort order will be applied to the list. If the optional parameter 'descending' is not supplied or is set to 'false',
+but 'orderby' is supplied then the list will be sorted in ascending order.
+
++ Parameters
+    + start (optional, integer) ... start index
+    + end (optional, integer) ... end index
+    + attribute (optional, string) ... attribute to sort by
+    + bool (optional, boolean) ... boolean to denote if sort should be in descending order. default is false, ascending order.
+
++ Model (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 2,
+                    "name": "Google",
+                    "email": "example@google.com",
+                    "url" : "http://github.com/google",
+                    "avatar_url": "https://avatars.githubusercontent.com/u/1234567?v=3",
+                    "project_ids": [10, 12],
+                    "member_ids": [3, 4],
+                    "description": "Google is a company focused on ..."
+                },
+                {
+                    "id": 1,
+                    "name": "Microsoft",
+                    "email": "example@microsoft.com",
+                    "url" : "http://github.com/microsoft",
+                    "avatar_url": "https://avatars.githubusercontent.com/u/7654321?v=3",
+                    "description": "Microsoft is a compnay ...",
+                    "project_ids": [2, 20],
+                    "member_ids": [1, 3, 4]
+                }
+            ]
+            
+
+## List all companies [GET]
+
++ Response 200
+
+    [Company List][]
+
+## Contributor [/api/contributors/{id}]
+Represents a single contributor.
+
+Required attributes: 
+
+- `id`          A unique ID
+- `username`    The username of the contributor
+- `email`       The email address of the contributor
+- `url`         The URL of the contributor
+- `avatar_url`  The URL of the contributor's avatar image
+- `location`    The geographical location of the contributor
+- `project_ids` A list of project ids for which the contributor contributes
+- `company_ids` A list of company ids for which the contributor is a member
+
++ Parameters
+    + id (required, integer) ... Unique ID
+
++ Model (application/json)
+
+    + Body
+
+            {
+                "id": 2,
+                "username": "usr1",
+                "email": "usr1@example.com",
+                "url": http://github.com/user1,
+                "avatar_url": "https://avatars.githubusercontent.com/u/1234?v=3",
+                "location": "Seattle, WA", 
+                "project_ids": [1, 2],
+                "company_ids": [3, 4]
+            }
+            
+## Retrieve a single Contributor [GET]
+
++ Response 200
+
+    [Contributor][]
+    
++ Response 404 (application/json)
+
+        "Resource not found" 
+
+
+# Contributor List [/api/contributors/?start={start}&end={end}&orderby={attribute}&descending={bool}]
+Get a list of contributors. 
+
+If the optional index parameters 'start' and 'end' are not supplied then all
+contributors will be retrieved (not recommended). If the optional parameter 'orderby' is not supplied then no
+sort order will be applied to the list. If the optional parameter 'descending' is not supplied or is set to 'false',
+but 'orderby' is supplied then the list will be sorted in ascending order.
+
++ Parameters
+    + start (optional, integer) ... start index
+    + end (optional, integer) ... end index
+    + attribute (optional, string) ... attribute to sort by
+    + bool (optional, boolean) ... boolean to denote if sort should be in descending order. default is false, ascending order.
+
+
++ Model (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 1,
+                    "username": "usr1",
+                    "email": "usr1@example.com",
+                    "url": http://github.com/user1,
+                    "avatar_url": "https://avatars.githubusercontent.com/u/1234?v=3",
+                    "location": "Seattle, WA", 
+                    "project_ids": [1, 2],
+                    "company_ids": [3, 4]
+                },
+                {
+                    "id": 2,
+                    "username": "usr2",
+                    "email": "usr2@example.com",
+                    "url": http://github.com/user2,
+                    "avatar_url": "https://avatars.githubusercontent.com/u/4321?v=3",
+                    "location": "Austin,TX", 
+                    "project_ids": [4, 5],
+                    "company_ids": [3]
+                }
+            ]
+            
+
+## List all Contributors [GET]
+
++ Response 200
+
+    [Contributor List][]
+
+## Language [/api/languages/{id}]
+Represents a single language.
+
+Required attributes: 
+
+- `id`              The unique ID of the language
+- `name`            The name of the language
+- `creator`         The creator of the language
+- `type`            The type of the language (compiled, interpreted, etc.)
+- `firstAppeared`   The year the language first appeared
+- `description`     A description of the language
+- `paradigms`       A list of programming paradigms the language uses
+- `project_ids`     A list of project ids that use this language
+
++ Parameters
+    + id (required, integer) ... Unique ID
+
++ Model (application/json)
+
+    + Body
+
+            {
+                "id": "123",
+                "name": "Python",
+                "creator": "Guido van Rossum",
+                "type": "Interpreted",
+                "firstAppeared": 1991,
+                "description": "Python is scripting language for ...",
+                "paradigms" : ["Functional", "Object Oriented"],
+                "project_ids": [1, 2]
+            }
+                
+                
+            
+## Retrieve a single Language [GET]
+
++ Response 200
+
+    [Language][]
+    
++ Response 404 (application/json)
+
+        "Resource not found" 
+
+
+# Language List [/api/languages/?start={start}&end={end}&orderby={attribute}&descending={bool}]
+Get a list of languages. 
+
+If the optional index parameters 'start' and 'end' are not supplied then all
+languages will be retrieved (not recommended). If the optional parameter 'orderby' is not supplied then no
+sort order will be applied to the list. If the optional parameter 'descending' is not supplied or is set to 'false',
+but 'orderby' is supplied then the list will be sorted in ascending order.
+
++ Parameters
+    + start (optional, integer) ... start index
+    + end (optional, integer) ... end index
+    + attribute (optional, string) ... attribute to sort by
+    + bool (optional, boolean) ... boolean to denote if sort should be in descending order. default is false, ascending order.
+
++ Model (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": "123",
+                    "name": "Python",
+                    "creator": "Guido van Rossum",
+                    "type": "Interpreted",
+                    "firstAppeared": 1991,
+                    "description": "Python is a programming language for ...",
+                    "paradigms" : ["Functional", "Object Oriented"],
+                    "project_ids": [1,2]
+                },
+                {
+                    "id": "345 ",
+                    "name": "Java",
+                    "creator": "James Gosling",
+                    "type": "Compiled",
+                    "firstAppeared": 1995,
+                    "description": "Java is a programming language for ...",
+                    "paradigms" : ["Object Oriented"],
+                    "project_ids": [4,10]
+                }
+            ]
+            
+
+## List all Languages [GET]
+
++ Response 200
+
+    [Language List][]
