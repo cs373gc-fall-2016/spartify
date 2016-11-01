@@ -28,6 +28,27 @@ export class ProjectService {
           .catch(this.handleError);
   }
 
+  getSortedProjects(sortField:string, sortOrder:number, start:number, end:number) : Promise<Project[]> {
+    if (sortOrder === 1) {
+      return this.http
+          .get(this.projectsUrl + "?start=" + start + "&end=" + end
+              + "&orderby=" + sortField)
+          .toPromise()
+          .then(response => response.json() as Project[])
+          .catch(this.handleError);
+
+    } else if (sortOrder === -1) {
+      return this.http
+          .get(this.projectsUrl + "?start=" + start + "&end=" + end
+              + "&orderby=" + sortField + "&descending=true")
+          .toPromise()
+          .then(response => response.json() as Project[])
+          .catch(this.handleError);
+    } else {
+      return this.getProjectRange(start, end);
+    }
+  }
+
   getProject(id: number): Promise<Project> {
       return this.http
           .get(this.projectsUrl + id)

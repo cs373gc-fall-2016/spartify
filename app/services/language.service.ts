@@ -27,6 +27,27 @@ export class LanguageService {
         .catch(this.handleError);
   }
 
+  getSortedLanguages(sortField:string, sortOrder:number, start:number, end:number) : Promise<Language[]> {
+    if (sortOrder === 1) {
+      return this.http
+          .get(this.languagesUrl + "?start=" + start + "&end=" + end
+              + "&orderby=" + sortField)
+          .toPromise()
+          .then(response => response.json() as Language[])
+          .catch(this.handleError);
+
+    } else if (sortOrder === -1) {
+      return this.http
+          .get(this.languagesUrl + "?start=" + start + "&end=" + end
+              + "&orderby=" + sortField + "&descending=true")
+          .toPromise()
+          .then(response => response.json() as Language[])
+          .catch(this.handleError);
+    } else {
+      return this.getLanguageRange(start, end);
+    }
+  }
+
   getLanguages(): Promise<Language[]> {
     if (this.languages === null) {
       this.languages = this.http

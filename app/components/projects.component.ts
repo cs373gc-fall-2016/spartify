@@ -28,7 +28,12 @@ export class ProjectsComponent implements OnInit {
   }
 
   loadData(event : LazyLoadEvent) {
-    this.projectService.getProjectRange(event.first, (event.first + event.rows))
+    if (event.sortField) {
+      this.projectService.getSortedProjects(event.sortField, event.sortOrder, event.first, (event.first + event.rows))
+          .then(contributors => this.projects = contributors);
+    } else {
+      this.projectService.getProjectRange(event.first, (event.first + event.rows))
         .then(projects => this.projects = projects);
+    }
   }
 }

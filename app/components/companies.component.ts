@@ -28,7 +28,12 @@ export class CompaniesComponent implements OnInit {
   }
 
   loadData(event : LazyLoadEvent) {
-    this.companyService.getCompanyRange(event.first, (event.first + event.rows))
-        .then(contributors => this.companies = contributors);
+    if (event.sortField) {
+      this.companyService.getSortedCompanies(event.sortField, event.sortOrder, event.first, (event.first + event.rows))
+          .then(contributors => this.companies = contributors);
+    } else {
+      this.companyService.getCompanyRange(event.first, (event.first + event.rows))
+          .then(contributors => this.companies = contributors);
+    }
   }
 }

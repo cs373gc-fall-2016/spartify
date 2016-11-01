@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, abort, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import func
+from sqlalchemy import func, desc
 from flask_script import Manager, Shell
 from db import db, app, manager
 from models import Contributor, Paradigm, Language, Project, Company
@@ -56,12 +56,14 @@ def model_count(db_name):
     return str(db_by_name[db_name].query.count())
 
 @app.route('/api/<db_name>/')
-def model_page(db_name):
+def model_page(db_name, start=None, end=None, orderby=None, descending=None):
     """
     returns json list of items in database
     """
     start = request.args.get("start")
     end = request.args.get("end")
+    orderby = request.args.get("orderby")
+    descending = request.args.get("descending")
     if (start == None and end == None):
         if db_name not in db_by_name:
             abort(404)
@@ -71,8 +73,15 @@ def model_page(db_name):
             abort(404)
         if db_name not in db_by_name:
             abort(404)
-        result = db_by_name[db_name].query.limit(int(end) - int(start)).offset(int(start)).all()
-        return jsonify([x.dictionary() for x in result])
+        if (orderby != None and descending == "true"):
+            result = db_by_name[db_name].query.order_by(desc(orderby)).limit(int(end) - int(start)).offset(int(start)).all()
+            return jsonify([x.dictionary() for x in result])
+        elif (orderby != None):
+            result = db_by_name[db_name].query.order_by(orderby).limit(int(end) - int(start)).offset(int(start)).all()
+            return jsonify([x.dictionary() for x in result])
+        else:
+            result = db_by_name[db_name].query.limit(int(end) - int(start)).offset(int(start)).all()
+            return jsonify([x.dictionary() for x in result])
     else:
         abort(404)
 

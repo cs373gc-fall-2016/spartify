@@ -28,6 +28,27 @@ export class ContributorService {
         .catch(this.handleError);
   }
 
+  getSortedContributors(sortField:string, sortOrder:number, start:number, end:number) : Promise<Contributor[]> {
+    if (sortOrder === 1) {
+      return this.http
+          .get(this.contributorsUrl + "?start=" + start + "&end=" + end
+              + "&orderby=" + sortField)
+          .toPromise()
+          .then(response => response.json() as Contributor[])
+          .catch(this.handleError);
+
+    } else if (sortOrder === -1) {
+      return this.http
+          .get(this.contributorsUrl + "?start=" + start + "&end=" + end
+              + "&orderby=" + sortField + "&descending=true")
+          .toPromise()
+          .then(response => response.json() as Contributor[])
+          .catch(this.handleError);
+    } else {
+      return this.getContributorRange(start, end);
+    }
+  }
+
   getContributor(id: number): Promise<Contributor> {
     return this.http
         .get(this.contributorsUrl + id)

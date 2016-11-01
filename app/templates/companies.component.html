@@ -1,8 +1,4 @@
-<div class="ui-widget-header ui-helper-clearfix" style="padding:4px 10px;border-bottom: 0 none">
-  <i class="fa fa-search" style="float:left;margin:4px 4px 0 0"></i>
-  <input #gb type="text" pInputText size="50" style="float:left" placeholder="Search">
-</div>
-<p-dataTable [value]="companies" [sortMode]="multiple" [globalFilter]="gb" paginator=true
+<p-dataTable [value]="companies"
              [rows]="5" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,25,100]"
              [lazy]="true" [totalRecords]="totalCompanies" (onLazyLoad)="loadData($event)">
   <p-column field="avatar_url" header="Avatar" [sortable]="true" [style]="{'width':'150px'}">
@@ -12,7 +8,7 @@
       </a>
     </template>
   </p-column>
-  <p-column field="name" header="Name" [sortable]="true"></p-column>
+  <p-column field="name" header="Name" [sortable]="true" ></p-column>
   <p-column field="email" header="Email" [sortable]="true" [style]="{'width':'300px'}">
     <template let-company="rowData" pTemplate type="body">
       <a *ngIf="company.email" href="mailto:{{company.email}}">
@@ -29,7 +25,7 @@
       </a>
     </template>
   </p-column>
-  <p-column field="description" header="Description" [sortable]="true">
+  <p-column field="description" [sortable]="true" header="Description">
     <template let-company="rowData" pTemplate type="body">
       {{company.description | ellipsis:20}}
     </template>
