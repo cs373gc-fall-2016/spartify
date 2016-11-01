@@ -19,7 +19,7 @@ export class SplashComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.companyService.getCompanies()
+    this.companyService.getCompanyRange(0,3)
       .then(companies => this.companies = companies);
   }
 

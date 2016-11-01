@@ -6,24 +6,55 @@ import { Project } from './project';
 @Injectable()
 export class ProjectService {
   private projectsUrl = '/api/projects/';  // URL to web api
+  private projectCountUrl = '/api/count/projects';  // URL to web api
+
   private projects : Promise<Project[]>  = null;
 
   constructor(private http: Http) { }
 
-  getProjects(): Promise<Project[]> {
-    if (this.projects === null) {
-      this.projects =  this.http
-        .get(this.projectsUrl)
+  getTotalProjects() : Promise<number> {
+    return this.http
+        .get(this.projectCountUrl)
         .toPromise()
-        .then(response => response.json() as Project[])
+        .then(response => response.json() as number)
         .catch(this.handleError);
+  }
+
+  getProjectRange(start:number, end:number): Promise<Project[]> {
+    return this.http
+          .get(this.projectsUrl + "?start=" + start +"&end=" + end)
+          .toPromise()
+          .then(response => response.json() as Project[])
+          .catch(this.handleError);
+  }
+
+  getSortedProjects(sortField:string, sortOrder:number, start:number, end:number) : Promise<Project[]> {
+    if (sortOrder === 1) {
+      return this.http
+          .get(this.projectsUrl + "?start=" + start + "&end=" + end
+              + "&orderby=" + sortField)
+          .toPromise()
+          .then(response => response.json() as Project[])
+          .catch(this.handleError);
+
+    } else if (sortOrder === -1) {
+      return this.http
+          .get(this.projectsUrl + "?start=" + start + "&end=" + end
+              + "&orderby=" + sortField + "&descending=true")
+          .toPromise()
+          .then(response => response.json() as Project[])
+          .catch(this.handleError);
+    } else {
+      return this.getProjectRange(start, end);
     }
-    return this.projects;
   }
 
   getProject(id: number): Promise<Project> {
-    return this.getProjects()
-      .then(projects => projects.find(project => project.id === id));
+      return this.http
+          .get(this.projectsUrl + id)
+          .toPromise()
+          .then(response => response.json() as Project)
+          .catch(this.handleError);
   }
 
   private handleError(error: any): Promise<any> {

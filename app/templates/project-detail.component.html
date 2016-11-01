@@ -20,7 +20,7 @@
       </ul>
     </div>
     <div class="col-sm-7 col-md-8">
-      <p-dataGrid [value]="project.contributor_ids" [paginator]="true" [rows]="8">
+      <p-dataGrid *ngIf="project.contributor_ids" [value]="project.contributor_ids" [paginator]="true" [rows]="8">
         <header>Contributors</header>
         <template let-id>
           <div class="ui-g-12 ui-md-3">
@@ -29,7 +29,7 @@
         </template>
       </p-dataGrid>
       <br>
-      <p-dataGrid [value]="project.language_ids" [paginator]="true" [rows]="8">
+      <p-dataGrid *ngIf="project.language_ids" [value]="project.language_ids" [paginator]="true" [rows]="8">
         <header>Languages</header>
         <template let-id>
           <div class="ui-g-12 ui-md-3">

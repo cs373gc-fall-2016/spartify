@@ -1,5 +1,6 @@
-from flask import Flask, render_template, url_for, jsonify, abort, send_from_directory
+from flask import Flask, request, jsonify, abort, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import func, desc
 from flask_script import Manager, Shell
 from db import db, app, manager
 from models import Contributor, Paradigm, Language, Project, Company
@@ -14,7 +15,8 @@ import models
 
 
 @app.route('/')
-def index():
+@app.route('/<path:path>')
+def index(path = ""):
     """
     renders the landing page
     """
@@ -40,85 +42,60 @@ def send_systemconfig():
 def send_systemconfig_map():
     return send_from_directory('..', 'system-config.js.map')
 
-@app.route('/api/contributors/')
-def contributors():
-    """ 
-    returns a json list of all contributors 
-    """
-    contributors = Contributor.query.all()
-    return jsonify([create_dict(c) for c in contributors])
+db_by_name = {
+        "contributors": Contributor,
+        "projects": Project,
+        "languages": Language,
+        "companies": Company
+        }
 
-
-@app.route('/api/contributors/<id>')
-def contributor(id):
-    """ 
-    returns json for the contributor with the given id 
-    """
-    contributor = Contributor.query.filter_by(id=id).first()
-    if contributor == None:
+@app.route('/api/count/<db_name>')
+def model_count(db_name):
+    if (db_name not in db_by_name):
         abort(404)
-    return jsonify(create_dict(contributor))
+    return str(db_by_name[db_name].query.count())
 
-
-@app.route('/api/projects/')
-def projects():
-    """ 
-    returns a json list of all projects 
+@app.route('/api/<db_name>/')
+def model_page(db_name, start=None, end=None, orderby=None, descending=None):
     """
-    projects = Project.query.all()
-    return jsonify([create_dict(p) for p in projects])
-
-
-@app.route('/api/projects/<id>')
-def probejct(id):
-    """ 
-    returns json for the project with the given id 
+    returns json list of items in database
     """
-    project = Project.query.filter_by(id=id).first()
-    if project == None:
+    start = request.args.get("start")
+    end = request.args.get("end")
+    orderby = request.args.get("orderby")
+    descending = request.args.get("descending")
+    if (start == None and end == None):
+        if db_name not in db_by_name:
+            abort(404)
+        return jsonify([x.dictionary() for x in db_by_name[db_name].query.all()])
+    elif (start != None and end != None):
+        if (int(start) > int(end)):
+            abort(404)
+        if db_name not in db_by_name:
+            abort(404)
+        if (orderby != None and descending == "true"):
+            result = db_by_name[db_name].query.order_by(desc(orderby)).limit(int(end) - int(start)).offset(int(start)).all()
+            return jsonify([x.dictionary() for x in result])
+        elif (orderby != None):
+            result = db_by_name[db_name].query.order_by(orderby).limit(int(end) - int(start)).offset(int(start)).all()
+            return jsonify([x.dictionary() for x in result])
+        else:
+            result = db_by_name[db_name].query.limit(int(end) - int(start)).offset(int(start)).all()
+            return jsonify([x.dictionary() for x in result])
+    else:
         abort(404)
-    return jsonify(create_dict(project))
 
-
-@app.route('/api/languages/')
-def languages():
-    """ 
-    returns a json list of all languages
+@app.route('/api/<db_name>/<id>')
+def single_model(db_name, id):
     """
-    languages = Language.query.all()
-    return jsonify([create_dict(l) for l in languages])
-
-
-@app.route('/api/languages/<id>')
-def language(id):
-    """ 
-    retuns json for the language with the given name 
+    returns json for the database item with the given id
     """
-    language = Language.query.filter_by(id=id).first()
-    if language == None:
+    if db_name not in db_by_name:
         abort(404)
-    return jsonify(create_dict(language))
-
-
-@app.route('/api/companies/')
-def companies():
-    """ 
-    returns a json list of all companies 
-    """
-    companies = Company.query.all()
-    return jsonify([create_dict(c) for c in companies])
-
-
-@app.route('/api/companies/<id>')
-def company(id):
-    """ 
-    returns json of for the company with the given id 
-    """
-    company = Company.query.filter_by(id=id).first()
-    if company == None:
+    ret = db_by_name[db_name].query.filter_by(id=id).first()
+    if ret == None:
         abort(404)
-    return jsonify(create_dict(company))
-
+    return jsonify(ret.dictionary())
 
 @app.errorhandler(404)
 def resource_not_found(e):
@@ -126,7 +103,6 @@ def resource_not_found(e):
     error handinging for a 'not found' error
     """
     return "Resource not found", 404
-
 
 def shell_context():
     context = {
@@ -141,14 +117,6 @@ def shell_context():
     return context
 
 manager.add_command('shell', Shell(make_context=shell_context))
-
-
-def create_dict(obj):
-    """
-    calls the obj.dictionary() and returns the result
-    """
-    return obj.dictionary()
-#    return {}
 
 if __name__ == "__main__":
     manager.run()
