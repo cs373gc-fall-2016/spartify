@@ -2,11 +2,8 @@
   <div class="col-md-2">
   </div>
   <div class="col-md-8">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Highlighted Companies</h3>
-      </div>
-      <div class="panel-body">
+    <div>
+      <div>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
@@ -19,7 +16,7 @@
           <div class="carousel-inner" role="listbox">
             <div *ngFor="let company of companies" class="item" [ngClass]="{active: isActive()}">
                 <a routerLink="/companies/{{company.id}}" routerLinkActive="active">
-                  <img src="{{company.avatar_url}}">
+                  <div class="full-screen" style="background-image:url({{companies.avatar_url}});"></div>
                 </a>
             </div>
           </div>
