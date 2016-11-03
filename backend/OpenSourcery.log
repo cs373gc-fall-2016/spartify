@@ -1,3 +1,494 @@
+commit f0a1ebdb7513651d29c64ec52c5acef4833af9db
+Merge: fd70cfa 024af0c
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Thu Nov 3 08:57:38 2016 -0500
+
+    Merge pull request #82 from cs373gc-fall-2016/unit-tests
+    
+    Super Hacky way to run the unit tests
+
+commit 024af0c61b599cd5136636c421515d3f1eb8c7e9
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Tue Nov 1 14:14:50 2016 -0500
+
+    Super Hacky way to run the unit tests
+
+commit 2dd49d15161a5e91b2804bae239d193cbd7217f3
+Merge: 155bc40 9881f8a
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Mon Oct 31 19:17:41 2016 -0500
+
+    Merge pull request #79 from cs373gc-fall-2016/lazy-sort-fix
+    
+    Made it so we can sort even though we use lazy loading
+
+commit 155bc4072f5db236d88327cc52caae4be77c9308
+Merge: 6f82a94 2100da4
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Mon Oct 31 17:18:02 2016 -0500
+
+    Merge pull request #77 from cs373gc-fall-2016/lazy-load
+    
+    implemented lazy loading of the tables and stuff
+
+commit 9881f8a01918bff835814ef026e70bb5148e9d19
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Mon Oct 31 14:01:42 2016 -0500
+
+    Made it so we can sort even though we use lazy loading
+
+commit 6f82a94146dfd472f2b050ba5f4bb1c82b33d600
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Mon Oct 31 12:13:36 2016 -0500
+
+    updated full dump file removing 'null'
+    
+    replaced attributes that had a literal 'null' string with an
+    actual null string
+
+commit 398c643d04090b23f2d981db8f8705c220a92e17
+Merge: e4cb7c6 5780d2c
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Mon Oct 31 14:39:14 2016 -0500
+
+    Merge pull request #76 from cs373gc-fall-2016/ui-bugfixes
+    
+    Fixed some bugs
+
+commit e4cb7c67220638c5c7cf837bb94e48f786506ba3
+Merge: 5e61bc0 0067c8a
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Mon Oct 31 14:35:21 2016 -0500
+
+    Merge pull request #75 from cs373gc-fall-2016/refactor
+    
+    Looks Good
+
+commit 2100da4c983b481308719ed6098fe777f669fb18
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Mon Oct 31 12:03:02 2016 -0500
+
+    implemented lazy loading of the tables and stuff
+
+commit 0067c8aa410e98965e73f54ed88fc7658f469597
+Author: Vladislav Manoylo <vladislav.manoylo@gmail.com>
+Date:   Sun Oct 30 15:47:13 2016 -0500
+
+    Factor out database table
+
+commit 336b4cbcb611805145aa72d429924a62629f48ac
+Author: Vladislav Manoylo <vladislav.manoylo@gmail.com>
+Date:   Sun Oct 30 15:44:21 2016 -0500
+
+    Remove trivial helper function
+
+commit 89208e721b3733de8d591af1180d7163e4b3ac2e
+Author: Vladislav Manoylo <vladislav.manoylo@gmail.com>
+Date:   Sun Oct 30 15:42:43 2016 -0500
+
+    Combine functions looking for single model
+
+commit 2a3809bf7bed3b7a308eadcc5aa832cfd987d83d
+Author: Vladislav Manoylo <vladislav.manoylo@gmail.com>
+Date:   Sun Oct 30 15:39:19 2016 -0500
+
+    Combine model page functions
+
+commit 5780d2c47ad8dd7800ff344a711f0f088a8e21cd
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Mon Oct 31 09:16:02 2016 -0500
+
+    Fixed some bugs
+    
+    * Made it so it ther are no members for a Company, the members panel is not rendered, similarly for the other panels
+    * Some contributors do not have a location, if this is the case the location link is no longer rendered
+    * Made it so a details page queries the backend directly rather the getting all the data and searching for the specficic ones desired
+
+commit fd70cfa17ce8d528e8c6b3f40ddd6b578642ffa3
+Author: Jack Jiang <jackjiang@utexas.edu>
+Date:   Sun Oct 30 21:22:05 2016 -0500
+
+    cleaned up requirements.txt file a little
+
+commit 5e61bc0211a21d057d5ce879b9feead719cada2e
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sun Oct 30 17:53:20 2016 -0500
+
+    Removed "null" literals and replace them with actual null strings
+    
+    Reduced data set a little farther as well
+
+commit 2c68aa59dfd3138a7e3b00ea1ef15e5b4edb6e19
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sun Oct 30 17:30:25 2016 -0500
+
+    Somehow these got out of date readding them
+
+commit 7a938bca8b028d67dc58cf7234cb844514f5562d
+Merge: 8f640c0 4fdd1ee
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Sun Oct 30 17:19:29 2016 -0500
+
+    Merge pull request #74 from cs373gc-fall-2016/travis-fix
+    
+    Travis fix
+
+commit 8f640c02a15e6e98bba6cd613c93d4ac6eb7ea6b
+Merge: 0f0db47 9e09677
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Sun Oct 30 17:16:18 2016 -0500
+
+    Merge pull request #70 from cs373gc-fall-2016/routing
+    
+    Now able to correctly route through backend
+
+commit 4fdd1eeddbcf003d2889c363f40586cee0189ce6
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sun Oct 30 17:14:17 2016 -0500
+
+    updated
+
+commit 0f362ef21a46c28aacac164541d1671ea81dcdb2
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sun Oct 30 15:57:38 2016 -0500
+
+    tweaks
+
+commit af90f5b890c6a902fb98d615d05efd63180e9001
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sun Oct 30 15:48:03 2016 -0500
+
+    tweaked yml
+
+commit 274fb1d19829bbd9714ca73678b348df3d606bd4
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sun Oct 30 15:46:16 2016 -0500
+
+    Re-Added .travis.yml
+
+commit 9e096778a03c8333a7c61bac96fba80b7d72f210
+Author: Vladislav Manoylo <vladislav.manoylo@gmail.com>
+Date:   Sun Oct 30 14:18:59 2016 -0500
+
+    Add hack for routing from backend
+    
+    Resolve #68
+
+commit fc4bbff47428bc2f380b9dfb573fb7fffd3a6b36
+Author: Vladislav Manoylo <vladislav.manoylo@gmail.com>
+Date:   Sun Oct 30 14:03:59 2016 -0500
+
+    Add 'make run' command for back end
+
+commit 64345a72931fa0ff88b19986b132422570c28621
+Author: Vladislav Manoylo <vladislav.manoylo@gmail.com>
+Date:   Sun Oct 30 13:12:12 2016 -0500
+
+    Ignore vim session file
+
+commit 0f0db47107f8ac0e80becc8b25b35eba0e19b521
+Merge: b460327 0895925
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Sun Oct 30 12:45:19 2016 -0500
+
+    Merge remote-tracking branch 'origin/angular2-port' into dev
+    
+    Merged angular2 port branch into dev
+
+commit 089592534586c211aa77c80362fce853bf6e72bc
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Sun Oct 30 05:18:44 2016 -0500
+
+    tweaks
+
+commit 3307c1ba3717361e0f0c3f2639035891f3146792
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Fri Oct 28 21:11:49 2016 -0500
+
+    fixed bug with tables, used data grids in detail pages
+
+commit 5d9e43b8415fd91fc27d9ec15bf45d96059aad52
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Fri Oct 28 17:41:25 2016 -0500
+
+    Fixed small bug in services
+
+commit b0e1b9d234aef990faa620377d8ca5aa89e91c08
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Fri Oct 28 16:52:19 2016 -0500
+
+    Updated readme
+
+commit 129d33e9904ce4b64886df3f7450e33b2e3cbafe
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Fri Oct 28 16:48:48 2016 -0500
+
+    Made Tables paginated with sortable columns
+
+commit b460327ee2a08dea9c75a68179c7722ae03c50ed
+Author: Carlos Trevino <carlostrevino@utexas.edu>
+Date:   Fri Oct 28 11:55:40 2016 -0500
+
+    Simplified API routes.
+
+commit 496b957b5ddeadc3083e9a835ab87b0210655035
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Fri Oct 28 08:49:18 2016 -0500
+
+    fixed typo in the in memory data service
+
+commit fb88993e6a39a06605b4e5d88d18dd4f866419ea
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Fri Oct 28 08:34:28 2016 -0500
+
+    Fixed Typo in the README
+
+commit 7a24528ea20434c51de767a92bedcb1f3e70a1ab
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Fri Oct 28 08:32:56 2016 -0500
+
+    updated
+
+commit fb500076642b60b09f2be9e9a72ab9395ba983e6
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Fri Oct 28 08:28:57 2016 -0500
+
+    No longer needed, Using angular templates
+
+commit 6f47cda6dc0d537d4356db0cef608895d8fb9efe
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Tue Oct 25 01:06:00 2016 -0500
+
+    More porting, almost done
+
+commit 046de34b4a9c5ea19c2a7f7a17e36bcef98e5991
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Mon Oct 24 09:20:08 2016 -0500
+
+    fixed typo
+
+commit 8e0755d0c24ce6a44e06dd19f537506792c31bbb
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Mon Oct 24 09:18:56 2016 -0500
+
+    updated README.md
+
+commit 965bfca11a780f65d85ce1151f18ce9e6165a187
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Mon Oct 24 09:16:04 2016 -0500
+
+    Porting Front End over to Angular2.
+    
+    All previous files our now in the backend directory. New files
+    are for the Angular2 front end.
+
+commit c1bdd100cbc8e41d436094c9fd5d3a1596bd9513
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sat Oct 22 08:32:18 2016 -0500
+
+    more interface tweaks
+
+commit d994dfc87aaa356fd962fe5651020b80a3183c1f
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sat Oct 22 01:24:17 2016 -0500
+
+    Updated interface
+    
+    Made it so that if there is more than 12 of an item then
+    paging occurs
+
+commit a3d552e41b7ab86acdb77b78b7a8b8ef5774d95a
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Fri Oct 21 21:55:20 2016 -0500
+
+    Fixed bug in the carousel
+
+commit 79586b863c0b31d0f7c29f03d34a4bfe54a4565b
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Fri Oct 21 21:45:13 2016 -0500
+
+    more interface tweaks
+
+commit 35383db09fb11d98602b172c58b581f339770ceb
+Merge: 224b0c7 8c0bb0d
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Fri Oct 21 18:45:01 2016 -0500
+
+    Merge branch 'master' into dev
+
+commit 224b0c7b6f742b268a08ba1a8a6d3b20099e3072
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Fri Oct 21 18:44:16 2016 -0500
+
+    tweaked the about page
+
+commit 8c0bb0d03ef34645ee3a2b0e99489ea36744d15d
+Author: lock14 <brianrbechtel@gmail.com>
+Date:   Fri Oct 21 13:18:31 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit ef092a75c867b89c78902f73b7a5c17bbc66f3ec
+Merge: 581032b a501927
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Thu Oct 20 19:35:33 2016 -0500
+
+    Merge pull request #44 from cs373gc-fall-2016/dev
+    
+    fixed bug
+
+commit a5019272061fe752daab03391e9f181df4ac1ea3
+Author: Ubuntu <ubuntu@ip-172-31-21-2.us-west-2.compute.internal>
+Date:   Fri Oct 21 00:31:59 2016 +0000
+
+    fixed bug
+
+commit 581032bff865733ad5d1b2c5b29705ef2df1a93a
+Merge: 70c1f5a e869f3e
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Thu Oct 20 18:12:59 2016 -0500
+
+    Merge pull request #43 from cs373gc-fall-2016/dev
+    
+    Kludge to fix bug with name 'c#'
+
+commit e869f3ef20052ac6568e498a52427cea23ece1a6
+Author: Ubuntu <ubuntu@ip-172-31-21-2.us-west-2.compute.internal>
+Date:   Thu Oct 20 23:10:12 2016 +0000
+
+    Kludge to fix bug with name 'c#'
+    
+    A more permant fix such as URL encoding the names should be implented in
+    the future
+
+commit 70c1f5a76fc6805851eacb00ca4e2ff87a3a8961
+Merge: d98b287 f77c34c
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Thu Oct 20 18:01:54 2016 -0500
+
+    Merge pull request #42 from cs373gc-fall-2016/dev
+    
+    Dev
+
+commit d98b287380bcab03719bff78e7a4184965de173c
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Thu Oct 20 13:20:47 2016 -0500
+
+    updated descriptions for my role
+
+commit b10a1bc48c6f72db0d3959b441c940a15b5d9c29
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Thu Oct 20 13:01:27 2016 -0500
+
+    updated descriptions for my role
+
+commit f77c34c92870861f5eef72b20f0db3aa004e30de
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Thu Oct 20 12:58:17 2016 -0500
+
+    Fixed a typo and made things slightly more mobile friendly
+
+commit 3d14f345aa2d676ed9d382b8c5ef17bcfa3c353c
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Thu Oct 20 12:29:53 2016 -0500
+
+    dev was behind master
+
+commit 71a96642854a40ca07438a3ddf9bc3614226cea8
+Merge: d98b287 4c3cc2c
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Thu Oct 20 12:29:03 2016 -0500
+
+    Merge branch 'dev' of https://github.com/cs373gc-fall-2016/spartify into dev
+
+commit 4c3cc2cfa047cf9f6be775d596097b0616ddb896
+Merge: 0b7015c 68d6284
+Author: Jack Jiang <jackjiang@utexas.edu>
+Date:   Thu Oct 20 17:11:19 2016 -0500
+
+    Merge branch 'dev' of https://github.com/cs373gc-fall-2016/spartify into dev
+
+commit 0b7015c4eec5420b5a1bdd228f52cf979668b0f0
+Author: Jack Jiang <jackjiang@utexas.edu>
+Date:   Thu Oct 20 17:11:03 2016 -0500
+
+    removed -pkg-resources==0.0.0 dependency and old index.html
+
+commit 3074794c1d8bc30f72256eab90482adf4a6eb376
+Author: Ubuntu <ubuntu@ip-172-31-21-2.us-west-2.compute.internal>
+Date:   Thu Oct 20 15:52:13 2016 +0000
+
+    found a typo
+
+commit 4783271cab7533b594bd1825efeb99b0820fddf7
+Merge: a5c4e79 68d6284
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Thu Oct 20 08:45:53 2016 -0700
+
+    Merge pull request #37 from cs373gc-fall-2016/dev
+    
+    Dev
+
+commit a5c4e7976241c5be2ddbf1d4acf2164cf73f8b32
+Merge: f791455 cf293ff
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Thu Oct 20 07:41:20 2016 -0700
+
+    Merge pull request #30 from cs373gc-fall-2016/ui_idea
+    
+    Tuned links into squares
+
+commit f791455a8a256a4f54e008d7a407b42f42c2e0dc
+Author: Ubuntu <ubuntu@ip-172-31-21-2.us-west-2.compute.internal>
+Date:   Thu Oct 20 12:12:31 2016 +0000
+
+    For hosing on AWS
+
+commit 5890fe5358e5c4d8117514ddcb421fbe10cfd6d7
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Thu Oct 20 07:04:32 2016 -0500
+
+    closes #6
+    
+    Updated UML.pdf
+
+commit 68d628430a7213e715aa70b1ff0cb20baca41edc
+Merge: 17f6606 077d0f4
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Thu Oct 20 05:41:52 2016 -0500
+
+    Merge branch 'ui_idea' into dev
+
+commit 17f6606cc57e13eae5d38b63ec1c2a7afb8d3bee
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Thu Oct 20 05:36:40 2016 -0500
+
+    test
+
+commit 077d0f4af7db245c1dd674393d0609b27c38549c
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Thu Oct 20 05:33:38 2016 -0500
+
+    Finished About page, Tweaked UI
+
+commit f69671425c36463bf26682cba961b02e56015433
+Author: Ubuntu <ubuntu@ip-172-31-21-2.us-west-2.compute.internal>
+Date:   Thu Oct 20 10:21:50 2016 +0000
+
+    Unit test number was wrong
+
+commit 0be4d68a0347818638ac216cd3ef43188f197ca0
+Author: Ubuntu <ubuntu@ip-172-31-21-2.us-west-2.compute.internal>
+Date:   Thu Oct 20 10:19:56 2016 +0000
+
+    Not needed
+
+commit fb798944b9241ff13b3ffd9f0159d62e0d3ada53
+Author: Ubuntu <ubuntu@ip-172-31-21-2.us-west-2.compute.internal>
+Date:   Thu Oct 20 10:18:49 2016 +0000
+
+    Documentation
+
 commit a261a99bcfe0c4d4bd069fca8005ef4f257bb869
 Author: Ubuntu <ubuntu@ip-172-31-21-2.us-west-2.compute.internal>
 Date:   Thu Oct 20 09:59:20 2016 +0000
@@ -9,6 +500,12 @@ Author: Ubuntu <ubuntu@ip-172-31-21-2.us-west-2.compute.internal>
 Date:   Thu Oct 20 09:54:46 2016 +0000
 
     more unit tests
+
+commit cf293ff25cd309df35c740ecee24f7b1944ae374
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Thu Oct 20 04:37:08 2016 -0500
+
+    Tuned links into squares
 
 commit dc2f088976116a381d890e31a78050979be489f4
 Merge: 3570b11 80e57b1
