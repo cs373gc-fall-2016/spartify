@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func, desc
 from flask_script import Manager, Shell
 from db import db, app, manager
+import subprocess
 from models import Contributor, Paradigm, Language, Project, Company
 import models
 
@@ -41,6 +42,11 @@ def send_systemconfig():
 @app.route('/system-config.js.map')
 def send_systemconfig_map():
     return send_from_directory('..', 'system-config.js.map')
+
+@app.route('/runtests/')
+def run_unit_tests():
+    subprocess.check_output(["bash", "test.sh"])
+    return send_from_directory('.', 'tests.html')
 
 db_by_name = {
         "contributors": Contributor,
