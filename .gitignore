@@ -15,3 +15,4 @@ venv
 TestOpenSourcery.tmp
 .idea
 Session.vim
+tests.html

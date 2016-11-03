@@ -9,36 +9,39 @@
 <td valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>backend</strong></big></big></font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/ubuntu/spartify/backend.py">/home/ubuntu/spartify/backend.py</a></font></td></tr></table>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/brianb/spartify/backend/backend.py">/home/brianb/spartify/backend/backend.py</a></font></td></tr></table>
     <p></p>
 <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="models.html">models</a><br>
+</td><td width="25%" valign=top><a href="subprocess.html">subprocess</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#eeaa77">
 <td colspan=3 valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-about_temp"><strong>about_temp</strong></a>()</dt><dd><tt>renders&nbsp;the&nbsp;about&nbsp;page</tt></dd></dl>
- <dl><dt><a name="-comp_temp"><strong>comp_temp</strong></a>()</dt><dd><tt>renders&nbsp;the&nbsp;companies&nbsp;page</tt></dd></dl>
- <dl><dt><a name="-comp_tmp"><strong>comp_tmp</strong></a>(id)</dt><dd><tt>renders&nbsp;the&nbsp;page&nbsp;for&nbsp;the&nbsp;company&nbsp;with&nbsp;the&nbsp;given&nbsp;id</tt></dd></dl>
- <dl><dt><a name="-companies"><strong>companies</strong></a>()</dt><dd><tt>returns&nbsp;a&nbsp;json&nbsp;list&nbsp;of&nbsp;all&nbsp;companies</tt></dd></dl>
- <dl><dt><a name="-company"><strong>company</strong></a>(id)</dt><dd><tt>returns&nbsp;json&nbsp;of&nbsp;for&nbsp;the&nbsp;company&nbsp;with&nbsp;the&nbsp;given&nbsp;id</tt></dd></dl>
- <dl><dt><a name="-contr_temp"><strong>contr_temp</strong></a>()</dt><dd><tt>renders&nbsp;the&nbsp;contributors&nbsp;page</tt></dd></dl>
- <dl><dt><a name="-contr_tmp"><strong>contr_tmp</strong></a>(id)</dt><dd><tt>renders&nbsp;the&nbsp;page&nbsp;for&nbsp;the&nbsp;contributor&nbsp;with&nbsp;the&nbsp;given&nbsp;id</tt></dd></dl>
- <dl><dt><a name="-contributor"><strong>contributor</strong></a>(id)</dt><dd><tt>returns&nbsp;json&nbsp;for&nbsp;the&nbsp;contributor&nbsp;with&nbsp;the&nbsp;given&nbsp;id</tt></dd></dl>
- <dl><dt><a name="-contributors"><strong>contributors</strong></a>()</dt><dd><tt>returns&nbsp;a&nbsp;json&nbsp;list&nbsp;of&nbsp;all&nbsp;contributors</tt></dd></dl>
- <dl><dt><a name="-create_dict"><strong>create_dict</strong></a>(obj)</dt><dd><tt>calls&nbsp;the&nbsp;obj.dictionary()&nbsp;and&nbsp;returns&nbsp;the&nbsp;result</tt></dd></dl>
- <dl><dt><a name="-index"><strong>index</strong></a>()</dt><dd><tt>renders&nbsp;the&nbsp;landing&nbsp;page</tt></dd></dl>
- <dl><dt><a name="-lang_temp"><strong>lang_temp</strong></a>()</dt><dd><tt>renders&nbsp;the&nbsp;languages&nbsp;page</tt></dd></dl>
- <dl><dt><a name="-lang_tmp"><strong>lang_tmp</strong></a>(name)</dt><dd><tt>renders&nbsp;the&nbsp;page&nbsp;for&nbsp;the&nbsp;given&nbsp;language</tt></dd></dl>
- <dl><dt><a name="-language"><strong>language</strong></a>(name)</dt><dd><tt>retuns&nbsp;json&nbsp;for&nbsp;the&nbsp;language&nbsp;with&nbsp;the&nbsp;given&nbsp;name</tt></dd></dl>
- <dl><dt><a name="-languages"><strong>languages</strong></a>()</dt><dd><tt>returns&nbsp;a&nbsp;json&nbsp;list&nbsp;of&nbsp;all&nbsp;languages</tt></dd></dl>
- <dl><dt><a name="-probejct"><strong>probejct</strong></a>(id)</dt><dd><tt>returns&nbsp;json&nbsp;for&nbsp;the&nbsp;project&nbsp;with&nbsp;the&nbsp;given&nbsp;id</tt></dd></dl>
- <dl><dt><a name="-proj_temp"><strong>proj_temp</strong></a>()</dt><dd><tt>renders&nbsp;the&nbsp;projects&nbsp;page</tt></dd></dl>
- <dl><dt><a name="-proj_tmp"><strong>proj_tmp</strong></a>(id)</dt><dd><tt>renders&nbsp;the&nbsp;page&nbsp;for&nbsp;the&nbsp;project&nbsp;with&nbsp;the&nbsp;given&nbsp;id</tt></dd></dl>
- <dl><dt><a name="-projects"><strong>projects</strong></a>()</dt><dd><tt>returns&nbsp;a&nbsp;json&nbsp;list&nbsp;of&nbsp;all&nbsp;projects</tt></dd></dl>
+<td width="100%"><dl><dt><a name="-index"><strong>index</strong></a>(path<font color="#909090">=''</font>)</dt><dd><tt>sends&nbsp;all&nbsp;non&nbsp;defined&nbsp;paths&nbsp;to&nbsp;index.html&nbsp;so<br>
+Angular2&nbsp;routing&nbsp;can&nbsp;take&nbsp;over</tt></dd></dl>
+ <dl><dt><a name="-model_count"><strong>model_count</strong></a>(db_name)</dt><dd><tt>return&nbsp;a&nbsp;count&nbsp;of&nbsp;how&nbsp;many&nbsp;items&nbsp;are&nbsp;in&nbsp;the&nbsp;database</tt></dd></dl>
+ <dl><dt><a name="-model_page"><strong>model_page</strong></a>(db_name, start<font color="#909090">=None</font>, end<font color="#909090">=None</font>, orderby<font color="#909090">=None</font>, descending<font color="#909090">=None</font>)</dt><dd><tt>returns&nbsp;json&nbsp;list&nbsp;of&nbsp;items&nbsp;in&nbsp;database</tt></dd></dl>
  <dl><dt><a name="-resource_not_found"><strong>resource_not_found</strong></a>(e)</dt><dd><tt>error&nbsp;handinging&nbsp;for&nbsp;a&nbsp;'not&nbsp;found'&nbsp;error</tt></dd></dl>
+ <dl><dt><a name="-run_unit_tests"><strong>run_unit_tests</strong></a>()</dt><dd><tt>path&nbsp;to&nbsp;run&nbsp;unit&nbsp;tests.</tt></dd></dl>
+ <dl><dt><a name="-send_app"><strong>send_app</strong></a>(path)</dt><dd><tt>path&nbsp;to&nbsp;frontend&nbsp;static&nbsp;files&nbsp;such&nbsp;as&nbsp;/app/css/app.css</tt></dd></dl>
+ <dl><dt><a name="-send_favicon"><strong>send_favicon</strong></a>()</dt><dd><tt>path&nbsp;to&nbsp;favicon.ico</tt></dd></dl>
+ <dl><dt><a name="-send_nodemodules"><strong>send_nodemodules</strong></a>(path)</dt><dd><tt>path&nbsp;to&nbsp;Angular2&nbsp;javascript&nbsp;libaries</tt></dd></dl>
+ <dl><dt><a name="-send_systemconfig"><strong>send_systemconfig</strong></a>()</dt><dd><tt>path&nbsp;to&nbsp;system-config.js.&nbsp;this&nbsp;file&nbsp;tells&nbsp;the&nbsp;Angular2<br>
+front-end&nbsp;where&nbsp;to&nbsp;look&nbsp;for&nbsp;the&nbsp;javascript&nbsp;files.</tt></dd></dl>
+ <dl><dt><a name="-send_systemconfig_map"><strong>send_systemconfig_map</strong></a>()</dt><dd><tt>realted&nbsp;to&nbsp;system-config.js.&nbsp;helps&nbsp;the&nbsp;front-end&nbsp;locate<br>
+required&nbsp;javascript&nbsp;files.</tt></dd></dl>
  <dl><dt><a name="-shell_context"><strong>shell_context</strong></a>()</dt></dl>
+ <dl><dt><a name="-single_model"><strong>single_model</strong></a>(db_name, id)</dt><dd><tt>returns&nbsp;json&nbsp;for&nbsp;the&nbsp;database&nbsp;item&nbsp;with&nbsp;the&nbsp;given&nbsp;id</tt></dd></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
@@ -49,5 +52,8 @@
 <td width="100%"><strong>abort</strong> = &lt;werkzeug.exceptions.Aborter object&gt;<br>
 <strong>app</strong> = &lt;Flask 'db'&gt;<br>
 <strong>db</strong> = &lt;SQLAlchemy engine='postgresql://localhost/opensourcery'&gt;<br>
-<strong>manager</strong> = &lt;flask_script.Manager object&gt;</td></tr></table>
+<strong>db_by_name</strong> = {'companies': &lt;class 'models.Company'&gt;, 'contributors': &lt;class 'models.Contributor'&gt;, 'languages': &lt;class 'models.Language'&gt;, 'projects': &lt;class 'models.Project'&gt;}<br>
+<strong>func</strong> = &lt;sqlalchemy.sql.functions._FunctionGenerator object&gt;<br>
+<strong>manager</strong> = &lt;flask_script.Manager object&gt;<br>
+<strong>request</strong> = &lt;LocalProxy unbound&gt;</td></tr></table>
 </body></html>
