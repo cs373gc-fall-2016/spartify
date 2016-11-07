@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, abort, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import func, desc
+from sqlalchemy import func, desc, or_, cast, String
 from flask_script import Manager, Shell
 from db import db, app, manager
 import subprocess
@@ -126,7 +126,6 @@ def model_page(db_name, start=None, end=None, orderby=None, descending=None):
     else:
         abort(404)
 
-
 @app.route('/api/<db_name>/<id>')
 def single_model(db_name, id):
     """
@@ -139,6 +138,37 @@ def single_model(db_name, id):
         abort(404)
     return jsonify(ret.dictionary())
 
+
+@app.route('/api/search/<db_name>/')
+def model_search(db_name, query=None, start=None, end=None, type=None):
+    """
+    returns json list of items in database
+    """
+    tokens = ["%" + str(tok) + "%" for tok in request.args.getlist("q")]
+    print(tokens)
+    start = request.args.get("start")
+    end = request.args.get("end")
+    type = request.args.get("type")
+    if (start == None and end == None):
+        if db_name not in db_by_name:
+            abort(404)
+        model = db_by_name[db_name]
+        query = model.query
+        if (type == "or"):
+            query = query.filter(or_(*model.or_queries(tokens)))
+        else:
+            query = query.filter(*model.and_queries(tokens))
+        print(str(query))
+        result = query.all()
+        return jsonify([x.dictionary() for x in result])
+    elif (start != None and end != None):
+        if (int(start) > int(end)):
+            abort(404)
+        if db_name not in db_by_name:
+            abort(404)
+        return jsonify(tokens)
+    else:
+        abort(404)
 
 @app.errorhandler(404)
 def resource_not_found(e):
