@@ -83,7 +83,7 @@ db_by_name = {
 }
 
 
-@app.route('/api/count/<db_name>')
+@app.route('/api/count/<db_name>/')
 def model_count(db_name):
     """
     return a count of how many items are in the database
@@ -155,9 +155,9 @@ def model_search(db_name, query=None, start=None, end=None, type=None):
         model = db_by_name[db_name]
         query = model.query
         if (type == "or"):
-            query = query.filter(or_(*model.or_queries(tokens)))
+            query = query.filter(or_(*model.column_queries(tokens)))
         else:
-            query = query.filter(*model.and_queries(tokens))
+            query = query.filter(*model.column_queries(tokens)) #implicitly 'and' the filters
         print(str(query))
         result = query.all()
         return jsonify([x.dictionary() for x in result])

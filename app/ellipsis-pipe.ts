@@ -4,13 +4,13 @@ import { Pipe } from '@angular/core';
     name: 'ellipsis'
 })
 export class EllipsisPipe {
-    transform(val:string, args:any) {
-        if (args === undefined) {
+    transform(val:string, numchar:number) {
+        if (numchar === undefined) {
             return val;
         }
 
-        if (val != null && val.length > args) {
-            return val.substring(0, args) + '...';
+        if (val != null && val.length > numchar) {
+            return val.substring(0, numchar) + '...';
         } else {
             return val;
         }

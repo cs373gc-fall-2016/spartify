@@ -72,7 +72,7 @@ class Contributor(db.Model):
         return '<Contributor %r>' % self.username
     
     @staticmethod
-    def and_queries(tokens):
+    def column_queries(tokens):
         column_queries = []
         for token in tokens:
             column_queries.append(or_(func.lower(Contributor.username).like(token),
@@ -80,16 +80,6 @@ class Contributor(db.Model):
                                       func.lower(Contributor.url).like(token),
                                       func.lower(Contributor.avatar_url).like(token),
                                       func.lower(Contributor.location).like(token)))
-        return column_queries
-
-    @staticmethod
-    def or_queries(tokens):
-        column_queries = []
-        column_queries.append(or_(*[func.lower(Contributor.username).like(token) for token in tokens]))
-        column_queries.append(or_(*[func.lower(Contributor.email).like(token) for token in tokens]))
-        column_queries.append(or_(*[func.lower(Contributor.url).like(token) for token in tokens]))
-        column_queries.append(or_(*[func.lower(Contributor.avatar_url).like(token) for token in tokens]))
-        column_queries.append(or_(*[func.lower(Contributor.location).like(token) for token in tokens]))
         return column_queries
 
     def dictionary(self):
@@ -149,7 +139,7 @@ class Language(db.Model):
         return '<Language %r>' % self.name
 
     @staticmethod
-    def and_queries(tokens):
+    def column_queries(tokens):
         column_queries = []
         for token in tokens:
             column_queries.append(or_(func.lower(Language.name).like(token),
@@ -157,16 +147,6 @@ class Language(db.Model):
                                       func.lower(Language.type).like(token),
                                       cast(Language.firstAppeared, String).like(token),
                                       func.lower(Language.description).like(token)))
-        return column_queries
-
-    @staticmethod
-    def or_queries(tokens):
-        column_queries = []
-        column_queries.append(or_(*[func.lower(Language.name).like(token) for token in tokens]))
-        column_queries.append(or_(*[func.lower(Language.creator).like(token) for token in tokens]))
-        column_queries.append(or_(*[func.lower(Language.type).like(token) for token in tokens]))
-        column_queries.append(or_(*[cast(Language.firstAppeared, String).like(token) for token in tokens]))
-        column_queries.append(or_(*[func.lower(Language.description).like(token) for token in tokens]))
         return column_queries
 
     def dictionary(self):
@@ -214,7 +194,7 @@ class Project(db.Model):
         return '<Project %r>' % self.name
 
     @staticmethod
-    def and_queries(tokens):
+    def column_queries(tokens):
         column_queries = []
         for token in tokens:
             column_queries.append(or_(func.lower(Project.name).like(token),
@@ -222,16 +202,6 @@ class Project(db.Model):
                                       func.lower(cast(Project.createdDate, String)).like(token),
                                       func.lower(cast(Project.private, String)).like(token),
                                       func.lower(Project.description).like(token)))
-        return column_queries
-
-    @staticmethod
-    def or_queries(tokens):
-        column_queries = []
-        column_queries.append(or_(*[func.lower(Project.name).like(token) for token in tokens]))
-        column_queries.append(or_(*[func.lower(Project.url).like(token) for token in tokens]))
-        column_queries.append(or_(*[func.lower(cast(Project.createdDate, String)).like(token) for token in tokens]))
-        column_queries.append(or_(*[func.lower(cast(Project.private, String)).like(token) for token in tokens]))
-        column_queries.append(or_(*[func.lower(Project.description).like(token) for token in tokens]))
         return column_queries
 
     def dictionary(self):
@@ -278,7 +248,7 @@ class Company(db.Model):
         return '<Company %r>' % self.name
 
     @staticmethod
-    def and_queries(tokens):
+    def column_queries(tokens):
         column_queries = []
         for token in tokens:
             column_queries.append(or_(func.lower(Company.name).like(token),
@@ -286,16 +256,6 @@ class Company(db.Model):
                                       func.lower(Company.url).like(token),
                                       func.lower(Company.avatar_url).like(token),
                                       func.lower(Company.description).like(token)))
-        return column_queries
-
-    @staticmethod
-    def or_queries(tokens):
-        column_queries = []
-        column_queries.append(or_(*[func.lower(Company.name).like(token) for token in tokens]))
-        column_queries.append(or_(*[func.lower(Company.email).like(token) for token in tokens]))
-        column_queries.append(or_(*[func.lower(Company.url).like(token) for token in tokens]))
-        column_queries.append(or_(*[func.lower(Company.avatar_url).like(token) for token in tokens]))
-        column_queries.append(or_(*[func.lower(Company.description).like(token) for token in tokens]))
         return column_queries
 
     def dictionary(self):
