@@ -14,11 +14,11 @@
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
-            <div *ngFor="let company of companies" class="item" [ngClass]="{active: isActive()}">
-                <a routerLink="/companies/{{company.id}}" routerLinkActive="active">
-                  <div class="fill" style="background-image:url({{company.avatar_url}});"></div>
-                  <!-- <img src="{{company.avatar_url}}"> -->
-                </a>
+            <div *ngFor="let pic of pics" class="item" [ngClass]="{active: isActive()}">
+<!--               <div style="background-image: url("app/img/google.jpg")" />
+ -->              <div [ngStyle]="{'background-image': 'url(\'app/img/google.jpg\')'}"></div>
+                  <!-- <div [ngStyle]="{'background-image': 'url(' + photo + ')'}"></div> -->
+
             </div>
           </div>
 

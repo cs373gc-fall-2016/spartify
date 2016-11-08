@@ -1,6 +1,10 @@
-img {
+/*img {
   margin: 0 auto;
-}
+  visibility: visible;
+  display:block !important;
+  max-width: 100%;
+
+}*/
 
 .thumbnail {
   margin-bottom: 0 !important;

@@ -1,27 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
-import { Company } from '../services/company';
-import { CompanyService } from '../services/company.service';
+import { Component } from '@angular/core';
 
 @Component({
   moduleId: module.id,
   selector: 'my-splash',
   templateUrl: '../templates/splash.component.html'
 })
-export class SplashComponent implements OnInit {
+export class SplashComponent {
   count = 0;
-  companies: Company[] = [];
-
-  constructor(
-    private router: Router,
-    private companyService: CompanyService) {
-  }
-
-  ngOnInit(): void {
-    this.companyService.getCompanyRange(0,3)
-      .then(companies => this.companies = companies);
-  }
+  pics = [
+    'app/img/google.jpg', 'app/img/msft.jpg', 'app/img/fb.jpeg'
+  ];
 
   isActive() {
     if (this.count === 0) {
