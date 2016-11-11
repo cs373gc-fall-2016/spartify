@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit, OnChanges} from '@angular/core';
 
 import { Company } from '../services/company';
 import { CompanyService } from '../services/company.service';
@@ -9,16 +9,17 @@ import { CompanyService } from '../services/company.service';
     templateUrl: '../templates/company-search.component.html'
 })
 
-export class CompanySearchComponent implements OnInit {
+export class CompanySearchComponent implements OnChanges {
     @Input() tokens: string[];
+    @Input() or_search: boolean = false;
     companies: Company[] = [];
 
     constructor(
         private companyService: CompanyService) {
     }
 
-    ngOnInit(): void {
-        this.companyService.searchCompanies(this.tokens)
+    ngOnChanges(): void {
+        this.companyService.searchCompanies(this.tokens, this.or_search)
             .then(companies => this.companies = companies);
     }
 }

@@ -17,6 +17,9 @@ import { ContributorLinkComponent } from "./components/contributor-link.componen
 import { LanguageLinkComponent } from "./components/language-link-component";
 import { CompanyLinkComponent } from "./components/company-link-component";
 import { CompanySearchComponent } from "./components/company-search.component"
+import { ProjectSearchComponent } from "./components/project-search.component"
+import { LanguageSearchComponent } from "./components/language-search.component"
+import { ContributorSearchComponent } from "./components/contributor-search.component"
 import { EllipsisPipe } from "./ellipsis-pipe";
 import { BoldPipe } from "./bold-pipe";
 
@@ -40,6 +43,9 @@ import { BoldPipe } from "./bold-pipe";
     CompanyAvatarComponent,
     CompanyLinkComponent,
     CompanySearchComponent,
+    ProjectSearchComponent,
+    LanguageSearchComponent,
+    ContributorSearchComponent,
     ContributorLinkComponent,
     ProjectLinkComponent,
     LanguageLinkComponent

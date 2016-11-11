@@ -12,6 +12,7 @@ export class AppComponent {
 
   performSearch(searchTerm: HTMLInputElement): void {
     let val:string = searchTerm.value;
+    searchTerm.value = null;
     if (val) {
       let link = ['/search', val];
       this.router.navigate(link);

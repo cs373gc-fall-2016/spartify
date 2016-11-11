@@ -51,13 +51,16 @@ export class CompanyService {
     }
   }
 
-  searchCompanies(tokens: string[]): Promise<Company[]> {
+  searchCompanies(tokens: string[], or_search:boolean): Promise<Company[]> {
     let url = this.companySearchUrl + '?';
     if (tokens) {
       url = url + 'q=' + tokens[0];
       let i = 0;
       for (i = 1; i < tokens.length; i++) {
         url = url + '&q=' + tokens[i];
+      }
+      if (or_search) {
+        url = url + "&type=or"
       }
       return this.http.get(url)
                  .toPromise()

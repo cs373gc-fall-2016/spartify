@@ -23,7 +23,7 @@ export class LanguagesComponent implements OnInit {
   ngOnInit(): void {
     this.languageService.getTotalLanguages()
         .then(total => this.totalLanguages= total)
-    this.languageService.getLanguages()
+    this.languageService.getLanguageRange(0,5)
       .then(languages => this.languages = languages);
   }
 
