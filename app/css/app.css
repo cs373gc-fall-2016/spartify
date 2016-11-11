@@ -1,10 +1,13 @@
-/*img {
+img {
   margin: 0 auto;
   visibility: visible;
   display:block !important;
-  max-width: 100%;
-
-}*/
+  max-width: 1100px;
+  max-height: 1100px;
+  width: auto;
+  height: auto;
+}
+.expand { width: 10em; }
 
 .thumbnail {
   margin-bottom: 0 !important;
