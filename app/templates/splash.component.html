@@ -2,8 +2,8 @@
   <div class="col-md-2">
   </div>
   <div class="col-md-8 fill">
-    <div>
-      <div>
+    <div class="fill">
+      <div class="fill">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
@@ -14,11 +14,8 @@
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
-            <div *ngFor="let pic of pics" class="item" [ngClass]="{active: isActive()}">
-<!--               <div style="background-image: url("app/img/google.jpg")" />
- -->              <div [ngStyle]="{'background-image': 'url(\'app/img/google.jpg\')'}"></div>
-                  <!-- <div [ngStyle]="{'background-image': 'url(' + photo + ')'}"></div> -->
-
+            <div *ngFor="let pic of pics; let i=index" class="item fill" [ngClass]="{active: isActive(i)}">
+              <img src="{{pic}}" class="fill">
             </div>
           </div>
 
