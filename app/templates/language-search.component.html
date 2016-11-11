@@ -1,0 +1,37 @@
+<p-dataList [value]="languages" [paginator]="true" [rows]="10">
+    <template let-language>
+        <div class="ui-grid ui-grid-responsive ui-fluid" style="font-size:10px;border-bottom:1px solid #D5D5D5;">
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-1">
+                    <a routerLink="/projects/{{language.id}}" routerLinkActive="active" class="text-capitalize btn btn-primary btn-block btn-sqr-small">
+                        {{language.name}}
+                    </a>
+                </div>
+                <div class="ui-grid-col-5" style="padding-top: 5px; padding-left: 10px;">
+                    <div class="ui-grid ui-grid-responsive ui-fluid">
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-2"><label>Creator:</label> </div>
+                            <div class="ui-grid-col-10">{{language.creator}}</div>
+                        </div>
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-2"><label>Type:</label> </div>
+                            <div class="ui-grid-col-10">{{language.type}}</div>
+                        </div>
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-2"><label>FirstAppeared:</label> </div>
+                            <div class="ui-grid-col-10">{{language.firstAppeared}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-grid-col-6" style="padding-top: 5px; padding-left: 10px;">
+                    <div class="ui-grid-row">
+                        <div class="ui-grid-col-2"><label>Description:</label></div>
+                    </div>
+                    <div class="ui-grid-row">
+                        <div class="ui-grid-col-10">{{language.description}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</p-dataList>

@@ -7,7 +7,7 @@ import { Contributor } from './contributor';
 export class ContributorService {
   private contributorsUrl = '/api/contributors/';  // URL to web ap
   private contributorCountUrl = '/api/count/contributors';  // URL to web api
-
+  private contributorSearchUrl = '/api/search/contributors/'
   private contributors : Promise<Contributor[]> = null;
 
   constructor(private http: Http) { }
@@ -47,6 +47,25 @@ export class ContributorService {
     } else {
       return this.getContributorRange(start, end);
     }
+  }
+
+  searchContributors(tokens: string[], or_search:boolean): Promise<Contributor[]> {
+    let url = this.contributorSearchUrl + '?';
+    if (tokens) {
+      url = url + 'q=' + tokens[0];
+      let i = 0;
+      for (i = 1; i < tokens.length; i++) {
+        url = url + '&q=' + tokens[i];
+      }
+      if (or_search) {
+        url = url + "&type=or"
+      }
+      return this.http.get(url)
+          .toPromise()
+          .then(response => response.json() as Contributor[])
+          .catch(this.handleError);
+    }
+    return null;
   }
 
   getContributor(id: number): Promise<Contributor> {
