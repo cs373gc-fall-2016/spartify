@@ -8,15 +8,10 @@ import { Component } from '@angular/core';
 export class SplashComponent {
   count = 0;
   pics = [
-    'app/img/google.jpg', 'app/img/msft.jpg', 'app/img/fb.jpeg'
+    'app/img/google.jpg', 'app/img/msft.jpg', 'app/img/openhardware.jpg'
   ];
 
-  isActive() {
-    if (this.count === 0) {
-      this.count = 1;
-      return true;
-    } else {
-      return false;
-    }
+  isActive(i : any) {
+    return i === 0;
   }
 }
