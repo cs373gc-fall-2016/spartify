@@ -28,13 +28,13 @@ Or, you run the frontend through the backend
 $ cd ./backend
 $ python backend.py runserver
 ```
-If you are just doing frontend work it is reccomended to just run the frontend by itslef, unless you need access to all the data the backend provides
+If you are just doing frontend work it is reccomended to just run the frontend by itself, unless you need access to all the data the backend provides
 (Running the frontend by itself provides limited placeholder data just so the pages have some content in them)
 
 #DB Setup (Should only need to be done once)
-PostgreSQL needs to be installed.  Apparantly you can use http://postgresapp.com/ if your using mac OS X.
-Installation instructions for Ubuntu ared below and I would expect that the experience would be fairly similar for other linux
-distributions. If your using windows well then your on your on figuring out how to install it.
+PostgreSQL needs to be installed.  Apparantly you can use http://postgresapp.com/ if you're using Mac OS X.
+Installation instructions for Ubuntu are below and I would expect that the experience would be fairly similar for other linux
+distributions. If you're using Windows, well, then you're on you're on figuring out how to install it.
 
 The following instructions will setup PostgresSQl for Ubuntu:
 ```
@@ -47,7 +47,7 @@ $ sudo vim /etc/postgresql/9.5/main/pg_hba.conf
 ```
 Then restart the psql server:
 ```
-$sudo /etc/init.d/postgresql restart
+$ sudo /etc/init.d/postgresql restart
 ```
 
 Create a super user(I recommend an empty password, its not secure but should be fine for a dev environment):
@@ -69,7 +69,7 @@ $ psql opensourcery < dump.sql
 
 That will import the data to the database and the database is now setup.
 
-On ubuntu you need to install the following:
+On Ubuntu you need to install the following:
 ```
 $ sudo apt-get update
 $ sudo apt-get install python-psycopg2
@@ -77,21 +77,21 @@ $ sudo apt-get install python-psycopg2
 
 Then use pip to install psycog libary:
 ```
-pip install psycopg2
+$ pip install psycopg2
 ```
 
 Also load the requirements file.
 ```
-$sudo pip install flask
-$sudo pip install flask_sqlalchemy
-$sudo pip install flask_script
+$ sudo pip install flask
+$ sudo pip install flask_sqlalchemy
+$ sudo pip install flask_script
 ```
 
 This finishes the setup. You're about ready to run the server now!
 
 You may need to switch to a postgres user profile before being able to run your app properly.
 ```
-sudo su - postgres
+$ sudo su - postgres
 ```
 
 To Run:
