@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, abort, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func, desc, or_, cast, String
 from flask_script import Manager, Shell
+from flask_cors import CORS, cross_origin
 from db import db, app, manager
 import subprocess
 from models import Contributor, Paradigm, Language, Project, Company
@@ -9,6 +10,8 @@ import models
 
 """
 """
+
+CORS(app)
 
 # ---------------
 # index
