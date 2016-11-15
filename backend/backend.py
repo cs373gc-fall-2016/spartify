@@ -158,7 +158,6 @@ def model_search(db_name, query=None, start=None, end=None, type=None):
             query = query.filter(or_(*model.column_queries(tokens)))
         else:
             query = query.filter(*model.column_queries(tokens)) #implicitly 'and' the filters
-        print(str(query))
         result = query.all()
         return jsonify([x.dictionary() for x in result])
     elif (start != None and end != None):

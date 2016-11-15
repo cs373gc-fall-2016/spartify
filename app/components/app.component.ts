@@ -11,7 +11,7 @@ export class AppComponent {
   constructor(private router: Router) {}
 
   performSearch(searchTerm: HTMLInputElement): void {
-    let val:string = searchTerm.value;
+    let val:string = searchTerm.value.toLowerCase();
     searchTerm.value = null;
     if (val) {
       let link = ['/search', val];
