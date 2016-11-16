@@ -11,6 +11,7 @@ import { ContributorDetailComponent } from "./components/contributor-detail.comp
 import { LanguagesComponent } from './components/languages.component';
 import { LanguageDetailComponent } from './components/language-detail.component';
 import { AboutComponent } from './components/about.component';
+import { VisualizationComponent } from './components/visualization.component';
 import { DbSearchComponent } from "./components/dbsearch.component";
 
 
@@ -58,6 +59,10 @@ const routes: Routes = [
     component: AboutComponent
   },
   {
+    path: 'visualization',
+    component: VisualizationComponent
+  },
+  {
     path: 'search/:query',
     component: DbSearchComponent
   }
@@ -69,7 +74,7 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routedComponents = [SplashComponent, AboutComponent, DbSearchComponent,
+export const routedComponents = [SplashComponent, AboutComponent, DbSearchComponent, VisualizationComponent,
                                  CompaniesComponent, CompanyDetailComponent,
                                  ProjectsComponent, ProjectDetailComponent,
                                  ContributorsComponent, ContributorDetailComponent,
