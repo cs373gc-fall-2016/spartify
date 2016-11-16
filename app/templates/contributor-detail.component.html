@@ -1,58 +1,60 @@
-<div *ngIf="contributor">
-  <div class="row">
-    <div class="col-sm-5 col-md-4">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <img src="{{contributor.avatar_url}}" class="img-responsive" alt="">
+<div class="container">
+  <div *ngIf="contributor">
+    <div class="row">
+      <div class="col-sm-5 col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <img src="{{contributor.avatar_url}}" class="img-responsive" alt="">
 
-          <div>
-            <h3 class="text-capitalize">{{contributor.username}}</h3>
-          </div>
+            <div>
+              <h3 class="text-capitalize">{{contributor.username}}</h3>
+            </div>
 
-          <div>
-            <ul class="nav">
-              <li *ngIf="contributor.email">
-                <a href="mailto:{{contributor.email}}">
-                  <i class="glyphicon glyphicon-envelope"></i>
-                  {{contributor.email}}
-                </a>
-              </li>
-              <li>
-                <a href="{{contributor.url}}">
-                  <i class="glyphicon glyphicon-link"></i>
-                  {{contributor.url}}
-                </a>
-              </li>
-              <li *ngIf="contributor.location">
-                <a href="https://www.google.com/maps/place/{{contributor.location}}/">
-                  <i class="glyphicon glyphicon-pushpin"></i>
-                  {{contributor.location}}
-                </a>
-              </li>
-            </ul>
+            <div>
+              <ul class="nav">
+                <li *ngIf="contributor.email">
+                  <a href="mailto:{{contributor.email}}">
+                    <i class="glyphicon glyphicon-envelope"></i>
+                    {{contributor.email}}
+                  </a>
+                </li>
+                <li>
+                  <a href="{{contributor.url}}">
+                    <i class="glyphicon glyphicon-link"></i>
+                    {{contributor.url}}
+                  </a>
+                </li>
+                <li *ngIf="contributor.location">
+                  <a href="https://www.google.com/maps/place/{{contributor.location}}/">
+                    <i class="glyphicon glyphicon-pushpin"></i>
+                    {{contributor.location}}
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-sm-7 col-md-8">
+      <div class="col-sm-7 col-md-8">
 
-      <p-dataGrid *ngIf="contributor.project_ids" [value]="contributor.project_ids" [paginator]="true" [rows]="8">
-        <header>Projects</header>
-        <template let-id>
-          <div class="ui-g-12 ui-md-3">
-            <my-project-link [p_id]="id"></my-project-link>
-          </div>
-        </template>
-      </p-dataGrid>
-      <br>
-      <p-dataGrid *ngIf="contributor.company_ids" [value]="contributor.company_ids" [paginator]="true" [rows]="8">
-        <header>Membership</header>
-        <template let-id>
-          <div class="ui-g-12 ui-md-3">
-            <my-company-link [c_id]="id"></my-company-link>
-          </div>
-        </template>
-      </p-dataGrid>
+        <p-dataGrid *ngIf="contributor.project_ids" [value]="contributor.project_ids" [paginator]="true" [rows]="8">
+          <header>Projects</header>
+          <template let-id>
+            <div class="ui-g-12 ui-md-3">
+              <my-project-link [p_id]="id"></my-project-link>
+            </div>
+          </template>
+        </p-dataGrid>
+        <br>
+        <p-dataGrid *ngIf="contributor.company_ids" [value]="contributor.company_ids" [paginator]="true" [rows]="8">
+          <header>Membership</header>
+          <template let-id>
+            <div class="ui-g-12 ui-md-3">
+              <my-company-link [c_id]="id"></my-company-link>
+            </div>
+          </template>
+        </p-dataGrid>
+      </div>
     </div>
   </div>
 </div>

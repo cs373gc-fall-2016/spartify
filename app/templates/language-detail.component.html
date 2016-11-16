@@ -1,28 +1,30 @@
-<div *ngIf="language">
-  <div class="row">
-    <div class="col-sm-5 col-md-4">
-      <ul class="list-group">
-        <li class="list-group-item">
-          <h3 class="text-capitalize">{{language.name}}</h3>
-          <p>{{language.description}}</p>
-        </li>
-        <li class="list-group-item"><label>Creator:</label> {{language.creator}}</li>
-        <li class="list-group-item"><label>Type:</label> {{language.type}}</li>
-        <li class="list-group-item"><label>First Appeared:</label> {{language.firstAppeared}}</li>
-        <li class="list-group-item">
-          <label>Paradigms:</label> <span *ngFor="let p of language.paradigms"> {{p}} </span>
-        </li>
-      </ul>
-    </div>
-    <div class="col-sm-7 col-md-8">
-      <p-dataGrid *ngIf="language.project_ids" [value]="language.project_ids" [paginator]="true" [rows]="8">
-        <header>Used in Projects</header>
-        <template let-id>
-          <div class="ui-g-12 ui-md-3">
-            <my-project-link [p_id]="id"></my-project-link>
-          </div>
-        </template>
-      </p-dataGrid>
+<div class="container">
+  <div *ngIf="language">
+    <div class="row">
+      <div class="col-sm-5 col-md-4">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <h3 class="text-capitalize">{{language.name}}</h3>
+            <p>{{language.description}}</p>
+          </li>
+          <li class="list-group-item"><label>Creator:</label> {{language.creator}}</li>
+          <li class="list-group-item"><label>Type:</label> {{language.type}}</li>
+          <li class="list-group-item"><label>First Appeared:</label> {{language.firstAppeared}}</li>
+          <li class="list-group-item">
+            <label>Paradigms:</label> <span *ngFor="let p of language.paradigms"> {{p}} </span>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-7 col-md-8">
+        <p-dataGrid *ngIf="language.project_ids" [value]="language.project_ids" [paginator]="true" [rows]="8">
+          <header>Used in Projects</header>
+          <template let-id>
+            <div class="ui-g-12 ui-md-3">
+              <my-project-link [p_id]="id"></my-project-link>
+            </div>
+          </template>
+        </p-dataGrid>
+      </div>
     </div>
   </div>
 </div>
