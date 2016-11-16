@@ -36,6 +36,10 @@ img {
   margin: 0 auto;
 }
 
+b {
+  color: #337ab7;
+}
+
 .thumbnail {
   margin-bottom: 0 !important;
 }
@@ -46,6 +50,16 @@ img {
   width: 125px !important;
   height: 125px !important;
   padding-top: 50px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.btn-sqr-small {
+  color: white !important;
+  font-size: small !important;
+  width: 75px !important;
+  height: 75px !important;
+  padding-top: 25px !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
@@ -71,6 +85,11 @@ img {
   border: 0 !important;
   text-align: center;
 }
+
+.ui-grid-col-1 {
+  width: 7.15% !important;
+}
+
 .ui-carousel {
   padding: 0 !important;
 }

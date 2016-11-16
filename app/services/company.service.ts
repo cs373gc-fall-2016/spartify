@@ -8,7 +8,8 @@ import { Company } from './company';
 @Injectable()
 export class CompanyService {
   private companiesUrl = '/api/companies/';  // URL to web api.
-  private companyCountUrl = '/api/count/companies';  // URL to web api
+  private companyCountUrl = '/api/count/companies/';  // URL to web api
+  private companySearchUrl = '/api/search/companies/'
   private companies : Promise<Company[]> = null;
 
   constructor(private http: Http) { }
@@ -48,6 +49,25 @@ export class CompanyService {
     } else {
       return this.getCompanyRange(start, end);
     }
+  }
+
+  searchCompanies(tokens: string[], or_search:boolean): Promise<Company[]> {
+    let url = this.companySearchUrl + '?';
+    if (tokens) {
+      url = url + 'q=' + tokens[0];
+      let i = 0;
+      for (i = 1; i < tokens.length; i++) {
+        url = url + '&q=' + tokens[i];
+      }
+      if (or_search) {
+        url = url + "&type=or"
+      }
+      return this.http.get(url)
+                 .toPromise()
+                 .then(response => response.json() as Company[])
+                 .catch(this.handleError);
+    }
+    return null;
   }
 
   getCompanies(): Promise<Company[]> {

@@ -1,0 +1,34 @@
+<p-tabView>
+    <p-tabPanel header="Full Matches">
+        <p-tabView>
+            <p-tabPanel header="Companies">
+                <my-company-search [tokens]="queries" [or_search]="false"></my-company-search>
+            </p-tabPanel>
+            <p-tabPanel header="Projects">
+                <my-project-search [tokens]="queries" [or_search]="false"></my-project-search>
+            </p-tabPanel>
+            <p-tabPanel header="Contributors">
+                <my-contributor-search [tokens]="queries" [or_search]="false"></my-contributor-search>
+            </p-tabPanel>
+            <p-tabPanel header="Languages">
+                <my-language-search [tokens]="queries" [or_search]="false"></my-language-search>
+            </p-tabPanel>
+        </p-tabView>
+    </p-tabPanel>
+    <p-tabPanel header="Partial Matches">
+        <p-tabView>
+            <p-tabPanel header="Companies">
+                <my-company-search [tokens]="queries" [or_search]="true"></my-company-search>
+            </p-tabPanel>
+            <p-tabPanel header="Projects">
+                <my-project-search [tokens]="queries" [or_search]="true"></my-project-search>
+            </p-tabPanel>
+            <p-tabPanel header="Contributors">
+                <my-contributor-search [tokens]="queries" [or_search]="true"></my-contributor-search>
+            </p-tabPanel>
+            <p-tabPanel header="Languages">
+                <my-language-search [tokens]="queries" [or_search]="true"></my-language-search>
+            </p-tabPanel>
+        </p-tabView>
+    </p-tabPanel>
+</p-tabView>

@@ -7,6 +7,7 @@ import { Project } from './project';
 export class ProjectService {
   private projectsUrl = '/api/projects/';  // URL to web api
   private projectCountUrl = '/api/count/projects';  // URL to web api
+  private projectSearchUrl = '/api/search/projects/'
 
   private projects : Promise<Project[]>  = null;
 
@@ -47,6 +48,25 @@ export class ProjectService {
     } else {
       return this.getProjectRange(start, end);
     }
+  }
+
+  searchProjects(tokens: string[], or_search:boolean): Promise<Project[]> {
+    let url = this.projectSearchUrl + '?';
+    if (tokens) {
+      url = url + 'q=' + tokens[0];
+      let i = 0;
+      for (i = 1; i < tokens.length; i++) {
+        url = url + '&q=' + tokens[i];
+      }
+      if (or_search) {
+        url = url + "&type=or"
+      }
+      return this.http.get(url)
+          .toPromise()
+          .then(response => response.json() as Project[])
+          .catch(this.handleError);
+    }
+    return null;
   }
 
   getProject(id: number): Promise<Project> {
