@@ -6,9 +6,8 @@ import { Component } from '@angular/core';
   templateUrl: '../templates/splash.component.html'
 })
 export class SplashComponent {
-  count = 0;
   pics = [
-    'app/img/google.jpg', 'app/img/msft.jpg', 'app/img/openhardware.jpg'
+    'app/img/needopensource.jpg', 'app/img/sky.jpg', 'app/img/google.jpg', 'app/img/msft.jpg', 'app/img/opensource.jpg'
   ];
 
   isActive(i : any) {

@@ -11,25 +11,9 @@
 
   <!-- Wrapper for Slides -->
   <div class="carousel-inner">
-    <div class="item active">
-      <!-- Set the first background image using inline CSS below. -->
-      <div class="fill" style="background-image:url('app/img/needopensource.jpg');"></div>
-    </div>
-    <div class="item">
-      <!-- Set the second background image using inline CSS below. -->
-      <div class="fill" style="background-image:url('app/img/sky.jpg');"></div>
-    </div>
-    <div class="item">
-      <!-- Set the third background image using inline CSS below. -->
-      <div class="fill" style="background-image:url('app/img/google.jpg');"></div>
-    </div>
-    <div class="item">
-      <!-- Set the fourth background image using inline CSS below. -->
-      <div class="fill" style="background-image:url('app/img/msft.jpg');"></div>
-    </div>
-    <div class="item">
-      <!-- Set the fifth background image using inline CSS below. -->
-      <div class="fill" style="background-image:url('app/img/opensource.jpg');"></div>
+    <div class="item" *ngFor="let pic of pics; let i=index" [ngClass]="{active: isActive(i)}">
+      <!-- Set the background image using inline CSS below. -->
+      <div class="fill" [ngStyle]="{'background-image':'url(' + pic + ')'}"></div>
     </div>
   </div>
 
