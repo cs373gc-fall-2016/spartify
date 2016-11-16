@@ -50,6 +50,16 @@ img {
   padding-right: 0 !important;
 }
 
+.btn-sqr-small {
+  color: white !important;
+  font-size: small !important;
+  width: 75px !important;
+  height: 75px !important;
+  padding-top: 25px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .btn-tile {
   color: white !important;
   font-size: large !important;
@@ -71,6 +81,11 @@ img {
   border: 0 !important;
   text-align: center;
 }
+
+.ui-grid-col-1 {
+  width: 7.15% !important;
+}
+
 .ui-carousel {
   padding: 0 !important;
 }

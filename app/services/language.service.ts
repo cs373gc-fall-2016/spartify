@@ -7,6 +7,7 @@ import { Language } from './language';
 export class LanguageService {
   private languagesUrl = '/api/languages/';  // URL to web api
   private languageCountUrl = '/api/count/languages';  // URL to web api
+  private languageSearchUrl = '/api/search/languages/'
   private languages :  Promise<Language[]> = null;
 
   constructor(private http: Http) { }
@@ -48,15 +49,23 @@ export class LanguageService {
     }
   }
 
-  getLanguages(): Promise<Language[]> {
-    if (this.languages === null) {
-      this.languages = this.http
-          .get(this.languagesUrl)
+  searchLanguages(tokens: string[], or_search:boolean): Promise<Language[]> {
+    let url = this.languageSearchUrl + '?';
+    if (tokens) {
+      url = url + 'q=' + tokens[0];
+      let i = 0;
+      for (i = 1; i < tokens.length; i++) {
+        url = url + '&q=' + tokens[i];
+      }
+      if (or_search) {
+        url = url + "&type=or"
+      }
+      return this.http.get(url)
           .toPromise()
           .then(response => response.json() as Language[])
           .catch(this.handleError);
     }
-    return this.languages;
+    return null;
   }
 
   getLanguage(id: number): Promise<Language> {

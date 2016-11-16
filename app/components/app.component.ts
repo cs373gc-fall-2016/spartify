@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   templateUrl: '../templates/app-component.html'
 })
 export class AppComponent {
-  title = 'Tour of Heroes';
+
+  constructor(private router: Router) {}
+
+  performSearch(searchTerm: HTMLInputElement): void {
+    let val:string = searchTerm.value;
+    searchTerm.value = null;
+    if (val) {
+      let link = ['/search', val];
+      this.router.navigate(link);
+    }
+  }
 }
