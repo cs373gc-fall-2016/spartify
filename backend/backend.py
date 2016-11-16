@@ -78,6 +78,10 @@ def run_unit_tests():
     subprocess.check_output(["bash", "unit-test.sh"])
     return send_from_directory('.', 'tests.html')
 
+@app.route('/visualization/')
+def visualization():
+    return send_from_directory('../app/templates/', 'visualization.component.html')
+    
 db_by_name = {
     "contributors": Contributor,
     "projects": Project,
