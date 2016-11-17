@@ -1,3 +1,25 @@
+commit f536025d4e8b4716b69c6c6ca34819baf309a910
+Merge: f7a654f 0d70ba3
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Thu Nov 17 05:43:26 2016 -0600
+
+    Merge branch 'dev' of https://github.com/cs373gc-fall-2016/spartify into dev
+
+commit f7a654f42ced30be2986e5d0b5a27094066c08d5
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Thu Nov 17 05:42:53 2016 -0600
+
+    Formatted with autopep8 regenerated doc files
+
+commit 0d70ba3323ebf8469caae5bed6bf337817efd6fa
+Merge: 8940913 8f54dbb
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Thu Nov 17 00:49:50 2016 -0600
+
+    Merge pull request #105 from cs373gc-fall-2016/visualization-placeholder
+    
+    Visualization placeholder
+
 commit 89409139518a2bdcd0ef45d3dab82f1a41cbe7e7
 Merge: 55dfe00 5a90b0c
 Author: lock14 <lock14@users.noreply.github.com>
@@ -40,6 +62,12 @@ Date:   Wed Nov 16 14:46:05 2016 -0600
     
     Search Highlighting
 
+commit 8f54dbbd3deeae1fdcd54007a4c9acbc7c7e5fa8
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Wed Nov 16 13:05:08 2016 -0600
+
+    Placeholder for visualization.
+
 commit a4cc02830f90f5a996c6b7c6244d5f9a3a8b981e
 Author: Cindy Wu <cindywu2018@utexas.edu>
 Date:   Wed Nov 16 12:47:38 2016 -0600
@@ -63,6 +91,12 @@ Author: cindywu <cindywu2018@utexas.edu>
 Date:   Wed Nov 16 12:21:42 2016 -0600
 
     updated our buttons and added a link to our presentation in about page
+
+commit 823c0b1462fd35945deb5bde88aff92473a5965c
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Wed Nov 16 11:29:57 2016 -0600
+
+    Stuff
 
 commit 26e2ea1c8a52b2b2bd04a7bf5af7c0eb93c95882
 Merge: fe37bdf 8ea2f1a

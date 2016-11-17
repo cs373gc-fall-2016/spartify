@@ -4,6 +4,7 @@
 
 import unittest
 from models import Contributor, Paradigm, Company, Project, Language
+import sqlalchemy
 
 
 class TestModels(unittest.TestCase):
@@ -71,6 +72,16 @@ class TestModels(unittest.TestCase):
                  'firstAppeared': 1987, 'description': 'test'}
         self.assertEqual(self.language.dictionary(), ldict)
 
+    def test_language_column_queries(self):
+        """
+           test column queries
+        """
+        tokens = ['%bacon%', '%eggs%']
+        queries = Language.column_queries(tokens)
+        for query in queries:
+            self.assertTrue(isinstance(
+                query, sqlalchemy.sql.elements.BooleanClauseList))
+
     def test_contributor_refr(self):
         """
            test string representaion method for Contributor class
@@ -96,6 +107,16 @@ class TestModels(unittest.TestCase):
                  'url': 'test.com/testusr', 'avatar_url': 'test.com/testusr/avatar',
                  'location': 'Texas'}
         self.assertEqual(self.contributor.dictionary(), cdict)
+
+    def test_contributor_column_queries(self):
+        """
+           test column queries
+        """
+        tokens = ['%bacon%', '%eggs%']
+        queries = Contributor.column_queries(tokens)
+        for query in queries:
+            self.assertTrue(isinstance(
+                query, sqlalchemy.sql.elements.BooleanClauseList))
 
     def test_company_repr(self):
         """
@@ -123,6 +144,16 @@ class TestModels(unittest.TestCase):
                  'description': 'test'}
         self.assertEqual(self.company.dictionary(), cdict)
 
+    def test_company_column_queries(self):
+        """
+           test column queries
+        """
+        tokens = ['%bacon%', '%eggs%']
+        queries = Company.column_queries(tokens)
+        for query in queries:
+            self.assertTrue(isinstance(
+                query, sqlalchemy.sql.elements.BooleanClauseList))
+
     def test_project_refr(self):
         """
            test string representaion method for Project class
@@ -148,6 +179,16 @@ class TestModels(unittest.TestCase):
                  'description': 'test', 'createdDate': 'June, 11', 'private': False,
                  'owner_id': 3}
         self.assertEqual(self.project.dictionary(), pdict)
+
+    def test_project_column_queries(self):
+        """
+           test column queries
+        """
+        tokens = ['%bacon%', '%eggs%']
+        queries = Project.column_queries(tokens)
+        for query in queries:
+            self.assertTrue(isinstance(
+                query, sqlalchemy.sql.elements.BooleanClauseList))
 
 if __name__ == "__main__":
     unittest.main()
