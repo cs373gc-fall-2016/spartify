@@ -1,13 +1,13 @@
 <p-dataList [value]="languages" [paginator]="true" [rows]="10">
     <template let-language>
-        <div class="ui-grid ui-grid-responsive ui-fluid" style="font-size:10px;border-bottom:1px solid #D5D5D5;">
+        <div class="ui-grid ui-grid-responsive ui-fluid" style="font-size:12px;border-bottom:1px solid #D5D5D5;">
             <div class="ui-grid-row">
                 <div class="ui-grid-col-1">
                     <a routerLink="/languages/{{language.id}}" routerLinkActive="active" class="text-capitalize btn btn-success btn-block btn-sqr-small">
                         {{language.name | ellipsis:7}}
                     </a>
                 </div>
-                <div class="ui-grid-col-5" style="padding-top: 5px; padding-left: 10px;">
+                <div class="ui-grid-col-7" style="padding-top: 5px; padding-left: 10px;">
                     <div class="ui-grid ui-grid-responsive ui-fluid">
                         <div class="ui-grid-row">
                             <div class="ui-grid-col-3"><label>Creator:</label> </div>
@@ -29,12 +29,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="ui-grid-col-6" style="padding-top: 5px; padding-left: 10px;">
+                <div class="ui-grid-col-5" style="padding-top: 5px; padding-left: 10px;">
                     <div class="ui-grid-row">
-                        <label>Description:</label>
+                        <label>Description (hover for full text):</label>
                     </div>
-                    <div class="ui-grid-row" style="font-size:8px;">
-                        <span [innerHTML]="language.description | bold:tokens"></span>
+                    <div class="ui-grid-row">
+                        <span [innerHTML]="language.description | ellipsis:60 | bold:tokens"
+                              pTooltip="{{language.description | bold:tokens}}" tooltipPosition="bottom"></span>
                     </div>
                 </div>
             </div>

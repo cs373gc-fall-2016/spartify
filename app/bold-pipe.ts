@@ -12,7 +12,7 @@ export class BoldPipe {
             val = val.toString();
             let i = 0;
             for (i = 0; i < substrings.length; i++) {
-                val = val.replace(new RegExp('(' + substrings[i] + ')', 'gi'), '<b>$1</b>');
+                val = val.replace(new RegExp('(' + substrings[i] + ')', 'gi'), `<b class="search">$1</b>`);
             }
         }
         return val;

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { DataTableModule, DataGridModule, SharedModule, TabViewModule, DataListModule } from 'primeng/primeng';
+import { DataTableModule, DataGridModule, SharedModule, TabViewModule, DataListModule, TooltipModule } from 'primeng/primeng';
 import './rxjs-extensions';
 import { AppComponent } from './components/app.component';
 import { AppRoutingModule, routedComponents } from './app-routing.module';
@@ -33,6 +33,7 @@ import { BoldPipe } from "./bold-pipe";
     DataGridModule,
     TabViewModule,
     DataListModule,
+    TooltipModule,
     SharedModule
   ],
   declarations: [
