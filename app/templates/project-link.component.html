@@ -1,5 +1,5 @@
 <a *ngIf="project" routerLink="/projects/{{project.id}}" routerLinkActive="active"
-   pTooltip="<b>{{project.name}}</b><br>{{project.description}}" tooltipPosition="bottom"
+   pTooltip='<label class="text-capitalize">{{project.name}}</label><br>{{project.description}}' tooltipPosition="bottom"
    class="btn btn-primary btn-block btn-tile mrgn-btm">
   <h4 class="text-capitalize">{{project.name | ellipsis:12}}</h4>
 </a>
