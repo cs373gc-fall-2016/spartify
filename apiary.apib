@@ -371,3 +371,45 @@ but 'orderby' is supplied then the list will be sorted in ascending order.
 + Response 200
 
     [Language List][]
+    
+## Search [/api/search/{category}/?q={token}&q={token}&type={search_type}]
+Search the given category for the tokens. The type specifier dictates whether
+it is an 'and' search or an 'or' search.
+
++ Parameters
+    + category (required, string) ... one of the following categories [companies, projects, contriutors, languages]
+    + token    (required, string) ... term for which to search. At least one term is required. Multiple terms are
+                                      supplied spearately e.g (q=cow&q=moose).
+    + search_type (optional, string) ... Denotes search type. Valid values are ['and', 'or]. Default type is 'and'.
+
++ Model (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": "123",
+                    "name": "Python",
+                    "creator": "Guido van Rossum",
+                    "type": "Interpreted",
+                    "firstAppeared": 1991,
+                    "description": "Python is a programming language for ...",
+                    "paradigms" : ["Functional", "Object Oriented"],
+                    "project_ids": [1,2]
+                },
+                {
+                    "id": "345 ",
+                    "name": "Java",
+                    "creator": "James Gosling",
+                    "type": "Compiled",
+                    "firstAppeared": 1995,
+                    "description": "Java is a programming language for ...",
+                    "paradigms" : ["Object Oriented"],
+                    "project_ids": [4,10]
+                }
+            ]
+            
+## Retrieve search result [GET]
+
++ Response 200
+    [Search][]
