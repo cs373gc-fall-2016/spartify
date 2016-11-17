@@ -34,7 +34,7 @@ img {
   margin: 0 auto;
 }
 
-b {
+b.search {
   color: #337ab7;
 }
 
@@ -100,6 +100,10 @@ b {
   padding-top: 10px !important;
   padding-left: 15px !important;
   border: 0 !important;
+}
+
+.ui-tooltip {
+  max-width: 250px;
 }
 
 .ui-datagrid-header {

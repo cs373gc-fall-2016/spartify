@@ -54,6 +54,10 @@ Methods defined here:<br>
 <dl><dt><a name="Company-dictionary"><strong>dictionary</strong></a>(self)</dt></dl>
 
 <hr>
+Static methods defined here:<br>
+<dl><dt><a name="Company-column_queries"><strong>column_queries</strong></a>(tokens)</dt></dl>
+
+<hr>
 Data descriptors defined here:<br>
 <dl><dt><strong>avatar_url</strong></dt>
 </dl>
@@ -73,7 +77,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7fecc251da10; Company&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f7724c17ad0; Company&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('companies', MetaData(bind=None), Column('...tion', String(), table=&lt;companies&gt;), schema=None)</dl>
 
@@ -127,6 +131,10 @@ Methods defined here:<br>
 <dl><dt><a name="Contributor-dictionary"><strong>dictionary</strong></a>(self)</dt></dl>
 
 <hr>
+Static methods defined here:<br>
+<dl><dt><a name="Contributor-column_queries"><strong>column_queries</strong></a>(tokens)</dt></dl>
+
+<hr>
 Data descriptors defined here:<br>
 <dl><dt><strong>avatar_url</strong></dt>
 </dl>
@@ -146,7 +154,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7fecc2765e10; Contributor&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f7724e5ef10; Contributor&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('contributors', MetaData(bind=None), Colum...n', String(), table=&lt;contributors&gt;), schema=None)</dl>
 
@@ -200,6 +208,10 @@ Methods defined here:<br>
 <dl><dt><a name="Language-dictionary"><strong>dictionary</strong></a>(self)</dt></dl>
 
 <hr>
+Static methods defined here:<br>
+<dl><dt><a name="Language-column_queries"><strong>column_queries</strong></a>(tokens)</dt></dl>
+
+<hr>
 Data descriptors defined here:<br>
 <dl><dt><strong>creator</strong></dt>
 </dl>
@@ -219,7 +231,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7fecc24fc8d0; Language&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f7724bf39d0; Language&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('languages', MetaData(bind=None), Column('...tion', String(), table=&lt;languages&gt;), schema=None)</dl>
 
@@ -280,7 +292,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7fecc24fc1d0; Paradigm&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f7724bf32d0; Paradigm&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('paradigms', MetaData(bind=None), Column('...name', String(), table=&lt;paradigms&gt;), schema=None)</dl>
 
@@ -334,6 +346,10 @@ Methods defined here:<br>
 <dl><dt><a name="Project-dictionary"><strong>dictionary</strong></a>(self)</dt></dl>
 
 <hr>
+Static methods defined here:<br>
+<dl><dt><a name="Project-column_queries"><strong>column_queries</strong></a>(tokens)</dt></dl>
+
+<hr>
 Data descriptors defined here:<br>
 <dl><dt><strong>company</strong></dt>
 </dl>
@@ -357,7 +373,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7fecc251d090; Project&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f7724c17150; Project&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('projects', MetaData(bind=None), Column('i...ption', String(), table=&lt;projects&gt;), schema=None)</dl>
 
@@ -396,6 +412,7 @@ standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>company_membership</strong> = Table('company_membership', MetaData(bind=None),...s.id'), table=&lt;company_membership&gt;), schema=None)<br>
 <strong>db</strong> = &lt;SQLAlchemy engine='postgresql://localhost/opensourcery'&gt;<br>
+<strong>func</strong> = &lt;sqlalchemy.sql.functions._FunctionGenerator object&gt;<br>
 <strong>language_usage</strong> = Table('language_usage', MetaData(bind=None), Col...jects.id'), table=&lt;language_usage&gt;), schema=None)<br>
 <strong>paradigms_used</strong> = Table('paradigms_used', MetaData(bind=None), Col...digms.id'), table=&lt;paradigms_used&gt;), schema=None)<br>
 <strong>project_participation</strong> = Table('project_participation', MetaData(bind=Non...d'), table=&lt;project_participation&gt;), schema=None)</td></tr></table>

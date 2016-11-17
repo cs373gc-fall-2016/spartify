@@ -1,3 +1,325 @@
+commit f536025d4e8b4716b69c6c6ca34819baf309a910
+Merge: f7a654f 0d70ba3
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Thu Nov 17 05:43:26 2016 -0600
+
+    Merge branch 'dev' of https://github.com/cs373gc-fall-2016/spartify into dev
+
+commit f7a654f42ced30be2986e5d0b5a27094066c08d5
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Thu Nov 17 05:42:53 2016 -0600
+
+    Formatted with autopep8 regenerated doc files
+
+commit 0d70ba3323ebf8469caae5bed6bf337817efd6fa
+Merge: 8940913 8f54dbb
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Thu Nov 17 00:49:50 2016 -0600
+
+    Merge pull request #105 from cs373gc-fall-2016/visualization-placeholder
+    
+    Visualization placeholder
+
+commit 89409139518a2bdcd0ef45d3dab82f1a41cbe7e7
+Merge: 55dfe00 5a90b0c
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Wed Nov 16 16:07:51 2016 -0600
+
+    Merge pull request #103 from cs373gc-fall-2016/master
+    
+    Master and Dev out of sync
+
+commit 5a90b0ccff969c3a3edd41c5e3277617f323b67c
+Author: Ubuntu <ubuntu@ip-172-31-21-2.us-west-2.compute.internal>
+Date:   Wed Nov 16 21:33:17 2016 +0000
+
+    Noticed bug in language search component. fixed now
+
+commit 596f149035d4990aa6219fcbeb03f6d0f1e45280
+Merge: b834dd8 55dfe00
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Wed Nov 16 15:18:52 2016 -0600
+
+    Merge pull request #102 from cs373gc-fall-2016/dev
+    
+    Tweaks
+
+commit b834dd8164519f6229a56d3a6cdb7d34ad869b95
+Merge: a4cc028 7146b2a
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Wed Nov 16 14:46:49 2016 -0600
+
+    Merge pull request #101 from cs373gc-fall-2016/dev
+    
+    Dev
+
+commit 7146b2abea90cc953eb3e411457f116b1243cc9f
+Merge: 26e2ea1 88f49cd
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Wed Nov 16 14:46:05 2016 -0600
+
+    Merge pull request #100 from cs373gc-fall-2016/search-highlight
+    
+    Search Highlighting
+
+commit 8f54dbbd3deeae1fdcd54007a4c9acbc7c7e5fa8
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Wed Nov 16 13:05:08 2016 -0600
+
+    Placeholder for visualization.
+
+commit a4cc02830f90f5a996c6b7c6244d5f9a3a8b981e
+Author: Cindy Wu <cindywu2018@utexas.edu>
+Date:   Wed Nov 16 12:47:38 2016 -0600
+
+    deleted DS Store in app folder, please no more
+
+commit bb085caf369fe581e13273e65025207c96500296
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Wed Nov 16 12:46:36 2016 -0600
+
+    added DS store into gitignore
+
+commit 24815410eb1e5f17810a43116a0ea21253d8b34c
+Author: Cindy Wu <cindywu2018@utexas.edu>
+Date:   Wed Nov 16 12:46:03 2016 -0600
+
+    deleted DS Store annoying mac files
+
+commit 443a36573ef0dfda48173590dc7b6370a31d8329
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Wed Nov 16 12:21:42 2016 -0600
+
+    updated our buttons and added a link to our presentation in about page
+
+commit 823c0b1462fd35945deb5bde88aff92473a5965c
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Wed Nov 16 11:29:57 2016 -0600
+
+    Stuff
+
+commit 26e2ea1c8a52b2b2bd04a7bf5af7c0eb93c95882
+Merge: fe37bdf 8ea2f1a
+Author: Jack Jiang <jackjiang@utexas.edu>
+Date:   Wed Nov 16 11:29:46 2016 -0600
+
+    Merge branch 'dev' of https://github.com/cs373gc-fall-2016/spartify into dev
+
+commit fe37bdf9fbbece8b354a62242b83e4f97905c028
+Author: Jack Jiang <jackjiang@utexas.edu>
+Date:   Wed Nov 16 11:28:54 2016 -0600
+
+    angularized splash images and shrunk height to fit to page
+
+commit 55dfe0025a9c68ea734e95f1d578bdc17002f0de
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Wed Nov 16 09:18:10 2016 -0600
+
+    Tweaks
+
+commit b85b7d637562ae6a2699fa975a5df27e2ac16363
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Wed Nov 16 01:55:21 2016 -0600
+
+    changed carousel images and number to 5
+
+commit 87ac48cbeb260c18b9daa4473b7d715469f24d86
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Wed Nov 16 01:54:43 2016 -0600
+
+    added new images to our splash page
+
+commit 95fdbc72d9d2afd580abd73449770960280a118b
+Merge: b5b328b d479d22
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Wed Nov 16 00:25:34 2016 -0600
+
+    somehow changed about component and didnt realize it, committing it because git complained
+
+commit b5b328b33173c83150ed9fce5081726acfd4bfa5
+Merge: 1f928b9 afc6f6a
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Tue Nov 15 17:16:01 2016 -0600
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/spartify into splash-improv
+
+commit 1f928b9eeb139ca24db764d22f68c421a264228e
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Tue Nov 15 17:15:44 2016 -0600
+
+    updated about page stats
+
+commit d733f3b276cfd70de7038c9e2258be87289a79ec
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Tue Nov 15 17:10:33 2016 -0600
+
+    fixed the images being cut off
+
+commit 4e6f4aebdbe8578b1868a30160edc1dbaafcd4c6
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Tue Nov 15 17:09:53 2016 -0600
+
+    added some coloring stuff
+
+commit 8ea2f1af8da205a9bbba22c7c83814a56a8656d2
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Tue Nov 15 14:49:42 2016 -0600
+
+    Added CORS headers so other teams can use our REST API
+
+commit d479d226afbee111e9e04ddcb48823cdbe72cb80
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Tue Nov 15 13:34:12 2016 -0600
+
+    Fixed fullscreen carousel
+
+commit 88f49cd9cad3f3579fa038c0646c82a011790471
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Tue Nov 15 05:12:43 2016 -0600
+
+    Search Highlighting
+
+commit 55bfd7c1b49006d4910146189941a1ba1814e1b0
+Merge: df45313 1dcbe5e
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Fri Nov 11 15:11:16 2016 -0600
+
+    Merge pull request #97 from cs373gc-fall-2016/search
+    
+    Search
+
+commit 30b1eb6144c52429ee2e1320a39225f6a4c258ed
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Fri Nov 11 13:00:05 2016 -0600
+
+    temporarily working images. this hacky solution makes the resolution better but cuts off an image on the bottom. needs fix
+
+commit 23b73f63b03f202294663c6b721aa6ce17c9b115
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Fri Nov 11 12:59:20 2016 -0600
+
+    fixed isActive() thing
+
+commit 71bdaf8eb3fb44a874e3a0ee27f156b421b5bfdb
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Fri Nov 11 12:58:54 2016 -0600
+
+    fixed images on splash page so they are full screen
+
+commit 8a7908cb3ae8a4b4d1c8a316e1a0378a0659ecfa
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Fri Nov 11 12:58:23 2016 -0600
+
+    added new image to better fit splash page
+
+commit 1dcbe5e5c129ffe350144d64eb1f8875798c3f11
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Fri Nov 11 09:08:10 2016 -0600
+
+    Search Implmented. Just need to highlight search terms
+
+commit afc6f6a9b43aa3ed82b7ba47ed8444cfbc768787
+Author: jack0lantern <j_j_jiang@yahoo.com>
+Date:   Wed Nov 9 10:38:00 2016 -0600
+
+    fixed README grammar mistakes
+
+commit bc91d5fb272445e9af15b3b905b524e63b0c7943
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Tue Nov 8 17:37:43 2016 -0600
+
+    changed images to open source images, class item giving 0x0 pixels
+
+commit 0bb0ebd31d6e900d8db711d990ad84331147b346
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Tue Nov 8 14:10:29 2016 -0600
+
+    more work on search
+
+commit 84e79b8b19731093b1a12598f6dacb0b0f3ac4dd
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Mon Nov 7 15:36:22 2016 -0600
+
+    Initial REST API for search
+
+commit bedbe31fe083437d7bc050b95e41e124b6f5b537
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Thu Nov 3 18:30:35 2016 -0500
+
+    added full screen class, figured out how to enlarge the picture BUT ITS NOT SHOWING UP ON OUR SITE
+
+commit 697ae36153cca2a68c0cd6b5d82aa6038198402c
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Thu Nov 3 18:29:57 2016 -0500
+
+    added full screen class
+
+commit 763c3be471b80e18a6500be8cafc0f8b3e900b51
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Thu Nov 3 18:29:37 2016 -0500
+
+    added some styling in full slider code
+
+commit 928add5323b50ae692b872ac970f1e61e98c4fa0
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Thu Nov 3 11:17:40 2016 -0500
+
+    splash changes
+
+commit 2f18a64c9c1d704757f3d482070212fdbe7357e1
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Thu Nov 3 11:09:25 2016 -0500
+
+    Revert "somehow restricted carousel to 3 images by deleting stuff"
+    
+    This reverts commit 5352fe0f3d39eaf3210c352bd03b76baf1336225.
+
+commit f6fbfb27eb15e95bb61274c3cf9d1d429d413bc8
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Thu Nov 3 11:09:13 2016 -0500
+
+    Revert "added the full slider.css link in index.html"
+    
+    This reverts commit 51ed2db329e12c5785351fd67e7776e341ac68aa.
+
+commit 616e2db351cea232d3c1c383647e3e155815e33c
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Thu Nov 3 11:08:07 2016 -0500
+
+    Revert "the full slider code...need to modify so it actually does the full screen thing"
+    
+    This reverts commit aa6bc76a886f8d5daccea4eb8edf227397661378.
+
+commit 7a4b0f2db78c4e4d8fa68bafed3c97b0f2fd1f0c
+Merge: aa6bc76 df45313
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Thu Nov 3 09:42:37 2016 -0500
+
+    Merge pull request #85 from cs373gc-fall-2016/dev
+    
+    Dev
+
+commit df45313bac86a097726fce6d9af98a573279b5d4
+Merge: f0a1ebd 0f933f6
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Thu Nov 3 09:39:26 2016 -0500
+
+    Merge pull request #84 from cs373gc-fall-2016/submission-finalize
+    
+    Updated things in preparation for submission
+
+commit aa6bc76a886f8d5daccea4eb8edf227397661378
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Thu Nov 3 09:26:36 2016 -0500
+
+    the full slider code...need to modify so it actually does the full screen thing
+
+commit 51ed2db329e12c5785351fd67e7776e341ac68aa
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Thu Nov 3 09:24:58 2016 -0500
+
+    added the full slider.css link in index.html
+
 commit f0a1ebdb7513651d29c64ec52c5acef4833af9db
 Merge: fd70cfa 024af0c
 Author: lock14 <lock14@users.noreply.github.com>
@@ -7,11 +329,52 @@ Date:   Thu Nov 3 08:57:38 2016 -0500
     
     Super Hacky way to run the unit tests
 
+commit 0f933f6f38d091de4b3c700fc15fc7fe9818570d
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Thu Nov 3 04:32:08 2016 -0500
+
+    Updated things in preparation for submission
+    
+    Formatted python files with autopep8
+    
+    Generated pydoc files for each of the python files
+    
+    Updated about page statistics
+    
+    Added link to about page to wiki page that
+      explains how data was scraped
+    
+    Added TA-README file to help TA locate documentation files
+    
+    Renamed test.sh unit-test.sh as the name test.sh
+      was causing weird behavior with make test
+
+commit 5352fe0f3d39eaf3210c352bd03b76baf1336225
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Wed Nov 2 13:46:43 2016 -0500
+
+    somehow restricted carousel to 3 images by deleting stuff
+
 commit 024af0c61b599cd5136636c421515d3f1eb8c7e9
 Author: Brian Bechtel <brianbechtel@outlook.com>
 Date:   Tue Nov 1 14:14:50 2016 -0500
 
     Super Hacky way to run the unit tests
+
+commit cadb3afb2ee3a8df187ca51f2f0c86acae81dfe7
+Author: lock14 <brianrbechtel@gmail.com>
+Date:   Tue Nov 1 11:26:57 2016 -0500
+
+    Updated API documentation to reflect new additions that accommodate lazy loading
+
+commit ca401bc304854aa2696c2f266cb0b4793b61e840
+Merge: a19fe1c 2dd49d1
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Mon Oct 31 19:41:45 2016 -0500
+
+    Merge pull request #80 from cs373gc-fall-2016/dev
+    
+    Updating Master
 
 commit 2dd49d15161a5e91b2804bae239d193cbd7217f3
 Merge: 155bc40 9881f8a
@@ -21,6 +384,15 @@ Date:   Mon Oct 31 19:17:41 2016 -0500
     Merge pull request #79 from cs373gc-fall-2016/lazy-sort-fix
     
     Made it so we can sort even though we use lazy loading
+
+commit a19fe1c70f84a251a77e2b90ce474372e5be6e74
+Merge: 4fc2f5d 9881f8a
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Mon Oct 31 19:08:02 2016 -0500
+
+    Merge pull request #78 from cs373gc-fall-2016/lazy-sort-fix
+    
+    Lazy sort fix
 
 commit 155bc4072f5db236d88327cc52caae4be77c9308
 Merge: 6f82a94 2100da4
@@ -133,6 +505,15 @@ Date:   Sun Oct 30 17:19:29 2016 -0500
     
     Travis fix
 
+commit 4fc2f5d3ce63436a6949f3d3fb25e6edbaf60b03
+Merge: 9bed6b8 4fdd1ee
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Sun Oct 30 17:17:39 2016 -0500
+
+    Merge pull request #73 from cs373gc-fall-2016/travis-fix
+    
+    Travis fix
+
 commit 8f640c02a15e6e98bba6cd613c93d4ac6eb7ea6b
 Merge: 0f0db47 9e09677
 Author: lock14 <lock14@users.noreply.github.com>
@@ -186,6 +567,22 @@ Date:   Sun Oct 30 13:12:12 2016 -0500
 
     Ignore vim session file
 
+commit 9bed6b818d47a6cb2d7bd701403e59df0ea12309
+Merge: 7683b69 8bee40e
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Sun Oct 30 12:53:55 2016 -0500
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/spartify
+
+commit 7683b691861b1e241cba8587f0918b6544522bb7
+Merge: a421169 0f0db47
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Sun Oct 30 12:52:17 2016 -0500
+
+    Merge branch 'dev'
+    
+    merged dev into master
+
 commit 0f0db47107f8ac0e80becc8b25b35eba0e19b521
 Merge: b460327 0895925
 Author: Brian Bechtel <brianbechtel@outlook.com>
@@ -195,11 +592,122 @@ Date:   Sun Oct 30 12:45:19 2016 -0500
     
     Merged angular2 port branch into dev
 
+commit 8bee40e575faaa4e555dc873c0f830ee15de3097
+Author: Cindy Wu <cindywu2018@utexas.edu>
+Date:   Sun Oct 30 12:40:06 2016 -0500
+
+    Added ID attribute to Language in API
+
+commit a421169494b2fcf10d342d6adfda1471e8dad10f
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Sun Oct 30 12:26:14 2016 -0500
+
+    updated UML diagram to include IDs for all models as pirmary keys
+
+commit 917a2102062adf4740e55309ea03e1d01d9bd6e6
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Sun Oct 30 05:19:42 2016 -0500
+
+    Greatly reduced data set
+
 commit 089592534586c211aa77c80362fce853bf6e72bc
 Author: Brian Bechtel <brianbechtel@outlook.com>
 Date:   Sun Oct 30 05:18:44 2016 -0500
 
     tweaks
+
+commit 7b660d85d69e96489de38ee10eca61d0dc142df4
+Author: Brian Bechtel <brianbechtel@outlook.com>
+Date:   Sun Oct 30 04:13:48 2016 -0500
+
+    updated dump file
+
+commit 1ae68f2e14ef7fdf21ba039820a0ae1523326fcb
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sat Oct 29 19:40:32 2016 -0500
+
+    New dump file with all the data
+
+commit b144f7c01b3823433802605423d5b2118c7ca402
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sat Oct 29 18:16:44 2016 -0500
+
+    Fixed missing tab character
+
+commit a24f4393a5d3045c004fc13e4c04190047afd60a
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sat Oct 29 18:15:37 2016 -0500
+
+    Fized typo newline
+
+commit a1729f5f160426489d49d26836cbbe6e789a1984
+Merge: 351ea34 b3b6072
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sat Oct 29 18:13:46 2016 -0500
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/spartify
+
+commit 351ea344c9f25a825a2c958ed70bb0289eb5479e
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sat Oct 29 18:12:36 2016 -0500
+
+    Finished getting language data
+
+commit b3b6072b06977e3209ab3a540870a5a73ba2500c
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Sat Oct 29 15:39:10 2016 -0500
+
+    deleted UML.pdf
+
+commit a6185b9efdfe0edc61bdb06f00bdd42bc67a04df
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Sat Oct 29 14:30:07 2016 -0500
+
+    added UML file to be included in makefile to check for existence
+
+commit 7f9c455600edbd2963d5dc24ba96576acafdfe39
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Sat Oct 29 14:29:33 2016 -0500
+
+    renamed UML file to comply with spec requirement
+
+commit 4f886434ed1ff279edb5088386e9ad4b87f0bd14
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sat Oct 29 11:38:37 2016 -0500
+
+    Added trimmed down langauges and languages_used files
+    
+    These files have the entries we don't want to track removed
+
+commit dfa74d84156547c0cc575bdba5c14139a21955d2
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sat Oct 29 09:08:48 2016 -0500
+
+    Columns mislabeled
+
+commit 75691cbfbdd2d168b25b1f26910ca20b4b57dd03
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sat Oct 29 08:40:43 2016 -0500
+
+    trying alternate escape sequence
+
+commit 0ea4426410bbf14d4080ae1124617596481b5ce7
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sat Oct 29 08:34:46 2016 -0500
+
+    removed escape character
+
+commit 13d2f5f623de46f694ecda1e09163f184045e6f0
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Sat Oct 29 08:32:51 2016 -0500
+
+    Testing filling in rest of language data
+
+commit 81f8da6bc55c341fb0b1a4def8e25a16791f546a
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Fri Oct 28 23:36:09 2016 -0500
+
+    data
 
 commit 3307c1ba3717361e0f0c3f2639035891f3146792
 Author: Brian Bechtel <brianbechtel@outlook.com>
@@ -255,6 +763,49 @@ Date:   Fri Oct 28 08:28:57 2016 -0500
 
     No longer needed, Using angular templates
 
+commit cc4e2442f91d66fb5f129f84c867919ddd58c5cb
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Thu Oct 27 16:37:03 2016 -0500
+
+    more data!, also changed extension from .txt to .csv
+
+commit 5bd496ef707ca17a840d6c702ba0eb0e513a1a15
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Wed Oct 26 20:37:27 2016 -0500
+
+    added the tests section in our About page. a way to run our unit tests. haven't actually implemented it yet
+
+commit 9629ce93e19ff18f1a1cd62c6327c534867a3777
+Merge: 320c66a f6c064b
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Wed Oct 26 20:29:02 2016 -0500
+
+    fixed merging conflict
+
+commit 320c66a4bc748358e521f56cd8208744556f74f6
+Author: cindywu <cindywu2018@utexas.edu>
+Date:   Wed Oct 26 20:23:02 2016 -0500
+
+    updated the data scraping description in our About page
+
+commit f6c064be91cf1dd562ec58036ee218574f69d1a6
+Author: Cindy Wu <cindywu2018@utexas.edu>
+Date:   Wed Oct 26 19:22:01 2016 -0500
+
+    Updated API to be more clear
+
+commit f2e4485c79ea2bcc3875856d82b2810b2bdfe1bb
+Author: Brian Bechtel <brianrbechtel@gmail.com>
+Date:   Wed Oct 26 16:01:39 2016 -0500
+
+    Data in CSV format
+
+commit aea7177ab376e8549d1763770bf001f51e28c550
+Author: Jack Jiang <jackjiang@utexas.edu>
+Date:   Wed Oct 26 14:31:17 2016 -0500
+
+    modified README to include postgres user step I always seem to need to do
+
 commit 6f47cda6dc0d537d4356db0cef608895d8fb9efe
 Author: Brian Bechtel <brianbechtel@outlook.com>
 Date:   Tue Oct 25 01:06:00 2016 -0500
@@ -288,6 +839,15 @@ Date:   Sat Oct 22 08:32:18 2016 -0500
 
     more interface tweaks
 
+commit 2f281d87fc212ca1a68612a1dcec4aa09a8d3131
+Merge: 93ca024 d994dfc
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Sat Oct 22 02:51:34 2016 -0500
+
+    Merge pull request #49 from cs373gc-fall-2016/dev
+    
+    Updated interface
+
 commit d994dfc87aaa356fd962fe5651020b80a3183c1f
 Author: Brian Bechtel <brianrbechtel@gmail.com>
 Date:   Sat Oct 22 01:24:17 2016 -0500
@@ -297,17 +857,44 @@ Date:   Sat Oct 22 01:24:17 2016 -0500
     Made it so that if there is more than 12 of an item then
     paging occurs
 
+commit 93ca024fb8c2b3efeec740f4f36ffbd5a8df0247
+Merge: 0382f68 a3d552e
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Fri Oct 21 21:55:59 2016 -0500
+
+    Merge pull request #48 from cs373gc-fall-2016/dev
+    
+    Fixed bug in the carousel
+
 commit a3d552e41b7ab86acdb77b78b7a8b8ef5774d95a
 Author: Brian Bechtel <brianrbechtel@gmail.com>
 Date:   Fri Oct 21 21:55:20 2016 -0500
 
     Fixed bug in the carousel
 
+commit 0382f68ccef51a6e9fda4a1e092ba7158df952b0
+Merge: 4f5e8b1 79586b8
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Fri Oct 21 21:46:54 2016 -0500
+
+    Merge pull request #47 from cs373gc-fall-2016/dev
+    
+    more interface tweaks
+
 commit 79586b863c0b31d0f7c29f03d34a4bfe54a4565b
 Author: Brian Bechtel <brianrbechtel@gmail.com>
 Date:   Fri Oct 21 21:45:13 2016 -0500
 
     more interface tweaks
+
+commit 4f5e8b19dbf09c60f8abf97f79ce800548928690
+Merge: 8c0bb0d 35383db
+Author: lock14 <lock14@users.noreply.github.com>
+Date:   Fri Oct 21 21:18:09 2016 -0500
+
+    Merge pull request #46 from cs373gc-fall-2016/dev
+    
+    Dev
 
 commit 35383db09fb11d98602b172c58b581f339770ceb
 Merge: 224b0c7 8c0bb0d

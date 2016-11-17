@@ -1,3 +1,5 @@
-<a *ngIf="company" routerLink="/companies/{{company.id}}" routerLinkActive="active" class="btn btn-info btn-block btn-tile mrgn-btm">
+<a *ngIf="company" routerLink="/companies/{{company.id}}" routerLinkActive="active"
+   pTooltip='<label class="text-capitalize">{{company.name}}</label><br>{{company.description}}' tooltipPosition="bottom"
+   class="btn btn-info btn-block btn-tile mrgn-btm">
   <h4 class="text-capitalize">{{company.name | ellipsis:12}}</h4>
 </a>
