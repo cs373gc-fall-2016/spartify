@@ -129,6 +129,7 @@ def model_page(db_name, start=None, end=None, orderby=None, descending=None):
     else:
         abort(404)
 
+
 @app.route('/api/<db_name>/<id>')
 def single_model(db_name, id):
     """
@@ -160,7 +161,8 @@ def model_search(db_name, query=None, start=None, end=None, type=None):
         if (type == "or"):
             query = query.filter(or_(*model.column_queries(tokens)))
         else:
-            query = query.filter(*model.column_queries(tokens)) #implicitly 'and' the filters
+            # implicitly 'and' the filters
+            query = query.filter(*model.column_queries(tokens))
         result = query.all()
         return jsonify([x.dictionary() for x in result])
     elif (start != None and end != None):
@@ -171,6 +173,7 @@ def model_search(db_name, query=None, start=None, end=None, type=None):
         return jsonify(tokens)
     else:
         abort(404)
+
 
 @app.errorhandler(404)
 def resource_not_found(e):

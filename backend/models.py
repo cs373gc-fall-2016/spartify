@@ -70,15 +70,17 @@ class Contributor(db.Model):
 
     def __repr__(self):
         return '<Contributor %r>' % self.username
-    
+
     @staticmethod
     def column_queries(tokens):
         column_queries = []
         for token in tokens:
             column_queries.append(or_(func.lower(Contributor.username).like(token),
-                                      func.lower(Contributor.email).like(token),
+                                      func.lower(
+                                          Contributor.email).like(token),
                                       func.lower(Contributor.url).like(token),
-                                      func.lower(Contributor.avatar_url).like(token),
+                                      func.lower(
+                                          Contributor.avatar_url).like(token),
                                       func.lower(Contributor.location).like(token)))
         return column_queries
 
@@ -145,7 +147,8 @@ class Language(db.Model):
             column_queries.append(or_(func.lower(Language.name).like(token),
                                       func.lower(Language.creator).like(token),
                                       func.lower(Language.type).like(token),
-                                      cast(Language.firstAppeared, String).like(token),
+                                      cast(Language.firstAppeared,
+                                           String).like(token),
                                       func.lower(Language.description).like(token)))
         return column_queries
 
@@ -199,8 +202,10 @@ class Project(db.Model):
         for token in tokens:
             column_queries.append(or_(func.lower(Project.name).like(token),
                                       func.lower(Project.url).like(token),
-                                      func.lower(cast(Project.createdDate, String)).like(token),
-                                      func.lower(cast(Project.private, String)).like(token),
+                                      func.lower(
+                                          cast(Project.createdDate, String)).like(token),
+                                      func.lower(
+                                          cast(Project.private, String)).like(token),
                                       func.lower(Project.description).like(token)))
         return column_queries
 
@@ -254,7 +259,8 @@ class Company(db.Model):
             column_queries.append(or_(func.lower(Company.name).like(token),
                                       func.lower(Company.email).like(token),
                                       func.lower(Company.url).like(token),
-                                      func.lower(Company.avatar_url).like(token),
+                                      func.lower(
+                                          Company.avatar_url).like(token),
                                       func.lower(Company.description).like(token)))
         return column_queries
 
